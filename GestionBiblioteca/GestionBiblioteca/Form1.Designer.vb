@@ -32,8 +32,11 @@ Partial Class Form1
         Me.CategoriasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrestamosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.bVolver = New System.Windows.Forms.Button()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.msNavbar.SuspendLayout()
+        Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'bTituloLogo
@@ -121,11 +124,36 @@ Partial Class Form1
         Me.PrestamosToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
         Me.PrestamosToolStripMenuItem.Text = "Prestamos"
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.bVolver)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(196, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(487, 48)
+        Me.Panel1.TabIndex = 9
+        '
+        'bVolver
+        '
+        Me.bVolver.BackColor = System.Drawing.Color.White
+        Me.bVolver.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.bVolver.Image = CType(resources.GetObject("bVolver.Image"), System.Drawing.Image)
+        Me.bVolver.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.bVolver.Location = New System.Drawing.Point(0, 0)
+        Me.bVolver.Name = "bVolver"
+        Me.bVolver.Size = New System.Drawing.Size(99, 45)
+        Me.bVolver.TabIndex = 0
+        Me.bVolver.Text = "Volver"
+        Me.bVolver.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.bVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.bVolver.UseVisualStyleBackColor = False
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(683, 416)
+        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.TableLayoutPanel1)
         Me.IsMdiContainer = True
         Me.MinimumSize = New System.Drawing.Size(699, 455)
@@ -135,6 +163,7 @@ Partial Class Form1
         Me.TableLayoutPanel1.PerformLayout()
         Me.msNavbar.ResumeLayout(False)
         Me.msNavbar.PerformLayout()
+        Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -147,4 +176,6 @@ Partial Class Form1
     Friend WithEvents CategoriasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PrestamosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents bVolver As Button
 End Class

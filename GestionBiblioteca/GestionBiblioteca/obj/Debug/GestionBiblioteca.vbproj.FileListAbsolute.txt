@@ -11,3 +11,17 @@ C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestionBiblioteca\GestionBib
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.xml
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.pdb
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.DashboardForm.resources
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\bin\Debug\GestionBiblioteca.exe.config
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\bin\Debug\GestionBiblioteca.exe
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\bin\Debug\GestionBiblioteca.pdb
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\bin\Debug\GestionBiblioteca.xml
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.vbproj.AssemblyReference.cache
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.DashboardForm.resources
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.Form1.resources
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.Resources.resources
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.vbproj.GenerateResource.cache
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.vbproj.CoreCompileInputs.cache
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.exe
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.xml
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.pdb
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.UsuariosForm.resources

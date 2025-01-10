@@ -2,6 +2,10 @@
 
     Public dashboard As New DashboardForm
 
+    'para poder volver a la pagina anterior
+    Private formHistory As New Stack(Of Form)
+
+
     Dim mostrado As Boolean = False
     Const FONTSIZE As Double = 8
     Private Sub Principal_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
@@ -10,6 +14,8 @@
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
 
         dashboard.MdiParent = Me
         dashboard.Dock = DockStyle.Fill
@@ -28,6 +34,11 @@
 
 
         AjustarMenuItems()
+
+
+        AddHandler dashboard.pcDashboard.Click, AddressOf AbrirUsuariosForm
+        AddHandler dashboard.lDashboardUsuarios.Click, AddressOf AbrirUsuariosForm
+
 
 
     End Sub
@@ -64,53 +75,44 @@
         For Each control In dashboard.tlpPrincipal.Controls
             control.Font = New Font("Microsoft Sans Serif", proporciónAncho * FONTSIZE)
 
-            If TypeOf control Is Button Then
-                Dim boton As Button = DirectCast(control, Button)
 
-                ' Ajustamos el tamaño de la fuente del botón proporcionalmente al tamaño de Form1
-                boton.Font = New Font("Microsoft Sans Serif", proporciónAncho * FONTSIZE)
-
-                ' Si el botón tiene una imagen, la ajustamos también
-                If boton.Image IsNot Nothing Then
-                    ' Redimensionamos la imagen manteniendo la relación de aspecto con una interpolación de alta calidad
-                    boton.Image = RedimensionarImagenAltaCalidad(boton.Image, boton.Width, boton.Height)
-                End If
-            End If
         Next
     End Sub
 
-    ' Función que redimensiona la imagen manteniendo la relación de aspecto con alta calidad
-    Private Function RedimensionarImagenAltaCalidad(imagenOriginal As Image, nuevoAncho As Integer, nuevaAltura As Integer) As Image
-        ' Calculamos la relación de aspecto de la imagen original
-        Dim ratio As Double = imagenOriginal.Width / imagenOriginal.Height
 
-        ' Calculamos el ancho y alto proporcionalmente, manteniendo la relación de aspecto
-        Dim anchoRedimensionado As Integer
-        Dim alturaRedimensionada As Integer
 
-        ' Comprobamos si el ancho redimensionado o la altura es el que limita la imagen
-        If nuevoAncho / nuevaAltura > ratio Then
-            ' Si el nuevo ancho es más grande en relación a la altura, ajustamos la altura
-            alturaRedimensionada = nuevaAltura
-            anchoRedimensionado = CInt(alturaRedimensionada * ratio)
-        Else
-            ' Si el nuevo alto es más grande en relación al ancho, ajustamos el ancho
-            anchoRedimensionado = nuevoAncho
-            alturaRedimensionada = CInt(anchoRedimensionado / ratio)
+
+    Private Sub AbrirUsuariosForm()
+        ' Guardar el formulario actual en el historial
+        If ActiveMdiChild IsNot Nothing Then
+            formHistory.Push(ActiveMdiChild)
         End If
 
-        ' Creamos un nuevo Bitmap con las nuevas dimensiones
-        Dim imagenRedimensionada As New Bitmap(anchoRedimensionado, alturaRedimensionada)
-
-        ' Usamos un objeto Graphics para dibujar la imagen con una interpolación de alta calidad
-        Using g As Graphics = Graphics.FromImage(imagenRedimensionada)
-            g.InterpolationMode = Drawing2D.InterpolationMode.HighQualityBicubic
-            g.DrawImage(imagenOriginal, 0, 0, anchoRedimensionado, alturaRedimensionada)
-        End Using
-
-        Return imagenRedimensionada
-    End Function
+        ' Abrir el nuevo formulario
+        Dim usuariosForm As New UsuariosForm
+        usuariosForm.MdiParent = Me
+        usuariosForm.Dock = DockStyle.Fill
+        usuariosForm.Show()
+    End Sub
 
 
+    Private Sub VolverAtras()
+        ' Verificar si hay formularios en el historial
+        If formHistory.Count > 0 Then
+            ' Cerrar el formulario actual
+            Dim currentForm As Form = ActiveMdiChild
+            If currentForm IsNot Nothing Then
+                currentForm.Close()
+            End If
 
+            ' Recuperar el formulario anterior de la pila y mostrarlo
+            Dim previousForm As Form = formHistory.Pop()
+            previousForm.Show()
+        Else
+        End If
+    End Sub
+
+    Private Sub bVolver_Click(sender As Object, e As EventArgs) Handles bVolver.Click
+        VolverAtras()
+    End Sub
 End Class
