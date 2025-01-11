@@ -45,4 +45,18 @@ Public Class Usuario
         Return usuarios
     End Function
 
+    Public Shared Function BorrarUsuario(id As Integer)
+        Try
+            Dim Cmd As New SQLiteCommand
+            Dim Sql As String = “DELETE FROM Usuarios WHERE (ID=@Id)"
+            Cmd.CommandText = Sql
+            Cmd.Parameters.Add("@Id", SqlDbType.Int).Value = id
+            SQLLite.Ejecuta(My.Settings.conexion, Cmd)
+
+        Catch ex As Exception
+            Throw New Exception("Error al intentar borrar usuario: " & ex.Message)
+        End Try
+
+    End Function
+
 End Class

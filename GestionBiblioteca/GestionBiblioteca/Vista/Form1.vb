@@ -2,6 +2,8 @@
 
     Public dashboard As New DashboardForm
 
+    Public gestionUsuarios As New UsuariosForm
+
     'para poder volver a la pagina anterior
     Private formHistory As New Stack(Of Form)
 
@@ -77,16 +79,42 @@
 
 
         Next
+
+        For Each control In gestionUsuarios.tlpGestionUsuarios.Controls
+            control.Font = New Font("Microsoft Sans Serif", proporciónAncho * FONTSIZE)
+
+
+        Next
+
+
+
+        ' Cambiar la fuente de todas las celdas
+        For Each column As DataGridViewColumn In gestionUsuarios.dgvUsuarios.Columns
+            column.DefaultCellStyle.Font = New Font("Microsoft Sans Serif", proporciónAncho * FONTSIZE)
+        Next
+
+        ' Cambiar la fuente de los encabezados de columna
+        ' gestionUsuarios.dgvUsuarios.ColumnHeadersDefaultCellStyle.Font = New Font("Microsoft Sans Serif", proporciónAncho * FONTSIZE, FontStyle.Bold)
+
+        ' Asegurarse de que los cambios se reflejen correctamente
+        gestionUsuarios.dgvUsuarios.Invalidate()
+        gestionUsuarios.dgvUsuarios.Refresh()
+
+
     End Sub
 
 
 
 
     Private Sub AbrirUsuariosForm()
+
+
         ' Guardar el formulario actual en el historial
         If ActiveMdiChild IsNot Nothing Then
             formHistory.Push(ActiveMdiChild)
         End If
+
+
 
         ' Abrir el nuevo formulario
         Dim usuariosForm As New UsuariosForm
