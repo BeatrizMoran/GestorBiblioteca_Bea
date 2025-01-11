@@ -1,11 +1,13 @@
 ﻿Public Class DashboardForm
 
+
     Dim mostrado As Boolean = False
     Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles tlpPrincipal.Paint
 
     End Sub
 
     Private Sub DashboardForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         ConfigurarPaneles(tlpPrincipal)
 
 

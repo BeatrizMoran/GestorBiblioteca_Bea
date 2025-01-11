@@ -36,10 +36,13 @@
 
 
         AjustarMenuItems()
+        msNavbar.Padding = New Padding(0, 30, 0, 0)
 
 
         AddHandler dashboard.pcDashboard.Click, AddressOf AbrirUsuariosForm
         AddHandler dashboard.lDashboardUsuarios.Click, AddressOf AbrirUsuariosForm
+
+
 
 
 
@@ -72,6 +75,14 @@
     Private Sub AjustarFuenteYImagenes()
         ' Calculamos la proporción del ancho del formulario en relación con su tamaño mínimo
         Dim proporciónAncho As Double = Me.Width / Me.MinimumSize.Width
+        Dim tamanoFuente As Integer = Math.Min(proporciónAncho * FONTSIZE, 14)
+
+        'barra navegacion
+
+        For Each item As ToolStripMenuItem In msNavbar.Items
+            item.Font = New Font("Arial", tamanoFuente)
+        Next
+
 
         ' Iteramos sobre los controles dentro del contenedor de botones (en este caso, tlpPrincipal)
         For Each control In dashboard.tlpPrincipal.Controls
