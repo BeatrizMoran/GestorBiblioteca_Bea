@@ -39,12 +39,7 @@
         msNavbar.Padding = New Padding(0, 30, 0, 0)
 
 
-        AddHandler dashboard.pcDashboard.Click, AddressOf AbrirUsuariosForm
-        AddHandler dashboard.lDashboardUsuarios.Click, AddressOf AbrirUsuariosForm
-
-
-
-
+        AddHandler dashboard.bdUsuarios.ClickarBlock, AddressOf AbrirUsuariosForm
 
     End Sub
 
@@ -62,9 +57,7 @@
         Next
     End Sub
 
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles bTituloLogo.Click
-        ' Código adicional si es necesario
-    End Sub
+
 
     Private Sub Form1_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
         If mostrado Then

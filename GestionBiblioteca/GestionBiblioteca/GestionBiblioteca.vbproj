@@ -165,7 +165,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\..\ControlesBiblioteca\ControlesBiblioteca\ControlesBiblioteca.vbproj">
+      <Project>{61389190-8ae5-4b06-a0fa-2f4ca152a40e}</Project>
+      <Name>ControlesBiblioteca</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
