@@ -87,7 +87,7 @@
         gestionUsuarios.dgvUsuarios.Refresh()
     End Sub
 
-    Private Sub AbrirUsuariosForm(pagina As String)
+    Public Sub AbrirUsuariosForm(pagina As String)
         ' Guardar el formulario activo en el historial
         If formularioActual IsNot Nothing Then
             Console.WriteLine("Página anterior: " & formularioActual.Name)
@@ -99,6 +99,8 @@
             Case "gestion"
                 If gestionUsuarios Is Nothing OrElse gestionUsuarios.IsDisposed Then
                     gestionUsuarios = New UsuariosForm()
+                Else
+                    gestionUsuarios.CargarUsuarios() ' Recarga los usuarios si ya está abierto
                 End If
                 nuevoFormulario = gestionUsuarios
 

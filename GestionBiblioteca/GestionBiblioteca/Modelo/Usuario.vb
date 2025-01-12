@@ -11,15 +11,15 @@ Public Class Usuario
     Public Sub New()
     End Sub
 
-    Public Sub New(id As Integer, nombre As String, apellido1 As String, apellido2 As String, telefono As Integer)
-        Me.id = id
+    Public Sub New(nombre As String, apellido1 As String, apellido2 As String, telefono As Integer)
         Me.nombre = nombre
         Me.apellido1 = apellido1
         Me.apellido2 = apellido2
         Me.telefono = telefono
     End Sub
 
-    ' Método para obtener la lista de usuarios desde la base de datos
+
+
     Public Shared Function ObtenerUsuarios() As List(Of Usuario)
         Dim usuarios As New List(Of Usuario)
         Dim consulta As String = "SELECT Id, Nombre, Apellido_1, Apellido_2, Telefono FROM Usuarios"
@@ -58,5 +58,30 @@ Public Class Usuario
         End Try
 
     End Function
+
+    Public Shared Sub CrearUsuario(usuario As Usuario)
+        Try
+            Dim Cmd As New SQLiteCommand
+
+            ' Consulta de inserción sin el campo ID (ya que es autoincremental)
+            Dim Sql As String = "INSERT INTO Usuarios (Nombre, Apellido_1, Apellido_2, Telefono) " &
+                                "VALUES (@Nombre, @Apellido_1, @Apellido_2, @Telefono)"
+
+            Cmd.CommandText = Sql
+
+            ' Añadir los parámetros correspondientes
+            Cmd.Parameters.Add("@Nombre", DbType.String).Value = usuario.nombre
+            Cmd.Parameters.Add("@Apellido_1", DbType.String).Value = usuario.apellido1
+            Cmd.Parameters.Add("@Apellido_2", DbType.String).Value = usuario.apellido2
+            Cmd.Parameters.Add("@Telefono", DbType.Int32).Value = usuario.telefono
+
+
+            SQLLite.Ejecuta(My.Settings.conexion, Cmd)
+        Catch ex As Exception
+            Throw New Exception("Error al intentar crear el usuario: " & ex.Message)
+        End Try
+    End Sub
+
+
 
 End Class

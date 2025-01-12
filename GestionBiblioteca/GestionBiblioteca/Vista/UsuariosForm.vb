@@ -11,7 +11,7 @@
         CargarUsuarios()
     End Sub
 
-    Private Sub CargarUsuarios()
+    Public Sub CargarUsuarios()
         Try
             Dim usuarios As List(Of Usuario) = UsuarioController.ObtenerUsuariosParaVista()
 

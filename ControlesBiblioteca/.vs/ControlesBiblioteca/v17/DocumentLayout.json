@@ -7,7 +7,7 @@
       "RelativeMoniker": "D:0:0:{61389190-8AE5-4B06-A0FA-2F4CA152A40E}|ControlesBiblioteca\\ControlesBiblioteca.vbproj|solutionrelative:controlesbiblioteca\\labelledinput.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61389190-8AE5-4B06-A0FA-2F4CA152A40E}|ControlesBiblioteca\\ControlesBiblioteca.vbproj|c:\\users\\beatr\\documents\\dam\\di\\proyecto_biblioteca\\gestorbiblioteca_bea\\controlesbiblioteca\\controlesbiblioteca\\labelledinput.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{61389190-8AE5-4B06-A0FA-2F4CA152A40E}|ControlesBiblioteca\\ControlesBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\ControlesBiblioteca\\controlesbiblioteca\\labelledinput.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{61389190-8AE5-4B06-A0FA-2F4CA152A40E}|ControlesBiblioteca\\ControlesBiblioteca.vbproj|solutionrelative:controlesbiblioteca\\labelledinput.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
@@ -19,7 +19,7 @@
       "RelativeMoniker": "D:0:0:{61389190-8AE5-4B06-A0FA-2F4CA152A40E}|ControlesBiblioteca\\ControlesBiblioteca.vbproj|solutionrelative:controlesbiblioteca\\librocontrol.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{61389190-8AE5-4B06-A0FA-2F4CA152A40E}|ControlesBiblioteca\\ControlesBiblioteca.vbproj|c:\\users\\beatr\\documents\\dam\\di\\proyecto_biblioteca\\gestorbiblioteca_bea\\controlesbiblioteca\\controlesbiblioteca\\librocontrol.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "AbsoluteMoniker": "D:0:0:{61389190-8AE5-4B06-A0FA-2F4CA152A40E}|ControlesBiblioteca\\ControlesBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\ControlesBiblioteca\\controlesbiblioteca\\librocontrol.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{61389190-8AE5-4B06-A0FA-2F4CA152A40E}|ControlesBiblioteca\\ControlesBiblioteca.vbproj|solutionrelative:controlesbiblioteca\\librocontrol.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
@@ -56,7 +56,7 @@
               "RelativeDocumentMoniker": "ControlesBiblioteca\\LabelledInput.vb",
               "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\ControlesBiblioteca\\ControlesBiblioteca\\LabelledInput.vb",
               "RelativeToolTip": "ControlesBiblioteca\\LabelledInput.vb",
-              "ViewState": "AgIAABsAAAAAAAAAAAAowF0AAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-01-12T09:41:49.334Z",
               "EditorCaption": ""
@@ -83,8 +83,7 @@
               "RelativeToolTip": "ControlesBiblioteca\\LibroControl.vb",
               "ViewState": "AgIAAAAAAAAAAAAAAAA6wAIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-11T20:18:48.929Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-11T20:18:48.929Z"
             },
             {
               "$type": "Document",
@@ -95,8 +94,7 @@
               "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\ControlesBiblioteca\\ControlesBiblioteca\\LibroControl.vb [Dise\u00F1o]",
               "RelativeToolTip": "ControlesBiblioteca\\LibroControl.vb [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-11T20:05:46.519Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-01-11T20:05:46.519Z"
             },
             {
               "$type": "Document",
@@ -108,8 +106,7 @@
               "RelativeToolTip": "ControlesBiblioteca\\BlockDashboard.vb",
               "ViewState": "AgIAAD0AAAAAAAAAAAAcwGMAAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-11T17:57:12.506Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-11T17:57:12.506Z"
             },
             {
               "$type": "Document",
@@ -120,8 +117,7 @@
               "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\ControlesBiblioteca\\ControlesBiblioteca\\BlockDashboard.vb [Dise\u00F1o]",
               "RelativeToolTip": "ControlesBiblioteca\\BlockDashboard.vb [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-11T17:49:22.234Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-01-11T17:49:22.234Z"
             },
             {
               "$type": "Document",
@@ -132,8 +128,7 @@
               "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\ControlesBiblioteca\\ControlesBiblioteca\\UserControl1.vb [Dise\u00F1o]",
               "RelativeToolTip": "ControlesBiblioteca\\UserControl1.vb [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-09T09:50:07.459Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-01-09T09:50:07.459Z"
             }
           ]
         }

@@ -4,6 +4,8 @@
     Private _TituloColor As Color = Color.Black
     Private _TextboxBackColor As Color = Color.White
     Private _TextboxForeColor As Color = Color.Black
+    Private _InputText As String
+
 
 
     ' Propiedad pública para el título
@@ -16,6 +18,16 @@
             lTitulo.Text = value
         End Set
     End Property
+    Public Property InputText As String
+        Get
+            Return tbCampo.Text
+        End Get
+        Set(value As String)
+            _InputText = value
+            tbCampo.Text = value
+        End Set
+    End Property
+
 
     ' Propiedad pública para cambiar el color del texto del título
     Public Property TituloColor As Color
