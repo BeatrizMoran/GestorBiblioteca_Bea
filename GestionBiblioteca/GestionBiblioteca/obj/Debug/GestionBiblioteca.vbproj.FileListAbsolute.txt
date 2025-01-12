@@ -38,3 +38,4 @@ C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\Gestion
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.exe
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.xml
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.pdb
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.AgregarUsuarioForm.resources

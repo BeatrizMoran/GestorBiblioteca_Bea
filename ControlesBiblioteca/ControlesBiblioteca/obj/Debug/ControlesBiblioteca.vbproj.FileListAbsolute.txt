@@ -9,3 +9,5 @@ C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\Control
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\ControlesBiblioteca\ControlesBiblioteca\obj\Debug\ControlesBiblioteca.dll
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\ControlesBiblioteca\ControlesBiblioteca\obj\Debug\ControlesBiblioteca.xml
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\ControlesBiblioteca\ControlesBiblioteca\obj\Debug\ControlesBiblioteca.pdb
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\ControlesBiblioteca\ControlesBiblioteca\obj\Debug\ControlesBiblioteca.LibroControl.resources
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\ControlesBiblioteca\ControlesBiblioteca\obj\Debug\ControlesBiblioteca.LabelledInput.resources

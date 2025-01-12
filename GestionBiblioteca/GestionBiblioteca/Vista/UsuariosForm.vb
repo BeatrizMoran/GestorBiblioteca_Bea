@@ -131,9 +131,6 @@
     End Sub
 
 
-    Private Sub tlpGestionUsuarios_Paint(sender As Object, e As PaintEventArgs)
-
-    End Sub
 
     Private Sub UsuariosForm_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
         If mostrado Then
@@ -164,4 +161,10 @@
     Private Sub UsuariosForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         mostrado = True
     End Sub
+
+    Private Sub bCrearUsuario_Click(sender As Object, e As EventArgs) Handles bCrearUsuario.Click
+        Me.Hide()
+    End Sub
+
+
 End Class

@@ -97,7 +97,7 @@
 
     End Sub
 
-    Private Sub BlockDashboard_MouseLeave(sender As Object, e As EventArgs) Handles MyBase.MouseLeave, lTitulo.MouseLeave, pbImagen.MouseLeave
+    Private Sub BlockDashboard_MouseLeave(sender As Object, e As EventArgs) Handles MyBase.MouseLeave
         Me.BackColor = _BackColorNormal
         lTitulo.BackColor = _BackColorNormal
 
