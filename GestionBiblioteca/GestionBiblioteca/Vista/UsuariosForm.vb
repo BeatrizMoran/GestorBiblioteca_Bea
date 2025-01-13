@@ -5,6 +5,11 @@
     Dim controlador As New UsuarioController
     Private fuenteActual As Font = New Font("Microsoft Sans Serif", 8) ' Tamaño inicial predeterminado
 
+    ' Variables para paginación
+    Private paginaActual As Integer = 1
+    Private tamañoPagina As Integer = 10
+    Private totalPaginas As Integer = 1
+
     Private Sub FormUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         bCrearUsuario.BackColor = Color.FromArgb(0, 123, 255) ' Color RGB personalizado
 
@@ -14,6 +19,12 @@
     Public Sub CargarUsuarios()
         Try
             Dim usuarios As List(Of Usuario) = UsuarioController.ObtenerUsuariosParaVista()
+            ' Calcular el número total de páginas
+            totalPaginas = Math.Ceiling(usuarios.Count / tamañoPagina)
+            ' Filtrar los usuarios según la página actual
+            Dim usuariosPagina = usuarios.Skip((paginaActual - 1) * tamañoPagina).Take(tamañoPagina).ToList()
+
+
 
             dgvUsuarios.Rows.Clear()
             dgvUsuarios.Columns.Clear()
@@ -56,14 +67,21 @@
 
             ' Verificar si la lista de usuarios tiene elementos
             If usuarios.Count > 0 Then
-                For Each usuario As Usuario In usuarios
-                    If usuario IsNot Nothing Then
-                        dgvUsuarios.Rows.Add(usuario.id, usuario.nombre, usuario.apellido1, usuario.apellido2, usuario.telefono)
-                    End If
+                ' Agregar usuarios de la página actual al DataGridView
+                For Each usuario As Usuario In usuariosPagina
+                    dgvUsuarios.Rows.Add(usuario.id, usuario.nombre, usuario.apellido1, usuario.apellido2, usuario.telefono)
                 Next
             Else
                 MessageBox.Show("No hay usuarios disponibles", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
+
+            For Each control As Control In tlpGestionUsuarios.Controls
+                control.Font = fuenteActual
+            Next
+
+
+            ' Mostrar el estado de la paginación
+            lblPaginacion.Text = $"Página {paginaActual} de {totalPaginas}"
 
             dgvUsuarios.Dock = DockStyle.Fill
 
@@ -73,16 +91,37 @@
             ' Ajustar las filas para ocupar el espacio adecuado, manteniendo el contenido visible
             dgvUsuarios.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
 
+
             For Each column As DataGridViewColumn In dgvUsuarios.Columns
                 column.DefaultCellStyle.Padding = New Padding(5)
             Next
+            For Each column As DataGridViewColumn In dgvUsuarios.Columns
+                column.DefaultCellStyle.Font = fuenteActual
+            Next
+
 
             ' Establecer el modo de edición del DataGridView
             dgvUsuarios.EditMode = DataGridViewEditMode.EditOnKeystrokeOrF2
 
+
+
         Catch ex As Exception
             MessageBox.Show("Error al cargar los usuarios: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
+    End Sub
+
+    Private Sub bAnterior_Click(sender As Object, e As EventArgs) Handles bAnterior.Click
+        If paginaActual > 1 Then
+            paginaActual -= 1
+            CargarUsuarios()
+        End If
+    End Sub
+
+    Private Sub bSiguiente_Click(sender As Object, e As EventArgs) Handles bSiguiente.Click
+        If paginaActual < totalPaginas Then
+            paginaActual += 1
+            CargarUsuarios()
+        End If
     End Sub
 
     Private Sub dgvUsuarios_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUsuarios.CellClick
