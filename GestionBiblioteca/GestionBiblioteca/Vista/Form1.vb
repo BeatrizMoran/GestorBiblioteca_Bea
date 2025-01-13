@@ -33,12 +33,12 @@
         AjustarMenuItems()
         msNavbar.Padding = New Padding(0, 30, 0, 0)
 
-        AddHandler dashboard.bdUsuarios.ClickarBlock, Sub()
-                                                          AbrirUsuariosForm("gestion")
-                                                      End Sub
-        AddHandler gestionUsuarios.bCrearUsuario.Click, Sub()
-                                                            AbrirUsuariosForm("crear")
-                                                        End Sub
+        'AddHandler dashboard.bdUsuarios.ClickarBlock, Sub()
+        '                                                  AbrirUsuariosForm("gestion")
+        '                                              End Sub
+        'AddHandler gestionUsuarios.bCrearUsuario.Click, Sub()
+        '                                                    AbrirUsuariosForm("crear")
+        '                                                End Sub
     End Sub
 
     Private Sub AjustarMenuItems()

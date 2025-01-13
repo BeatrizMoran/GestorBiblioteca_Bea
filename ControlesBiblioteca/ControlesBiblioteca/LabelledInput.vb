@@ -1,6 +1,6 @@
 ﻿Public Class LabelledInput
     Private _Titulo As String = "Título"
-    Private _Placeholder As String = "Escribe aquí"
+    Private _Placeholder As String = "Escribe aqui"
     Private _TituloColor As Color = Color.Black
     Private _TextboxBackColor As Color = Color.White
     Private _TextboxForeColor As Color = Color.Black
@@ -67,6 +67,8 @@
         InitializeComponent()
         UpdatePlaceholder()
 
+
+
         ' Configurar eventos para manejar el placeholder
         AddHandler tbCampo.GotFocus, AddressOf RemovePlaceholder
         AddHandler tbCampo.LostFocus, AddressOf RestorePlaceholder
@@ -74,9 +76,10 @@
 
     ' Actualizar el placeholder
     Private Sub UpdatePlaceholder()
-        If String.IsNullOrEmpty(tbCampo.Text) Then
+        If String.IsNullOrEmpty(tbCampo.Text) OrElse tbCampo.Text = _Placeholder Then
             tbCampo.Text = _Placeholder
             tbCampo.ForeColor = Color.Gray
+
         End If
     End Sub
 
@@ -85,6 +88,8 @@
         If tbCampo.Text = _Placeholder Then
             tbCampo.Text = ""
             tbCampo.ForeColor = Color.Black
+            lTitulo.ForeColor = Color.Black
+            tbCampo.BackColor = Color.White
         End If
     End Sub
 

@@ -22,26 +22,26 @@ Partial Class LabelledInput
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.tlpControl = New System.Windows.Forms.TableLayoutPanel()
         Me.lTitulo = New System.Windows.Forms.Label()
         Me.tbCampo = New System.Windows.Forms.TextBox()
-        Me.TableLayoutPanel1.SuspendLayout()
+        Me.tlpControl.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TableLayoutPanel1
+        'tlpControl
         '
-        Me.TableLayoutPanel1.ColumnCount = 1
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.lTitulo, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.tbCampo, 0, 1)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(188, 47)
-        Me.TableLayoutPanel1.TabIndex = 0
+        Me.tlpControl.ColumnCount = 1
+        Me.tlpControl.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlpControl.Controls.Add(Me.lTitulo, 0, 0)
+        Me.tlpControl.Controls.Add(Me.tbCampo, 0, 1)
+        Me.tlpControl.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlpControl.Location = New System.Drawing.Point(0, 0)
+        Me.tlpControl.Name = "tlpControl"
+        Me.tlpControl.RowCount = 2
+        Me.tlpControl.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tlpControl.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlpControl.Size = New System.Drawing.Size(188, 47)
+        Me.tlpControl.TabIndex = 0
         '
         'lTitulo
         '
@@ -66,16 +66,16 @@ Partial Class LabelledInput
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Controls.Add(Me.tlpControl)
         Me.Name = "LabelledInput"
         Me.Size = New System.Drawing.Size(188, 47)
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.PerformLayout()
+        Me.tlpControl.ResumeLayout(False)
+        Me.tlpControl.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents tlpControl As TableLayoutPanel
     Friend WithEvents lTitulo As Label
     Friend WithEvents tbCampo As TextBox
 End Class

@@ -25,6 +25,10 @@ Public Class DashboardForm
     End Sub
 
     Private Sub BlockDashboard2_ClickarBlock() Handles bdUsuarios.ClickarBlock
+        CType(Me.MdiParent, Form1).AbrirUsuariosForm("gestion")
+    End Sub
+
+    Private Sub bdUsuarios_Load(sender As Object, e As EventArgs) Handles bdUsuarios.Load
 
     End Sub
 End Class

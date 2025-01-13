@@ -163,8 +163,7 @@
     End Sub
 
     Private Sub bCrearUsuario_Click(sender As Object, e As EventArgs) Handles bCrearUsuario.Click
-        Me.Hide()
+        CType(Me.MdiParent, Form1).AbrirUsuariosForm("crear")
+
     End Sub
-
-
 End Class

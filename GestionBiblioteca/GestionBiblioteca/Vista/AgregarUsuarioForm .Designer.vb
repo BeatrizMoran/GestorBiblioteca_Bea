@@ -22,80 +22,41 @@ Partial Class AgregarUsuarioForm
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.liTelefono = New ControlesBiblioteca.LabelledInput()
-        Me.liApellido2 = New ControlesBiblioteca.LabelledInput()
-        Me.liApellido1 = New ControlesBiblioteca.LabelledInput()
+        Me.tlpFormulario = New System.Windows.Forms.TableLayoutPanel()
         Me.tlpBotones = New System.Windows.Forms.TableLayoutPanel()
         Me.bAceptar = New System.Windows.Forms.Button()
         Me.bCancelar = New System.Windows.Forms.Button()
-        Me.liNombre = New ControlesBiblioteca.LabelledInput()
         Me.lTexto = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel1.SuspendLayout()
+        Me.liTelefono = New ControlesBiblioteca.LabelledInput()
+        Me.liApellido2 = New ControlesBiblioteca.LabelledInput()
+        Me.liApellido1 = New ControlesBiblioteca.LabelledInput()
+        Me.liNombre = New ControlesBiblioteca.LabelledInput()
+        Me.tlpFormulario.SuspendLayout()
         Me.tlpBotones.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TableLayoutPanel1
+        'tlpFormulario
         '
-        Me.TableLayoutPanel1.ColumnCount = 1
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.liTelefono, 0, 4)
-        Me.TableLayoutPanel1.Controls.Add(Me.liApellido2, 0, 3)
-        Me.TableLayoutPanel1.Controls.Add(Me.liApellido1, 0, 2)
-        Me.TableLayoutPanel1.Controls.Add(Me.tlpBotones, 0, 5)
-        Me.TableLayoutPanel1.Controls.Add(Me.liNombre, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.lTexto, 0, 0)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 6
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(800, 450)
-        Me.TableLayoutPanel1.TabIndex = 0
-        '
-        'liTelefono
-        '
-        Me.liTelefono.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.liTelefono.Location = New System.Drawing.Point(3, 277)
-        Me.liTelefono.Name = "liTelefono"
-        Me.liTelefono.Placeholder = "Escribe aquí"
-        Me.liTelefono.Size = New System.Drawing.Size(794, 81)
-        Me.liTelefono.TabIndex = 6
-        Me.liTelefono.TextboxBackColor = System.Drawing.Color.White
-        Me.liTelefono.TextboxForeColor = System.Drawing.Color.Black
-        Me.liTelefono.Titulo = "Titulo"
-        Me.liTelefono.TituloColor = System.Drawing.Color.Black
-        '
-        'liApellido2
-        '
-        Me.liApellido2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.liApellido2.Location = New System.Drawing.Point(3, 190)
-        Me.liApellido2.Name = "liApellido2"
-        Me.liApellido2.Placeholder = "Escribe aquí"
-        Me.liApellido2.Size = New System.Drawing.Size(794, 81)
-        Me.liApellido2.TabIndex = 5
-        Me.liApellido2.TextboxBackColor = System.Drawing.Color.White
-        Me.liApellido2.TextboxForeColor = System.Drawing.Color.Black
-        Me.liApellido2.Titulo = "Titulo"
-        Me.liApellido2.TituloColor = System.Drawing.Color.Black
-        '
-        'liApellido1
-        '
-        Me.liApellido1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.liApellido1.Location = New System.Drawing.Point(3, 103)
-        Me.liApellido1.Name = "liApellido1"
-        Me.liApellido1.Placeholder = "Escribe aquí"
-        Me.liApellido1.Size = New System.Drawing.Size(794, 81)
-        Me.liApellido1.TabIndex = 4
-        Me.liApellido1.TextboxBackColor = System.Drawing.Color.White
-        Me.liApellido1.TextboxForeColor = System.Drawing.Color.Black
-        Me.liApellido1.Titulo = "Titulo"
-        Me.liApellido1.TituloColor = System.Drawing.Color.Black
+        Me.tlpFormulario.ColumnCount = 1
+        Me.tlpFormulario.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlpFormulario.Controls.Add(Me.liTelefono, 0, 4)
+        Me.tlpFormulario.Controls.Add(Me.liApellido2, 0, 3)
+        Me.tlpFormulario.Controls.Add(Me.liApellido1, 0, 2)
+        Me.tlpFormulario.Controls.Add(Me.tlpBotones, 0, 5)
+        Me.tlpFormulario.Controls.Add(Me.liNombre, 0, 1)
+        Me.tlpFormulario.Controls.Add(Me.lTexto, 0, 0)
+        Me.tlpFormulario.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlpFormulario.Location = New System.Drawing.Point(0, 0)
+        Me.tlpFormulario.Name = "tlpFormulario"
+        Me.tlpFormulario.RowCount = 6
+        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlpFormulario.Size = New System.Drawing.Size(800, 450)
+        Me.tlpFormulario.TabIndex = 0
         '
         'tlpBotones
         '
@@ -131,19 +92,6 @@ Partial Class AgregarUsuarioForm
         Me.bCancelar.Text = "Cancelar"
         Me.bCancelar.UseVisualStyleBackColor = True
         '
-        'liNombre
-        '
-        Me.liNombre.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.liNombre.Location = New System.Drawing.Point(3, 16)
-        Me.liNombre.Name = "liNombre"
-        Me.liNombre.Placeholder = "Escribe aquí"
-        Me.liNombre.Size = New System.Drawing.Size(794, 81)
-        Me.liNombre.TabIndex = 0
-        Me.liNombre.TextboxBackColor = System.Drawing.Color.White
-        Me.liNombre.TextboxForeColor = System.Drawing.Color.Black
-        Me.liNombre.Titulo = "Titulo"
-        Me.liNombre.TituloColor = System.Drawing.Color.Black
-        '
         'lTexto
         '
         Me.lTexto.AutoSize = True
@@ -153,23 +101,79 @@ Partial Class AgregarUsuarioForm
         Me.lTexto.TabIndex = 3
         Me.lTexto.Text = "CREAR NUEVO USUARIO"
         '
+        'liTelefono
+        '
+        Me.liTelefono.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.liTelefono.InputText = "Escribe aquí"
+        Me.liTelefono.Location = New System.Drawing.Point(3, 277)
+        Me.liTelefono.Name = "liTelefono"
+        Me.liTelefono.Placeholder = "Escribe aquí"
+        Me.liTelefono.Size = New System.Drawing.Size(794, 81)
+        Me.liTelefono.TabIndex = 6
+        Me.liTelefono.TextboxBackColor = System.Drawing.Color.White
+        Me.liTelefono.TextboxForeColor = System.Drawing.Color.Black
+        Me.liTelefono.Titulo = "Telefono"
+        Me.liTelefono.TituloColor = System.Drawing.Color.Black
+        '
+        'liApellido2
+        '
+        Me.liApellido2.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.liApellido2.InputText = "Escribe aquí"
+        Me.liApellido2.Location = New System.Drawing.Point(3, 190)
+        Me.liApellido2.Name = "liApellido2"
+        Me.liApellido2.Placeholder = "Escribe aquí"
+        Me.liApellido2.Size = New System.Drawing.Size(794, 81)
+        Me.liApellido2.TabIndex = 5
+        Me.liApellido2.TextboxBackColor = System.Drawing.Color.White
+        Me.liApellido2.TextboxForeColor = System.Drawing.Color.Black
+        Me.liApellido2.Titulo = "Apellido2"
+        Me.liApellido2.TituloColor = System.Drawing.Color.Black
+        '
+        'liApellido1
+        '
+        Me.liApellido1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.liApellido1.InputText = "Escribe aquí"
+        Me.liApellido1.Location = New System.Drawing.Point(3, 103)
+        Me.liApellido1.Name = "liApellido1"
+        Me.liApellido1.Placeholder = "Escribe aquí"
+        Me.liApellido1.Size = New System.Drawing.Size(794, 81)
+        Me.liApellido1.TabIndex = 4
+        Me.liApellido1.TextboxBackColor = System.Drawing.Color.White
+        Me.liApellido1.TextboxForeColor = System.Drawing.Color.Black
+        Me.liApellido1.Titulo = "Apellido1"
+        Me.liApellido1.TituloColor = System.Drawing.Color.Black
+        '
+        'liNombre
+        '
+        Me.liNombre.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.liNombre.InputText = "Escribe aquí"
+        Me.liNombre.Location = New System.Drawing.Point(3, 16)
+        Me.liNombre.Name = "liNombre"
+        Me.liNombre.Placeholder = "Escribe aquí"
+        Me.liNombre.Size = New System.Drawing.Size(794, 81)
+        Me.liNombre.TabIndex = 0
+        Me.liNombre.TextboxBackColor = System.Drawing.Color.White
+        Me.liNombre.TextboxForeColor = System.Drawing.Color.Black
+        Me.liNombre.Titulo = "Nombre"
+        Me.liNombre.TituloColor = System.Drawing.Color.Black
+        '
         'AgregarUsuarioForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Controls.Add(Me.tlpFormulario)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "AgregarUsuarioForm"
         Me.Text = "AgregarUsuarioForm"
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.PerformLayout()
+        Me.tlpFormulario.ResumeLayout(False)
+        Me.tlpFormulario.PerformLayout()
         Me.tlpBotones.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents tlpFormulario As TableLayoutPanel
     Friend WithEvents liTelefono As ControlesBiblioteca.LabelledInput
     Friend WithEvents liApellido2 As ControlesBiblioteca.LabelledInput
     Friend WithEvents liApellido1 As ControlesBiblioteca.LabelledInput
