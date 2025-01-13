@@ -2,11 +2,13 @@
 
 Public Class AgregarUsuarioForm
 
+    Dim mostrado = False
     Dim controlador As New UsuarioController
     Public opcion As String
     Public usuarioId As String
 
     Private Sub bCancelar_Click(sender As Object, e As EventArgs) Handles bCancelar.Click
+        MessageBox.Show("hola")
         Me.Hide()
     End Sub
 
@@ -49,27 +51,26 @@ Public Class AgregarUsuarioForm
 
         For Each campo In campos
             If campo.InputText = campo.Placeholder Then
-                campo.TituloColor = Color.Red
-                campo.TextboxBackColor = Color.Red
+                CambiarColorError(campo)
+
                 errores &= "El campo: " & campo.Titulo & " es obligatorio" & vbCrLf
             End If
 
             If campo.Titulo = "Telefono" Then
                 If Not campo.InputText.All(AddressOf Char.IsDigit) Then
-                    campo.TituloColor = Color.Red
-                    campo.TextboxBackColor = Color.Red
+                    CambiarColorError(campo)
+
                     errores &= "El campo: " & campo.Titulo & " no tiene un formato adecuado" & vbCrLf
                 End If
             Else
                 If campo.InputText.Any(AddressOf Char.IsDigit) Then
-                    campo.TituloColor = Color.Red
-                    campo.TextboxBackColor = Color.Red
+                    CambiarColorError(campo)
+
                     errores &= "El campo: " & campo.Titulo & " no puede contener números" & vbCrLf
                 End If
 
                 If String.IsNullOrEmpty(campo.InputText) Then
-                    campo.TituloColor = Color.Red
-                    campo.TextboxBackColor = Color.Red
+                    CambiarColorError(campo)
                     errores &= "El campo: " & campo.Titulo & " es obligatorio" & vbCrLf
                 End If
             End If
@@ -82,14 +83,17 @@ Public Class AgregarUsuarioForm
     End Sub
 
 
-    Private Sub liNombre_Load(sender As Object, e As EventArgs)
-
+    Private Sub CambiarColorError(campo As LabelledInput)
+        campo.TituloColor = Color.Red
+        campo.TextboxBackColor = Color.Red
+        campo.TextboxForeColor = Color.White
     End Sub
 
 
     Private Sub AgregarUsuarioForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
-        MessageBox.Show(opcion)
+        mostrado = True
         If opcion = "editar" Then
+            gbCrearUsuario.Text = "Editar Usuario"
             Dim usuario As New Usuario
             usuario = controlador.BuscarUsuario(usuarioId)
             liNombre.InputText = usuario.nombre
@@ -99,4 +103,34 @@ Public Class AgregarUsuarioForm
         End If
 
     End Sub
+
+
+
+    Private Sub tlpFormulario_Paint(sender As Object, e As PaintEventArgs) Handles tlpPrincipal.Paint
+        bAceptar.BackColor = Color.FromArgb(0, 123, 255)
+        bAceptar.ForeColor = Color.White
+
+        bCancelar.BackColor = Color.LightGray
+
+
+    End Sub
+
+    Private Sub AgregarUsuarioForm_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+        If mostrado Then
+            Const MAX_FONTSIZE As Integer = 13
+
+            Dim proporciónAncho As Double = Me.Width / Me.MinimumSize.Width
+            Dim fontSize As Integer = Math.Min(proporciónAncho * 8, MAX_FONTSIZE)
+
+
+            For Each control In tlpPrincipal.Controls
+
+                control.Font = New Font("Microsoft Sans Serif", fontSize)
+            Next
+
+
+        End If
+    End Sub
+
+
 End Class

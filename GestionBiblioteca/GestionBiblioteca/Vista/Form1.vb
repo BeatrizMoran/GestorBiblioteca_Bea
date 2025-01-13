@@ -72,19 +72,7 @@
             control.Font = New Font("Microsoft Sans Serif", proporcionAncho * FONTSIZE)
         Next
 
-        ' Ajustar la fuente de los controles en el formulario de Gestión de Usuarios
-        For Each control In gestionUsuarios.tlpGestionUsuarios.Controls
-            control.Font = New Font("Microsoft Sans Serif", proporcionAncho * FONTSIZE)
-        Next
 
-        ' Cambiar la fuente de todas las celdas del DataGridView
-        For Each column As DataGridViewColumn In gestionUsuarios.dgvUsuarios.Columns
-            column.DefaultCellStyle.Font = New Font("Microsoft Sans Serif", proporcionAncho * FONTSIZE)
-        Next
-
-        ' Asegurarse de que los cambios se reflejen correctamente en el DataGridView
-        gestionUsuarios.dgvUsuarios.Invalidate()
-        gestionUsuarios.dgvUsuarios.Refresh()
     End Sub
 
     Public Sub AbrirUsuariosForm(pagina As String, Optional id As Integer = Nothing)

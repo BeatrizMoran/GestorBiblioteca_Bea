@@ -79,6 +79,8 @@
         If String.IsNullOrEmpty(tbCampo.Text) OrElse tbCampo.Text = _Placeholder Then
             tbCampo.Text = _Placeholder
             tbCampo.ForeColor = Color.Gray
+            lTitulo.ForeColor = Color.Black
+            tbCampo.BackColor = Color.White
 
         End If
     End Sub

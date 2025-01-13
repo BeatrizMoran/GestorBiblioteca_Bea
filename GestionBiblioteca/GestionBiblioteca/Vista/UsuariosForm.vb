@@ -3,7 +3,7 @@
     Dim mostrado As Boolean = False
     Dim FONTSIZE = 8
     Dim controlador As New UsuarioController
-    Dim fuenteActual As Font
+    Private fuenteActual As Font = New Font("Microsoft Sans Serif", 8) ' Tamaño inicial predeterminado
 
     Private Sub FormUsuarios_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         bCrearUsuario.BackColor = Color.FromArgb(0, 123, 255) ' Color RGB personalizado
@@ -134,34 +134,48 @@
 
 
 
+
     Private Sub UsuariosForm_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
         If mostrado Then
             Const MAX_FONTSIZE As Integer = 13
+            Const MIN_FONTSIZE As Integer = 8 ' Tamaño mínimo de fuente para evitar fuentes demasiado pequeñas
 
+            ' Calcular el tamaño proporcional de la fuente basado en ancho y alto
             Dim proporciónAncho As Double = Me.Width / Me.MinimumSize.Width
-            Dim fontSize As Integer = Math.Min(proporciónAncho * 8, MAX_FONTSIZE)
+            Dim proporciónAlto As Double = Me.Height / Me.MinimumSize.Height
+            Dim proporciónPromedio As Double = (proporciónAncho + proporciónAlto) / 2
 
+            ' Determinar el tamaño de la fuente dentro de los límites
+            Dim fontSize As Integer = Math.Max(Math.Min(CInt(proporciónPromedio * MIN_FONTSIZE), MAX_FONTSIZE), MIN_FONTSIZE)
 
-            For Each control In tlpGestionUsuarios.Controls
-                fuenteActual = New Font("Microsoft Sans Serif", fontSize)
+            ' Actualizar la variable global con la nueva fuente
+            fuenteActual = New Font("Microsoft Sans Serif", fontSize)
 
+            ' Actualizar las fuentes de los controles en el TableLayoutPanel
+            For Each control As Control In tlpGestionUsuarios.Controls
                 control.Font = fuenteActual
             Next
 
+            ' Actualizar las fuentes de las columnas y encabezados del DataGridView
             For Each column As DataGridViewColumn In dgvUsuarios.Columns
-                column.DefaultCellStyle.Font = New Font("Microsoft Sans Serif", fontSize, FontStyle.Regular)
+                column.DefaultCellStyle.Font = fuenteActual
             Next
 
-            dgvUsuarios.ColumnHeadersDefaultCellStyle.Font = New Font("Microsoft Sans Serif", fontSize, FontStyle.Bold)
+            dgvUsuarios.ColumnHeadersDefaultCellStyle.Font = New Font(fuenteActual.FontFamily, fuenteActual.Size, FontStyle.Bold)
 
+            ' Forzar la actualización visual del DataGridView
             dgvUsuarios.Invalidate()
             dgvUsuarios.Refresh()
         End If
     End Sub
 
 
+
     Private Sub UsuariosForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         mostrado = True
+
+
+
     End Sub
 
     Private Sub bCrearUsuario_Click(sender As Object, e As EventArgs) Handles bCrearUsuario.Click
