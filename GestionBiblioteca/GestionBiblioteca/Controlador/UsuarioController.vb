@@ -25,4 +25,32 @@ Public Class UsuarioController
             Throw New Exception("Error al crear el usuario: " & ex.Message)
         End Try
     End Function
+
+    Public Function BuscarUsuario(id As Integer)
+        Try
+            Dim usuario As New Usuario
+            usuario.id = id
+
+            usuario = Usuario.BuscarUsuario(usuario)
+
+
+
+            Return usuario
+
+        Catch ex As Exception
+            Throw New Exception("Error al buscar el usuario: " & ex.Message)
+        End Try
+    End Function
+
+    Public Function ActualizarUsuario(id As Integer, Nombre As String, apellido_1 As String, apellido_2 As String, Telefono As Integer)
+        Try
+            Dim usuario As Usuario = New Usuario(Nombre, apellido_1, apellido_2, Telefono)
+            usuario.id = id
+
+            Usuario.ActualizarUsuario(usuario)
+
+        Catch ex As Exception
+            Throw New Exception("Error al crear el usuario: " & ex.Message)
+        End Try
+    End Function
 End Class

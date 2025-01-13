@@ -87,7 +87,7 @@
         gestionUsuarios.dgvUsuarios.Refresh()
     End Sub
 
-    Public Sub AbrirUsuariosForm(pagina As String)
+    Public Sub AbrirUsuariosForm(pagina As String, Optional id As Integer = Nothing)
         ' Guardar el formulario activo en el historial
         If formularioActual IsNot Nothing Then
             Console.WriteLine("Página anterior: " & formularioActual.Name)
@@ -107,7 +107,20 @@
             Case "crear"
                 If crearUsuario Is Nothing OrElse crearUsuario.IsDisposed Then
                     crearUsuario = New AgregarUsuarioForm()
+
                 End If
+                crearUsuario.opcion = "crear"
+
+                nuevoFormulario = crearUsuario
+            Case "editar"
+                If crearUsuario Is Nothing OrElse crearUsuario.IsDisposed Then
+                    crearUsuario = New AgregarUsuarioForm()
+
+                End If
+                crearUsuario.opcion = "editar"
+                crearUsuario.usuarioId = id
+
+
                 nuevoFormulario = crearUsuario
 
             Case Else

@@ -69,7 +69,6 @@ Public Class Usuario
 
             Cmd.CommandText = Sql
 
-            ' Añadir los parámetros correspondientes
             Cmd.Parameters.Add("@Nombre", DbType.String).Value = usuario.nombre
             Cmd.Parameters.Add("@Apellido_1", DbType.String).Value = usuario.apellido1
             Cmd.Parameters.Add("@Apellido_2", DbType.String).Value = usuario.apellido2
@@ -81,6 +80,61 @@ Public Class Usuario
             Throw New Exception("Error al intentar crear el usuario: " & ex.Message)
         End Try
     End Sub
+
+    Public Shared Sub ActualizarUsuario(usuario As Usuario)
+        Try
+            Dim Cmd As New SQLiteCommand
+
+            Dim Sql As String = "UPDATE Usuarios SET Nombre = @Nombre, Apellido_1 = @Apellido_1, Apellido_2 = @Apellido_2, Telefono = @Telefono WHERE Id = @Id"
+
+            Cmd.CommandText = Sql
+
+            Cmd.Parameters.Add("@Nombre", DbType.String).Value = usuario.nombre
+            Cmd.Parameters.Add("@Apellido_1", DbType.String).Value = usuario.apellido1
+            Cmd.Parameters.Add("@Apellido_2", DbType.String).Value = usuario.apellido2
+            Cmd.Parameters.Add("@Telefono", DbType.Int32).Value = usuario.telefono
+            Cmd.Parameters.Add("@Id", DbType.Int32).Value = usuario.id
+
+            SQLLite.Ejecuta(My.Settings.conexion, Cmd)
+        Catch ex As Exception
+            Throw New Exception("Error al intentar actualizar el usuario: " & ex.Message)
+        End Try
+    End Sub
+
+
+    Public Shared Function BuscarUsuario(usuario As Usuario) As Usuario
+        Try
+            ' Crear y abrir la conexión manualmente
+            Dim conn As New SQLiteConnection(My.Settings.conexion)
+            conn.Open()
+
+            Dim Cmd As New SQLiteCommand("SELECT * FROM Usuarios WHERE Id=@Id", conn)
+            Cmd.Parameters.Add("@Id", DbType.Int32).Value = usuario.id
+
+            ' Ejecutar el comando con la conexión abierta
+            Dim lector As SQLiteDataReader = Cmd.ExecuteReader()
+
+            If lector.Read() Then
+                usuario.id = Convert.ToInt32(lector("Id"))
+                usuario.nombre = lector("Nombre").ToString()
+                usuario.apellido1 = lector("Apellido_1").ToString()
+                usuario.apellido2 = lector("Apellido_2").ToString()
+                usuario.telefono = Convert.ToInt32(lector("Telefono"))
+            Else
+                usuario = Nothing
+            End If
+
+            ' Cerrar el lector y la conexión después de usarlos
+            lector.Close()
+            conn.Close()
+
+            Return usuario
+
+        Catch ex As Exception
+            Throw New Exception("Error al intentar buscar el usuario: " & ex.Message)
+        End Try
+    End Function
+
 
 
 

@@ -23,14 +23,14 @@ Partial Class AgregarUsuarioForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.tlpFormulario = New System.Windows.Forms.TableLayoutPanel()
-        Me.tlpBotones = New System.Windows.Forms.TableLayoutPanel()
-        Me.bAceptar = New System.Windows.Forms.Button()
-        Me.bCancelar = New System.Windows.Forms.Button()
-        Me.lTexto = New System.Windows.Forms.Label()
         Me.liTelefono = New ControlesBiblioteca.LabelledInput()
         Me.liApellido2 = New ControlesBiblioteca.LabelledInput()
         Me.liApellido1 = New ControlesBiblioteca.LabelledInput()
+        Me.tlpBotones = New System.Windows.Forms.TableLayoutPanel()
+        Me.bAceptar = New System.Windows.Forms.Button()
+        Me.bCancelar = New System.Windows.Forms.Button()
         Me.liNombre = New ControlesBiblioteca.LabelledInput()
+        Me.lTexto = New System.Windows.Forms.Label()
         Me.tlpFormulario.SuspendLayout()
         Me.tlpBotones.SuspendLayout()
         Me.SuspendLayout()
@@ -57,49 +57,6 @@ Partial Class AgregarUsuarioForm
         Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
         Me.tlpFormulario.Size = New System.Drawing.Size(800, 450)
         Me.tlpFormulario.TabIndex = 0
-        '
-        'tlpBotones
-        '
-        Me.tlpBotones.ColumnCount = 2
-        Me.tlpBotones.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tlpBotones.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tlpBotones.Controls.Add(Me.bAceptar, 0, 0)
-        Me.tlpBotones.Controls.Add(Me.bCancelar, 1, 0)
-        Me.tlpBotones.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.tlpBotones.Location = New System.Drawing.Point(3, 364)
-        Me.tlpBotones.Name = "tlpBotones"
-        Me.tlpBotones.RowCount = 1
-        Me.tlpBotones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlpBotones.Size = New System.Drawing.Size(794, 83)
-        Me.tlpBotones.TabIndex = 2
-        '
-        'bAceptar
-        '
-        Me.bAceptar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.bAceptar.Location = New System.Drawing.Point(3, 3)
-        Me.bAceptar.Name = "bAceptar"
-        Me.bAceptar.Size = New System.Drawing.Size(391, 77)
-        Me.bAceptar.TabIndex = 0
-        Me.bAceptar.Text = "Aceptar"
-        Me.bAceptar.UseVisualStyleBackColor = True
-        '
-        'bCancelar
-        '
-        Me.bCancelar.Location = New System.Drawing.Point(400, 3)
-        Me.bCancelar.Name = "bCancelar"
-        Me.bCancelar.Size = New System.Drawing.Size(391, 77)
-        Me.bCancelar.TabIndex = 1
-        Me.bCancelar.Text = "Cancelar"
-        Me.bCancelar.UseVisualStyleBackColor = True
-        '
-        'lTexto
-        '
-        Me.lTexto.AutoSize = True
-        Me.lTexto.Location = New System.Drawing.Point(3, 0)
-        Me.lTexto.Name = "lTexto"
-        Me.lTexto.Size = New System.Drawing.Size(137, 13)
-        Me.lTexto.TabIndex = 3
-        Me.lTexto.Text = "CREAR NUEVO USUARIO"
         '
         'liTelefono
         '
@@ -143,6 +100,40 @@ Partial Class AgregarUsuarioForm
         Me.liApellido1.Titulo = "Apellido1"
         Me.liApellido1.TituloColor = System.Drawing.Color.Black
         '
+        'tlpBotones
+        '
+        Me.tlpBotones.ColumnCount = 2
+        Me.tlpBotones.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpBotones.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpBotones.Controls.Add(Me.bAceptar, 0, 0)
+        Me.tlpBotones.Controls.Add(Me.bCancelar, 1, 0)
+        Me.tlpBotones.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.tlpBotones.Location = New System.Drawing.Point(3, 364)
+        Me.tlpBotones.Name = "tlpBotones"
+        Me.tlpBotones.RowCount = 1
+        Me.tlpBotones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlpBotones.Size = New System.Drawing.Size(794, 83)
+        Me.tlpBotones.TabIndex = 2
+        '
+        'bAceptar
+        '
+        Me.bAceptar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.bAceptar.Location = New System.Drawing.Point(3, 3)
+        Me.bAceptar.Name = "bAceptar"
+        Me.bAceptar.Size = New System.Drawing.Size(391, 77)
+        Me.bAceptar.TabIndex = 0
+        Me.bAceptar.Text = "Aceptar"
+        Me.bAceptar.UseVisualStyleBackColor = True
+        '
+        'bCancelar
+        '
+        Me.bCancelar.Location = New System.Drawing.Point(400, 3)
+        Me.bCancelar.Name = "bCancelar"
+        Me.bCancelar.Size = New System.Drawing.Size(391, 77)
+        Me.bCancelar.TabIndex = 1
+        Me.bCancelar.Text = "Cancelar"
+        Me.bCancelar.UseVisualStyleBackColor = True
+        '
         'liNombre
         '
         Me.liNombre.Dock = System.Windows.Forms.DockStyle.Fill
@@ -156,6 +147,15 @@ Partial Class AgregarUsuarioForm
         Me.liNombre.TextboxForeColor = System.Drawing.Color.Black
         Me.liNombre.Titulo = "Nombre"
         Me.liNombre.TituloColor = System.Drawing.Color.Black
+        '
+        'lTexto
+        '
+        Me.lTexto.AutoSize = True
+        Me.lTexto.Location = New System.Drawing.Point(3, 0)
+        Me.lTexto.Name = "lTexto"
+        Me.lTexto.Size = New System.Drawing.Size(137, 13)
+        Me.lTexto.TabIndex = 3
+        Me.lTexto.Text = "CREAR NUEVO USUARIO"
         '
         'AgregarUsuarioForm
         '

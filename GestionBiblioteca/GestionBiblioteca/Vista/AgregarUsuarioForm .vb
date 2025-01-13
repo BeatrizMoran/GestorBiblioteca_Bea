@@ -3,6 +3,9 @@
 Public Class AgregarUsuarioForm
 
     Dim controlador As New UsuarioController
+    Public opcion As String
+    Public usuarioId As String
+
     Private Sub bCancelar_Click(sender As Object, e As EventArgs) Handles bCancelar.Click
         Me.Hide()
     End Sub
@@ -11,8 +14,15 @@ Public Class AgregarUsuarioForm
         Try
             ValidarDatos()
 
-            controlador.CrearUsuario(liNombre.InputText, liApellido1.InputText, liApellido2.InputText, liTelefono.InputText)
-            MessageBox.Show("Usuario creado correctamente", "Usuario Crado", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            If opcion = "crear" Then
+                controlador.CrearUsuario(liNombre.InputText, liApellido1.InputText, liApellido2.InputText, liTelefono.InputText)
+                MessageBox.Show("Usuario creado correctamente", "Usuario Crado", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                controlador.ActualizarUsuario(usuarioId, liNombre.InputText, liApellido1.InputText, liApellido2.InputText, liTelefono.InputText)
+                MessageBox.Show("Usuario actualizado correctamente", "Usuario Crado", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+
+
 
 
 
@@ -73,6 +83,20 @@ Public Class AgregarUsuarioForm
 
 
     Private Sub liNombre_Load(sender As Object, e As EventArgs)
+
+    End Sub
+
+
+    Private Sub AgregarUsuarioForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        MessageBox.Show(opcion)
+        If opcion = "editar" Then
+            Dim usuario As New Usuario
+            usuario = controlador.BuscarUsuario(usuarioId)
+            liNombre.InputText = usuario.nombre
+            liApellido1.InputText = usuario.apellido1
+            liApellido2.InputText = usuario.apellido2
+            liTelefono.InputText = usuario.telefono
+        End If
 
     End Sub
 End Class

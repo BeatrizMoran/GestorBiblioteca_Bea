@@ -103,6 +103,8 @@
 
     Private Sub EditarUsuario(id As Integer)
         MessageBox.Show("Editar usuario con ID: " & id.ToString())
+        CType(Me.MdiParent, Form1).AbrirUsuariosForm("editar", id)
+
     End Sub
 
     Private Sub VerInformacion(id As Integer)
