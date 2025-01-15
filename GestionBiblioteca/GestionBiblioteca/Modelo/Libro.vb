@@ -58,6 +58,21 @@ Public Class Libro
         Return libros
     End Function
 
+    Public Shared Sub BorrarLibro(id As Integer)
+        Try
+
+            Dim Cmd As New SQLiteCommand
+            Dim Sql As String = "DELETE FROM Libros WHERE (Id=@Id)"
+            Cmd.CommandText = Sql
+            Cmd.Parameters.Add("@Id", SqlDbType.Int).Value = id
+            SQLLite.Ejecuta(My.Settings.conexion, Cmd)
+
+
+        Catch ex As Exception
+            Throw New Exception("Error al borrar el libro: " & ex.Message)
+        End Try
+    End Sub
+
 
 
 

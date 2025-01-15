@@ -9,7 +9,7 @@ Public Class AgregarUsuarioForm
 
     Private Sub bCancelar_Click(sender As Object, e As EventArgs) Handles bCancelar.Click
         Me.Hide()
-        CType(Me.MdiParent, Form1).AbrirUsuariosForm("gestion")
+        CType(Me.MdiParent, Form1).VolverAtras()
     End Sub
 
     Private Sub bAceptar_Click(sender As Object, e As EventArgs) Handles bAceptar.Click
@@ -96,8 +96,9 @@ Public Class AgregarUsuarioForm
         mostrado = True
         If opcion = "editar" Then
             gbCrearUsuario.Text = "Editar Usuario"
-            Dim usuario As New Usuario
+            Dim usuario As New UsuarioDTO
             usuario = controlador.BuscarUsuario(usuarioId)
+
             liNombre.InputText = usuario.nombre
             liApellido1.InputText = usuario.apellido1
             liApellido2.InputText = usuario.apellido2

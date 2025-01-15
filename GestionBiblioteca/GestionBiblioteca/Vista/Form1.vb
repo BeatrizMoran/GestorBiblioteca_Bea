@@ -3,6 +3,8 @@
     Public dashboard As New DashboardForm
     Private gestionLibros As New GestionLibroForm
     Public gestionUsuarios As New UsuariosForm
+    Public crearLibro As New AgregarLibroForm
+
     Dim crearUsuario As New AgregarUsuarioForm
     Dim formularioActual As Form = dashboard
 
@@ -164,6 +166,12 @@
                     gestionLibros.CargarLibros() ' Recarga los libros si ya está abierto
                 End If
                 nuevoFormulario = gestionLibros
+            Case "crear"
+                If crearLibro Is Nothing OrElse crearLibro.IsDisposed Then
+                    crearLibro = New AgregarLibroForm()
+
+                End If
+                nuevoFormulario = crearLibro
         End Select
         ' Configurar y mostrar el nuevo formulario
         If nuevoFormulario IsNot Nothing Then
@@ -192,7 +200,7 @@
         Console.WriteLine(historialComoTexto)
     End Sub
 
-    Private Sub VolverAtras()
+    Public Sub VolverAtras()
         If formHistory.Count > 0 Then
             If formularioActual IsNot Nothing Then
                 formularioActual.Hide()

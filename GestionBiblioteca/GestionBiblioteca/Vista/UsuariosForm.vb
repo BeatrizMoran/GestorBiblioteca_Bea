@@ -24,6 +24,7 @@ Public Class UsuariosForm
 
             Dim usuarios As List(Of UsuarioDTO) = controlador.ObtenerUsuariosParaVista()
             ' Calcular el número total de páginas
+            ' Calcular el número total de páginas
             totalPaginas = Math.Ceiling(usuarios.Count / tamañoPagina)
             ' Filtrar los usuarios según la página actual
             Dim usuariosPagina = usuarios.Skip((paginaActual - 1) * tamañoPagina).Take(tamañoPagina).ToList()

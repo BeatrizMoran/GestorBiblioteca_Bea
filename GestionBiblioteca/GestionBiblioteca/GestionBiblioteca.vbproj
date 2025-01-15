@@ -96,6 +96,12 @@
     <Compile Include="Controlador\UsuarioController.vb" />
     <Compile Include="DTOs\LibroDTO .vb" />
     <Compile Include="DTOs\UsuarioDTO.vb" />
+    <Compile Include="Vista\AgregarLibroForm.Designer.vb">
+      <DependentUpon>AgregarLibroForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\AgregarLibroForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\AgregarUsuarioForm .Designer.vb">
       <DependentUpon>AgregarUsuarioForm .vb</DependentUpon>
     </Compile>
@@ -148,6 +154,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Vista\AgregarLibroForm.resx">
+      <DependentUpon>AgregarLibroForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\AgregarUsuarioForm .resx">
       <DependentUpon>AgregarUsuarioForm .vb</DependentUpon>
     </EmbeddedResource>

@@ -97,7 +97,17 @@ Public Class GestionLibroForm
 
     ' Manejo del evento Borrar
     Private Sub LibroControl_ClickBorrar(id As Integer)
+        Try
+            Dim respuesta As DialogResult = MessageBox.Show("¿Seguro que quieres eliminar el libro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
+            If respuesta.Yes Then
+                controlador.BorrarLibro(id)
+                MessageBox.Show("Libro borrado correctamente", "Libro borrado", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                CargarLibros()
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error al borra el libro: " & ex.Message)
+        End Try
     End Sub
 
     Private Sub GestionLibroForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
@@ -136,5 +146,7 @@ Public Class GestionLibroForm
         End If
     End Sub
 
-
+    Private Sub bCrearLibro_Click(sender As Object, e As EventArgs) Handles bCrearLibro.Click
+        CType(Me.MdiParent, Form1).AbrirLibrosForm("crear")
+    End Sub
 End Class

@@ -19,4 +19,12 @@ Public Class LibroController
 
         Return librosDTO
     End Function
+
+    Public Sub BorrarLibro(id As Integer)
+        Try
+            Libro.BorrarLibro(id)
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class

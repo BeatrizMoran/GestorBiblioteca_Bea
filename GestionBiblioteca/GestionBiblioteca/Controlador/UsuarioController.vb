@@ -51,9 +51,17 @@ Public Class UsuarioController
 
             usuario = Usuario.BuscarUsuario(usuario)
 
+            Dim usuarioDTO As New UsuarioDTO
 
+            usuarioDTO = (New UsuarioDTO With {
+                .Id = usuario.id,
+                .Nombre = usuario.nombre,
+                .Apellido1 = usuario.apellido1,
+                .Apellido2 = usuario.apellido2,
+                .Telefono = usuario.telefono
+            })
 
-            Return usuario
+            Return usuarioDTO
 
         Catch ex As Exception
             Throw New Exception("Error al buscar el usuario: " & ex.Message)
