@@ -1,9 +1,27 @@
 ﻿Imports System.Data.SQLite
+Imports GestionBiblioteca.DTOs
 
 Public Class UsuarioController
-    Public Shared Function ObtenerUsuariosParaVista() As List(Of Usuario)
+    Public Shared Function ObtenerUsuariosParaVista() As List(Of UsuarioDTO)
         ' Llamamos al método del modelo que obtiene la lista de usuarios
-        Return Usuario.ObtenerUsuarios()
+
+        Dim usuarios As List(Of Usuario) = New List(Of Usuario)
+        Dim usuariosDTO As New List(Of UsuarioDTO)
+
+
+        usuarios = Usuario.ObtenerUsuarios
+
+        For Each usuario In usuarios
+            usuariosDTO.Add(New UsuarioDTO With {
+                .Id = usuario.id,
+                .Nombre = usuario.nombre,
+                .Apellido1 = usuario.apellido1,
+                .Apellido2 = usuario.apellido2,
+                .Telefono = usuario.telefono
+            })
+        Next
+
+        Return usuariosDTO
     End Function
 
     Public Function BorrarUsuario(id As Integer)

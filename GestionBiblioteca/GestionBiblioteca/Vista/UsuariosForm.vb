@@ -1,4 +1,6 @@
-﻿Public Class UsuariosForm
+﻿Imports GestionBiblioteca.DTOs
+
+Public Class UsuariosForm
 
     Dim mostrado As Boolean = False
     Dim FONTSIZE = 8
@@ -18,7 +20,9 @@
 
     Public Sub CargarUsuarios()
         Try
-            Dim usuarios As List(Of Usuario) = UsuarioController.ObtenerUsuariosParaVista()
+
+
+            Dim usuarios As List(Of UsuarioDTO) = controlador.ObtenerUsuariosParaVista()
             ' Calcular el número total de páginas
             totalPaginas = Math.Ceiling(usuarios.Count / tamañoPagina)
             ' Filtrar los usuarios según la página actual
@@ -44,21 +48,21 @@
             ' Crear una columna de botones para las acciones (editar, ver, borrar)
             Dim colEditar As New DataGridViewButtonColumn()
             colEditar.Name = "Editar"
-            colEditar.HeaderText = "Editar"
+            colEditar.HeaderText = ""
             colEditar.Text = "Editar"
             colEditar.UseColumnTextForButtonValue = True ' Hace que todos los botones muestren el texto "Editar"
             dgvUsuarios.Columns.Add(colEditar)
 
             Dim colVer As New DataGridViewButtonColumn()
             colVer.Name = "Ver"
-            colVer.HeaderText = "Ver"
+            colVer.HeaderText = ""
             colVer.Text = "Ver Info"
             colVer.UseColumnTextForButtonValue = True
             dgvUsuarios.Columns.Add(colVer)
 
             Dim colBorrar As New DataGridViewButtonColumn()
             colBorrar.Name = "Borrar"
-            colBorrar.HeaderText = "Borrar"
+            colBorrar.HeaderText = ""
             colBorrar.Text = "Borrar"
             colBorrar.UseColumnTextForButtonValue = True
             dgvUsuarios.Columns.Add(colBorrar)
@@ -68,8 +72,9 @@
             ' Verificar si la lista de usuarios tiene elementos
             If usuarios.Count > 0 Then
                 ' Agregar usuarios de la página actual al DataGridView
-                For Each usuario As Usuario In usuariosPagina
-                    dgvUsuarios.Rows.Add(usuario.id, usuario.nombre, usuario.apellido1, usuario.apellido2, usuario.telefono)
+                For Each usuario As UsuarioDTO In usuariosPagina
+                    dgvUsuarios.Rows.Add(usuario.Id, usuario.Nombre, usuario.Apellido1, usuario.Apellido2, usuario.Telefono)
+
                 Next
             Else
                 MessageBox.Show("No hay usuarios disponibles", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -211,6 +216,7 @@
 
 
     Private Sub UsuariosForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        CType(Me.MdiParent, Form1).OcultarMostrarBotonVolver()
         mostrado = True
 
 

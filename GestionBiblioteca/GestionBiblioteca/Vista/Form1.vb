@@ -1,6 +1,7 @@
 ﻿Public Class Form1
 
     Public dashboard As New DashboardForm
+    Private gestionLibros As New GestionLibroForm
     Public gestionUsuarios As New UsuariosForm
     Dim crearUsuario As New AgregarUsuarioForm
     Dim formularioActual As Form = dashboard
@@ -14,9 +15,13 @@
 
     Private Sub Principal_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         mostrado = True
+
     End Sub
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+
         dashboard.MdiParent = Me
         dashboard.Dock = DockStyle.Fill
         dashboard.Show()
@@ -75,10 +80,19 @@
 
     End Sub
 
+    Public Sub OcultarMostrarBotonVolver()
+        If formHistory.Count = 0 Then
+            bVolver.Visible = False
+        Else
+            bVolver.Visible = True
+        End If
+    End Sub
+
     Public Sub AbrirUsuariosForm(pagina As String, Optional id As Integer = Nothing)
         ' Guardar el formulario activo en el historial
         If formularioActual IsNot Nothing Then
             Console.WriteLine("Página anterior: " & formularioActual.Name)
+            formularioActual.Hide()
             formHistory.Push(formularioActual)
         End If
 
@@ -132,6 +146,43 @@
         MostrarHistorial()
     End Sub
 
+    Public Sub AbrirLibrosForm(pagina As String)
+        ' Guardar el formulario activo en el historial
+        If formularioActual IsNot Nothing Then
+            Console.WriteLine("Página anterior: " & formularioActual.Name)
+            formularioActual.Hide()
+            formHistory.Push(formularioActual)
+        End If
+
+        Dim nuevoFormulario As Form = Nothing
+
+        Select Case pagina
+            Case "gestion"
+                If gestionLibros Is Nothing OrElse gestionLibros.IsDisposed Then
+                    gestionLibros = New GestionLibroForm()
+                Else
+                    gestionLibros.CargarLibros() ' Recarga los libros si ya está abierto
+                End If
+                nuevoFormulario = gestionLibros
+        End Select
+        ' Configurar y mostrar el nuevo formulario
+        If nuevoFormulario IsNot Nothing Then
+            If ActiveMdiChild IsNot nuevoFormulario Then
+                nuevoFormulario.MdiParent = Me
+                nuevoFormulario.Dock = DockStyle.Fill
+                nuevoFormulario.Show()
+                Me.ActivateMdiChild(nuevoFormulario)
+                formularioActual = nuevoFormulario
+                Console.WriteLine("Formulario activo: " & formularioActual.Name)
+            End If
+        End If
+
+        ' Mostrar historial de formularios
+        MostrarHistorial()
+
+
+    End Sub
+
     ' Mostrar el historial de formularios en consola
     Private Sub MostrarHistorial()
         Dim historialComoTexto As String = "Formularios en el historial:" & Environment.NewLine
@@ -175,4 +226,23 @@
         VolverAtras()
     End Sub
 
+    Private Sub InicioToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles InicioToolStripMenuItem.Click
+        ' Ocultar el formulario actual y guardarlo en el historial
+        If formularioActual IsNot Nothing Then
+            Console.WriteLine("Formulario actual ocultado: " & formularioActual.Name)
+            formularioActual.Hide()
+            formHistory.Push(formularioActual)
+        End If
+
+        ' Crear o reutilizar el formulario de Dashboard
+        If dashboard Is Nothing OrElse dashboard.IsDisposed Then
+            dashboard = New DashboardForm()
+        End If
+
+        ' Mostrar el formulario Dashboard
+        formularioActual = dashboard
+        formularioActual.MdiParent = Me
+        formularioActual.Dock = DockStyle.Fill
+        formularioActual.Show()
+    End Sub
 End Class

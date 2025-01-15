@@ -23,49 +23,60 @@ Partial Class LibroControl
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LibroControl))
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.tlpControlLibro = New System.Windows.Forms.TableLayoutPanel()
+        Me.lAnyo = New System.Windows.Forms.Label()
         Me.lTitulo = New System.Windows.Forms.Label()
         Me.lEscritor = New System.Windows.Forms.Label()
-        Me.lEstado = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button4 = New System.Windows.Forms.Button()
+        Me.bEditar = New System.Windows.Forms.Button()
+        Me.bInfo = New System.Windows.Forms.Button()
+        Me.bBorrar = New System.Windows.Forms.Button()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
-        Me.TableLayoutPanel1.SuspendLayout()
+        Me.tlpControlLibro.SuspendLayout()
         Me.SuspendLayout()
         '
-        'TableLayoutPanel1
+        'tlpControlLibro
         '
-        Me.TableLayoutPanel1.ColumnCount = 7
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.Controls.Add(Me.lEstado, 3, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.lTitulo, 1, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.lEscritor, 2, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button2, 4, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button3, 5, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Button4, 6, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.CheckBox1, 0, 0)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 1
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(342, 40)
-        Me.TableLayoutPanel1.TabIndex = 0
+        Me.tlpControlLibro.ColumnCount = 7
+        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpControlLibro.Controls.Add(Me.lAnyo, 3, 0)
+        Me.tlpControlLibro.Controls.Add(Me.lTitulo, 1, 0)
+        Me.tlpControlLibro.Controls.Add(Me.lEscritor, 2, 0)
+        Me.tlpControlLibro.Controls.Add(Me.bEditar, 4, 0)
+        Me.tlpControlLibro.Controls.Add(Me.bInfo, 5, 0)
+        Me.tlpControlLibro.Controls.Add(Me.bBorrar, 6, 0)
+        Me.tlpControlLibro.Controls.Add(Me.CheckBox1, 0, 0)
+        Me.tlpControlLibro.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlpControlLibro.Location = New System.Drawing.Point(0, 0)
+        Me.tlpControlLibro.Name = "tlpControlLibro"
+        Me.tlpControlLibro.RowCount = 1
+        Me.tlpControlLibro.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlpControlLibro.Size = New System.Drawing.Size(261, 41)
+        Me.tlpControlLibro.TabIndex = 0
+        '
+        'lAnyo
+        '
+        Me.lAnyo.AutoSize = True
+        Me.lAnyo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lAnyo.Location = New System.Drawing.Point(133, 0)
+        Me.lAnyo.Name = "lAnyo"
+        Me.lAnyo.Size = New System.Drawing.Size(46, 41)
+        Me.lAnyo.TabIndex = 3
+        Me.lAnyo.Text = "Año"
+        Me.lAnyo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'lTitulo
         '
         Me.lTitulo.AutoSize = True
         Me.lTitulo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lTitulo.Location = New System.Drawing.Point(24, 0)
+        Me.lTitulo.Location = New System.Drawing.Point(29, 0)
         Me.lTitulo.Name = "lTitulo"
-        Me.lTitulo.Size = New System.Drawing.Size(33, 40)
+        Me.lTitulo.Size = New System.Drawing.Size(46, 41)
         Me.lTitulo.TabIndex = 1
         Me.lTitulo.Text = "Titulo"
         Me.lTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -74,56 +85,45 @@ Partial Class LibroControl
         '
         Me.lEscritor.AutoSize = True
         Me.lEscritor.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lEscritor.Location = New System.Drawing.Point(63, 0)
+        Me.lEscritor.Location = New System.Drawing.Point(81, 0)
         Me.lEscritor.Name = "lEscritor"
-        Me.lEscritor.Size = New System.Drawing.Size(42, 40)
+        Me.lEscritor.Size = New System.Drawing.Size(46, 41)
         Me.lEscritor.TabIndex = 2
         Me.lEscritor.Text = "Escritor"
         Me.lEscritor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'lEstado
+        'bEditar
         '
-        Me.lEstado.AutoSize = True
-        Me.lEstado.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lEstado.Location = New System.Drawing.Point(111, 0)
-        Me.lEstado.Name = "lEstado"
-        Me.lEstado.Size = New System.Drawing.Size(40, 40)
-        Me.lEstado.TabIndex = 3
-        Me.lEstado.Text = "Estado"
-        Me.lEstado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.bEditar.BackgroundImage = CType(resources.GetObject("bEditar.BackgroundImage"), System.Drawing.Image)
+        Me.bEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.bEditar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.bEditar.Location = New System.Drawing.Point(185, 3)
+        Me.bEditar.Name = "bEditar"
+        Me.bEditar.Size = New System.Drawing.Size(20, 35)
+        Me.bEditar.TabIndex = 4
+        Me.bEditar.UseVisualStyleBackColor = True
         '
-        'Button2
+        'bInfo
         '
-        Me.Button2.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Button2.BackgroundImage = CType(resources.GetObject("Button2.BackgroundImage"), System.Drawing.Image)
-        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button2.Location = New System.Drawing.Point(157, 4)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(32, 31)
-        Me.Button2.TabIndex = 4
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.bInfo.BackgroundImage = CType(resources.GetObject("bInfo.BackgroundImage"), System.Drawing.Image)
+        Me.bInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.bInfo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.bInfo.Location = New System.Drawing.Point(211, 3)
+        Me.bInfo.Name = "bInfo"
+        Me.bInfo.Size = New System.Drawing.Size(20, 35)
+        Me.bInfo.TabIndex = 5
+        Me.bInfo.UseVisualStyleBackColor = True
         '
-        'Button3
+        'bBorrar
         '
-        Me.Button3.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Button3.BackgroundImage = CType(resources.GetObject("Button3.BackgroundImage"), System.Drawing.Image)
-        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button3.Location = New System.Drawing.Point(195, 4)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(32, 31)
-        Me.Button3.TabIndex = 5
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'Button4
-        '
-        Me.Button4.Anchor = System.Windows.Forms.AnchorStyles.Left
-        Me.Button4.BackgroundImage = CType(resources.GetObject("Button4.BackgroundImage"), System.Drawing.Image)
-        Me.Button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.Button4.Location = New System.Drawing.Point(233, 4)
-        Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(32, 31)
-        Me.Button4.TabIndex = 6
-        Me.Button4.UseVisualStyleBackColor = True
+        Me.bBorrar.BackgroundImage = CType(resources.GetObject("bBorrar.BackgroundImage"), System.Drawing.Image)
+        Me.bBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.bBorrar.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.bBorrar.Location = New System.Drawing.Point(237, 3)
+        Me.bBorrar.Name = "bBorrar"
+        Me.bBorrar.Size = New System.Drawing.Size(21, 35)
+        Me.bBorrar.TabIndex = 6
+        Me.bBorrar.UseVisualStyleBackColor = True
         '
         'CheckBox1
         '
@@ -132,7 +132,7 @@ Partial Class LibroControl
         Me.CheckBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CheckBox1.Location = New System.Drawing.Point(3, 3)
         Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(15, 34)
+        Me.CheckBox1.Size = New System.Drawing.Size(20, 35)
         Me.CheckBox1.TabIndex = 7
         Me.CheckBox1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         Me.CheckBox1.UseVisualStyleBackColor = True
@@ -142,21 +142,21 @@ Partial Class LibroControl
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.White
-        Me.Controls.Add(Me.TableLayoutPanel1)
+        Me.Controls.Add(Me.tlpControlLibro)
         Me.Name = "LibroControl"
-        Me.Size = New System.Drawing.Size(342, 40)
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.PerformLayout()
+        Me.Size = New System.Drawing.Size(261, 41)
+        Me.tlpControlLibro.ResumeLayout(False)
+        Me.tlpControlLibro.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents Button4 As Button
-    Friend WithEvents lEstado As Label
+    Friend WithEvents tlpControlLibro As TableLayoutPanel
+    Friend WithEvents bBorrar As Button
+    Friend WithEvents lAnyo As Label
     Friend WithEvents lTitulo As Label
     Friend WithEvents lEscritor As Label
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents bEditar As Button
+    Friend WithEvents bInfo As Button
     Friend WithEvents CheckBox1 As CheckBox
 End Class

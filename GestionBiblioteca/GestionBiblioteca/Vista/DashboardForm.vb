@@ -9,26 +9,25 @@ Public Class DashboardForm
     End Sub
 
     Private Sub DashboardForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
-
-
         bdUsuarios.ColorFondoImagen = Color.FromArgb(243, 235, 116)
         bdLibros.ColorFondoImagen = Color.FromArgb(60, 187, 219)
-
-
-
-
     End Sub
 
-    Private Sub BlockDashboard1_ClickarBlock() Handles BlockDashboard1.ClickarBlock
-        MessageBox.Show("Hola")
-    End Sub
+
 
     Private Sub BlockDashboard2_ClickarBlock() Handles bdUsuarios.ClickarBlock
         CType(Me.MdiParent, Form1).AbrirUsuariosForm("gestion")
     End Sub
 
-    Private Sub bdUsuarios_Load(sender As Object, e As EventArgs) Handles bdUsuarios.Load
 
+
+
+    Private Sub bdLibros_ClickarBlock() Handles bdLibros.ClickarBlock
+        CType(Me.MdiParent, Form1).AbrirLibrosForm("gestion")
+
+    End Sub
+
+    Private Sub DashboardForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        CType(Me.MdiParent, Form1).OcultarMostrarBotonVolver()
     End Sub
 End Class

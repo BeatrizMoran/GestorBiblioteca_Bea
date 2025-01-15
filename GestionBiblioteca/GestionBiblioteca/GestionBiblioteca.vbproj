@@ -92,7 +92,10 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\LibroController.vb" />
     <Compile Include="Controlador\UsuarioController.vb" />
+    <Compile Include="DTOs\LibroDTO .vb" />
+    <Compile Include="DTOs\UsuarioDTO.vb" />
     <Compile Include="Vista\AgregarUsuarioForm .Designer.vb">
       <DependentUpon>AgregarUsuarioForm .vb</DependentUpon>
     </Compile>
@@ -131,6 +134,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Vista\GestionLibroForm.Designer.vb">
+      <DependentUpon>GestionLibroForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\GestionLibroForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\UsuariosForm.Designer.vb">
       <DependentUpon>UsuariosForm.vb</DependentUpon>
     </Compile>
@@ -153,6 +162,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\GestionLibroForm.resx">
+      <DependentUpon>GestionLibroForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\UsuariosForm.resx">
       <DependentUpon>UsuariosForm.vb</DependentUpon>

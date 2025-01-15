@@ -86,42 +86,42 @@ Partial Class Form1
         '
         Me.InicioToolStripMenuItem.Image = CType(resources.GetObject("InicioToolStripMenuItem.Image"), System.Drawing.Image)
         Me.InicioToolStripMenuItem.Name = "InicioToolStripMenuItem"
-        Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(113, 20)
+        Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
         Me.InicioToolStripMenuItem.Text = "Inicio"
         '
         'LibrosToolStripMenuItem
         '
         Me.LibrosToolStripMenuItem.Image = CType(resources.GetObject("LibrosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.LibrosToolStripMenuItem.Name = "LibrosToolStripMenuItem"
-        Me.LibrosToolStripMenuItem.Size = New System.Drawing.Size(113, 20)
+        Me.LibrosToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
         Me.LibrosToolStripMenuItem.Text = "Libros"
         '
         'AutoresToolStripMenuItem
         '
         Me.AutoresToolStripMenuItem.Image = CType(resources.GetObject("AutoresToolStripMenuItem.Image"), System.Drawing.Image)
         Me.AutoresToolStripMenuItem.Name = "AutoresToolStripMenuItem"
-        Me.AutoresToolStripMenuItem.Size = New System.Drawing.Size(113, 20)
+        Me.AutoresToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
         Me.AutoresToolStripMenuItem.Text = "Autores"
         '
         'CategoriasToolStripMenuItem
         '
         Me.CategoriasToolStripMenuItem.Image = CType(resources.GetObject("CategoriasToolStripMenuItem.Image"), System.Drawing.Image)
         Me.CategoriasToolStripMenuItem.Name = "CategoriasToolStripMenuItem"
-        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(113, 20)
+        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
         Me.CategoriasToolStripMenuItem.Text = "Categorias"
         '
         'UsuariosToolStripMenuItem
         '
         Me.UsuariosToolStripMenuItem.Image = CType(resources.GetObject("UsuariosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(113, 20)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
         'PrestamosToolStripMenuItem
         '
         Me.PrestamosToolStripMenuItem.Image = CType(resources.GetObject("PrestamosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PrestamosToolStripMenuItem.Name = "PrestamosToolStripMenuItem"
-        Me.PrestamosToolStripMenuItem.Size = New System.Drawing.Size(113, 20)
+        Me.PrestamosToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
         Me.PrestamosToolStripMenuItem.Text = "Prestamos"
         '
         'Panel1

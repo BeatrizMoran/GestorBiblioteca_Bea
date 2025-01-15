@@ -8,8 +8,8 @@ Public Class AgregarUsuarioForm
     Public usuarioId As String
 
     Private Sub bCancelar_Click(sender As Object, e As EventArgs) Handles bCancelar.Click
-        MessageBox.Show("hola")
         Me.Hide()
+        CType(Me.MdiParent, Form1).AbrirUsuariosForm("gestion")
     End Sub
 
     Private Sub bAceptar_Click(sender As Object, e As EventArgs) Handles bAceptar.Click
@@ -91,6 +91,8 @@ Public Class AgregarUsuarioForm
 
 
     Private Sub AgregarUsuarioForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        CType(Me.MdiParent, Form1).OcultarMostrarBotonVolver()
+
         mostrado = True
         If opcion = "editar" Then
             gbCrearUsuario.Text = "Editar Usuario"
