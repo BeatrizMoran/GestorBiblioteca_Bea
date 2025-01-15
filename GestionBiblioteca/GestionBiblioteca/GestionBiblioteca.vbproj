@@ -146,6 +146,12 @@
     <Compile Include="Vista\GestionLibroForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\InformacionUsuarioForm.Designer.vb">
+      <DependentUpon>InformacionUsuarioForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\InformacionUsuarioForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\UsuariosForm.Designer.vb">
       <DependentUpon>UsuariosForm.vb</DependentUpon>
     </Compile>
@@ -175,6 +181,9 @@
     <EmbeddedResource Include="Vista\GestionLibroForm.resx">
       <DependentUpon>GestionLibroForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Vista\InformacionUsuarioForm.resx">
+      <DependentUpon>InformacionUsuarioForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vista\UsuariosForm.resx">
       <DependentUpon>UsuariosForm.vb</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +191,15 @@
   <ItemGroup>
     <Content Include="Biblioteca.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\libroInfo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\prestamoInfo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="images\usuarioInfo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -201,6 +219,7 @@
       <Name>ControlesBiblioteca</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

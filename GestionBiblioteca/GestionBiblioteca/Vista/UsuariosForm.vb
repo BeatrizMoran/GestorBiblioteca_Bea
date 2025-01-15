@@ -147,16 +147,16 @@ Public Class UsuariosForm
     End Sub
 
     Private Sub EditarUsuario(id As Integer)
-        MessageBox.Show("Editar usuario con ID: " & id.ToString())
         CType(Me.MdiParent, Form1).AbrirUsuariosForm("editar", id)
 
     End Sub
 
     Private Sub VerInformacion(id As Integer)
-        MessageBox.Show("Ver información del usuario con ID: " & id.ToString())
+        Dim usuario As UsuarioDTO = controlador.BuscarUsuario(id)
+        CType(Me.MdiParent, Form1).AbrirPaginaInformacion("usuario", usuario)
     End Sub
 
-    Private Sub BorrarUsuario(id As Integer)
+    Public Sub BorrarUsuario(id As Integer)
         Try
             Dim respuesta As DialogResult = MessageBox.Show("¿Estás seguro de querer borrar el usuario con id: " & id.ToString(), "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
@@ -164,11 +164,16 @@ Public Class UsuariosForm
                 controlador.BorrarUsuario(id)
 
 
-                CargarUsuarios()
 
                 ' Restaurar el tamaño de la fuente a su valor anterior
                 dgvUsuarios.DefaultCellStyle.Font = fuenteActual
                 MessageBox.Show("Usuario borrado correctamente ", "Usuario borrado", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                CargarUsuarios()
+
+
+                ' Forzar la actualización visual del DataGridView
+                dgvUsuarios.Invalidate()
+                dgvUsuarios.Refresh()
 
 
             End If

@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SQLite
+Imports GestionBiblioteca.DTOs
 
 Public Class Libro
 
@@ -72,6 +73,44 @@ Public Class Libro
             Throw New Exception("Error al borrar el libro: " & ex.Message)
         End Try
     End Sub
+
+    Public Shared Function BuscarLibro(id As Integer) As LibroDTO
+        Try
+            Dim libroDTO As New LibroDTO()
+
+            Dim consulta As String = "SELECT * FROM Libros WHERE Id = @id"
+            Using conexion As New SQLiteConnection(My.Settings.conexion),
+                  cmd As New SQLiteCommand(consulta, conexion)
+
+                cmd.Parameters.Add("@id", DbType.Int32).Value = id
+
+                ' Abrir la conexión
+                conexion.Open()
+
+                ' Ejecutar la consulta y leer los datos
+                Using lector As SQLiteDataReader = cmd.ExecuteReader()
+                    If lector.Read() Then
+                        ' Asignar valores al objeto libroDTO
+                        libroDTO.Id = Convert.ToInt32(lector("Id"))
+                        libroDTO.Titulo = lector("Titulo").ToString()
+                        libroDTO.Escritor = lector("Escritor").ToString()
+                        libroDTO.AnyoEdicion = Convert.ToInt32(lector("Ano_Edicion"))
+                        libroDTO.Sinopsis = lector("Sinopsis").ToString()
+                    Else
+                        Throw New Exception("No se encontró un libro con el ID especificado.")
+                    End If
+                End Using
+            End Using
+
+            Return libroDTO
+        Catch ex As SQLiteException
+            Throw New Exception("Error en la consulta SQL: " & ex.Message)
+        Catch ex As Exception
+            Throw New Exception("Error al buscar libro: " & ex.Message)
+        End Try
+    End Function
+
+
 
 
 

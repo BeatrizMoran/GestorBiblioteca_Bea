@@ -92,7 +92,8 @@ Public Class GestionLibroForm
 
     ' Manejo del evento Ver
     Private Sub LibroControl_ClickInformacion(id As Integer)
-
+        Dim libro As LibroDTO = controlador.BuscarLibro(id)
+        CType(Me.MdiParent, Form1).AbrirPaginaInformacion("libro", Nothing, libro)
     End Sub
 
     ' Manejo del evento Borrar

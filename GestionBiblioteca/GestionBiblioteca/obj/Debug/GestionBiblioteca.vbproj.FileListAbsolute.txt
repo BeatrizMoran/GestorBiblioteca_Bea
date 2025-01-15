@@ -41,3 +41,7 @@ C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\Gestion
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.AgregarUsuarioForm.resources
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.GestionLibroForm.resources
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.AgregarLibroForm.resources
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.InformacionUsuarioForm.resources
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\bin\Debug\images\libroInfo.png
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\bin\Debug\images\prestamoInfo.png
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\bin\Debug\images\usuarioInfo.png

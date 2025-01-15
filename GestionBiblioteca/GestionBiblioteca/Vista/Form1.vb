@@ -1,9 +1,12 @@
-﻿Public Class Form1
+﻿Imports GestionBiblioteca.DTOs
+
+Public Class Form1
 
     Public dashboard As New DashboardForm
     Private gestionLibros As New GestionLibroForm
     Public gestionUsuarios As New UsuariosForm
     Public crearLibro As New AgregarLibroForm
+    Dim informacionFOrm As New InformacionUsuarioForm
 
     Dim crearUsuario As New AgregarUsuarioForm
     Dim formularioActual As Form = dashboard
@@ -190,6 +193,53 @@
 
 
     End Sub
+    Public Sub AbrirPaginaInformacion(pagina As String, Optional usuario As UsuarioDTO = Nothing, Optional libro As LibroDTO = Nothing)
+        ' Guardar el formulario activo en el historial
+        If formularioActual IsNot Nothing Then
+            Console.WriteLine("Página anterior: " & formularioActual.Name)
+            formularioActual.Hide()
+            formHistory.Push(formularioActual)
+        End If
+
+        Dim nuevoFormulario As Form = Nothing
+
+        Select Case pagina
+            Case "usuario"
+                If informacionFOrm Is Nothing OrElse informacionFOrm.IsDisposed Then
+                    informacionFOrm = New InformacionUsuarioForm()
+
+                End If
+                informacionFOrm.tipoPagina = pagina
+                informacionFOrm.datosUsuario = usuario
+                nuevoFormulario = informacionFOrm
+            Case "libro"
+                If informacionFOrm Is Nothing OrElse informacionFOrm.IsDisposed Then
+                    informacionFOrm = New InformacionUsuarioForm()
+
+                End If
+                informacionFOrm.tipoPagina = pagina
+                informacionFOrm.datosLibro = libro
+                nuevoFormulario = informacionFOrm
+        End Select
+
+        ' Configurar y mostrar el nuevo formulario
+        If nuevoFormulario IsNot Nothing Then
+            If ActiveMdiChild IsNot nuevoFormulario Then
+                nuevoFormulario.MdiParent = Me
+                nuevoFormulario.Dock = DockStyle.Fill
+                nuevoFormulario.Show()
+                Me.ActivateMdiChild(nuevoFormulario)
+                formularioActual = nuevoFormulario
+                Console.WriteLine("Formulario activo: " & formularioActual.Name)
+            End If
+        End If
+
+        ' Mostrar historial de formularios
+        MostrarHistorial()
+
+
+    End Sub
+
 
     ' Mostrar el historial de formularios en consola
     Private Sub MostrarHistorial()
