@@ -108,7 +108,7 @@ Partial Class GestionLibroForm
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MinimumSize = New System.Drawing.Size(574, 363)
         Me.Name = "GestionLibroForm"
-        Me.Text = "GestionLibroForm"
+        Me.Text = "<"
         Me.tlpTitulo.ResumeLayout(False)
         Me.tlpTitulo.PerformLayout()
         Me.tlpLibros.ResumeLayout(False)

@@ -15,8 +15,7 @@ Public Class Libro
     Public Sub New()
     End Sub
 
-    Public Sub New(id As Integer, titulo As String, escritor As String, anyoEdicion As Integer, sinopsis As String)
-        Me.id = id
+    Public Sub New(titulo As String, escritor As String, anyoEdicion As Integer, sinopsis As String)
         Me.titulo = titulo
         Me.escritor = escritor
         Me.anyoEdicion = anyoEdicion
@@ -109,6 +108,42 @@ Public Class Libro
             Throw New Exception("Error al buscar libro: " & ex.Message)
         End Try
     End Function
+
+    Public Shared Sub CrearLibro(libro As Libro)
+        Try
+            Dim Cmd As New SQLiteCommand
+            Dim consulta As String = "INSERT INTO Libros (Titulo, Escritor, Ano_Edicion, Sinopsis) VALUES (@Titulo, @Escritor, @AnyoEdicion, @Sinopsis)"
+            Cmd.CommandText = consulta
+            Cmd.Parameters.Add("@Titulo", DbType.String).Value = libro.titulo
+            Cmd.Parameters.Add("@Escritor", DbType.String).Value = libro.escritor
+            Cmd.Parameters.Add("@AnyoEdicion", DbType.Int32).Value = libro.anyoEdicion
+            Cmd.Parameters.Add("@Sinopsis", DbType.String).Value = libro.sinopsis
+
+            SQLLite.Ejecuta(My.Settings.conexion, Cmd)
+
+        Catch ex As Exception
+            Throw New Exception("Error al insertar el libro: " & ex.Message)
+        End Try
+    End Sub
+    Public Shared Sub ActualizarLibro(libro As Libro)
+        Try
+            Dim Cmd As New SQLiteCommand
+            Dim consulta As String = "UPDATE Libros SET Titulo = @Titulo, Escritor = @Escritor, Ano_Edicion = @AnyoEdicion, Sinopsis = @Sinopsis WHERE Id=@Id"
+            Cmd.CommandText = consulta
+            Console.WriteLine(libro.titulo)
+            Cmd.Parameters.Add("@Titulo", DbType.String).Value = libro.titulo
+            Cmd.Parameters.Add("@Escritor", DbType.String).Value = libro.escritor
+            Cmd.Parameters.Add("@AnyoEdicion", DbType.Int32).Value = libro.anyoEdicion
+            Cmd.Parameters.Add("@Sinopsis", DbType.String).Value = libro.sinopsis
+            Cmd.Parameters.Add("@Id", DbType.Int32).Value = libro.id
+
+            SQLLite.Ejecuta(My.Settings.conexion, Cmd)
+
+        Catch ex As Exception
+            Throw New Exception("Error al actualizar el libro: " & ex.Message)
+        End Try
+    End Sub
+
 
 
 

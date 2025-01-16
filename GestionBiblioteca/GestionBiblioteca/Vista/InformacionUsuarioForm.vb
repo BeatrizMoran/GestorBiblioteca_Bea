@@ -8,6 +8,7 @@ Public Class InformacionUsuarioForm
     Public datosLibro As LibroDTO
 
     Private Sub InformacionUsuarioForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        rtbSinopsis.Height = 100
         mostrado = True
 
         Select Case tipoPagina
@@ -39,6 +40,8 @@ Public Class InformacionUsuarioForm
     End Sub
 
     Private Sub InicializarDatosUsuarios()
+        gbDatos.Text = "Datos del Usuario"
+
         Dim nombreCompleto = datosUsuario.Nombre + " " + datosUsuario.Apellido1 + " " + datosUsuario.Apellido2
         lTitulo.Text = "Nombre: "
         lTitulo2.Text = nombreCompleto
@@ -87,6 +90,8 @@ Public Class InformacionUsuarioForm
     End Sub
 
     Private Sub InformacionUsuarioForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        rtbSinopsis.Height = 100
+
         bSalir.BackColor = Color.LightGray
         bBorrar.BackColor = Color.FromArgb(212, 132, 131)
         bBorrar.ForeColor = Color.White
@@ -99,9 +104,44 @@ Public Class InformacionUsuarioForm
 
                     UsuariosForm.BorrarUsuario(datosUsuario.Id)
                     CType(Me.MdiParent, Form1).AbrirUsuariosForm("gestion")
+
+                Case "libro"
+                    GestionLibroForm.LibroControl_ClickBorrar(datosLibro.Id)
+                    CType(Me.MdiParent, Form1).AbrirLibrosForm("gestion")
+
             End Select
+            Dim formHistory = CType(Me.MdiParent, Form1).formHistory
+
+            ' Verifica si el Stack tiene elementos
+            If formHistory.Count > 0 Then
+                ' Crea un stack temporal para reordenar los formularios
+                Dim tempStack As New Stack(Of Form)
+
+                ' Desapila hasta encontrar la página actual
+                While formHistory.Count > 0
+                    Dim topForm As Form = formHistory.Pop()
+
+                    ' Si no es la página actual, guárdalo en el stack temporal
+                    If topForm IsNot Me Then
+                        tempStack.Push(topForm)
+                    Else
+                        ' Si es la página actual, la omitimos (es decir, no la volvemos a apilar)
+                        Exit While
+                    End If
+                End While
+
+                ' Vuelve a apilar los formularios desde el stack temporal al original
+                While tempStack.Count > 0
+                    formHistory.Push(tempStack.Pop())
+                End While
+            End If
+
         Catch ex As Exception
             MessageBox.Show("Error al intentar borrar: " & ex.Message)
         End Try
+    End Sub
+
+    Private Sub bSalir_Click_1(sender As Object, e As EventArgs) Handles bSalir.Click
+        CType(Me.MdiParent, Form1).VolverAtras()
     End Sub
 End Class

@@ -61,6 +61,9 @@ Public Class AgregarUsuarioForm
                     CambiarColorError(campo)
 
                     errores &= "El campo: " & campo.Titulo & " no tiene un formato adecuado" & vbCrLf
+                ElseIf campo.InputText.Count > 9 OrElse campo.InputText.Count < 9 Then
+                    errores &= "El campo: " & campo.Titulo & " tiene que tener 9 digitos" & vbCrLf
+                    CambiarColorError(campo)
                 End If
             Else
                 If campo.InputText.Any(AddressOf Char.IsDigit) Then

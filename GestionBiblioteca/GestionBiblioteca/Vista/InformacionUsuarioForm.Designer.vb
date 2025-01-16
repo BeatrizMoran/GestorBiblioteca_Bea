@@ -42,6 +42,7 @@ Partial Class InformacionUsuarioForm
         Me.lTituloAnyo = New System.Windows.Forms.Label()
         Me.lEscritor = New System.Windows.Forms.Label()
         Me.lTituloEscritor = New System.Windows.Forms.Label()
+        Me.rtbSinopsis = New System.Windows.Forms.RichTextBox()
         Me.tlpPrestamo = New System.Windows.Forms.TableLayoutPanel()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.Label21 = New System.Windows.Forms.Label()
@@ -58,7 +59,6 @@ Partial Class InformacionUsuarioForm
         Me.bSalir = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.rtbSinopsis = New System.Windows.Forms.RichTextBox()
         Me.tlpPrincipal.SuspendLayout()
         Me.gbDatos.SuspendLayout()
         Me.tlpInformacion.SuspendLayout()
@@ -116,7 +116,7 @@ Partial Class InformacionUsuarioForm
         Me.tlpInformacion.Name = "tlpInformacion"
         Me.tlpInformacion.RowCount = 9
         Me.tlpInformacion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.76471!))
-        Me.tlpInformacion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.29412!))
+        Me.tlpInformacion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35.29411!))
         Me.tlpInformacion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.76471!))
         Me.tlpInformacion.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tlpInformacion.RowStyles.Add(New System.Windows.Forms.RowStyle())
@@ -356,6 +356,15 @@ Partial Class InformacionUsuarioForm
         Me.lTituloEscritor.Text = "Escritor"
         Me.lTituloEscritor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'rtbSinopsis
+        '
+        Me.rtbSinopsis.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rtbSinopsis.Location = New System.Drawing.Point(120, 29)
+        Me.rtbSinopsis.Name = "rtbSinopsis"
+        Me.rtbSinopsis.Size = New System.Drawing.Size(294, 43)
+        Me.rtbSinopsis.TabIndex = 6
+        Me.rtbSinopsis.Text = ""
+        '
         'tlpPrestamo
         '
         Me.tlpPrestamo.ColumnCount = 3
@@ -527,15 +536,6 @@ Partial Class InformacionUsuarioForm
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(417, 13)
         Me.Panel2.TabIndex = 6
-        '
-        'rtbSinopsis
-        '
-        Me.rtbSinopsis.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.rtbSinopsis.Location = New System.Drawing.Point(120, 29)
-        Me.rtbSinopsis.Name = "rtbSinopsis"
-        Me.rtbSinopsis.Size = New System.Drawing.Size(294, 43)
-        Me.rtbSinopsis.TabIndex = 6
-        Me.rtbSinopsis.Text = ""
         '
         'InformacionUsuarioForm
         '

@@ -87,7 +87,8 @@ Public Class GestionLibroForm
 
 
     Private Sub LibroControl_ClickEditar(id As Integer)
-        MessageBox.Show("Editar libro con id: " & id)
+        Dim datosLibro As LibroDTO = controlador.BuscarLibro(id)
+        CType(Me.MdiParent, Form1).AbrirLibrosForm("editar", datosLibro)
     End Sub
 
     ' Manejo del evento Ver
@@ -97,7 +98,7 @@ Public Class GestionLibroForm
     End Sub
 
     ' Manejo del evento Borrar
-    Private Sub LibroControl_ClickBorrar(id As Integer)
+    Public Sub LibroControl_ClickBorrar(id As Integer)
         Try
             Dim respuesta As DialogResult = MessageBox.Show("¿Seguro que quieres eliminar el libro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 

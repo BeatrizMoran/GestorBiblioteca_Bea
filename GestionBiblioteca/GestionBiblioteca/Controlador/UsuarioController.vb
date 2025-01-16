@@ -24,16 +24,16 @@ Public Class UsuarioController
         Return usuariosDTO
     End Function
 
-    Public Function BorrarUsuario(id As Integer)
+    Public Sub BorrarUsuario(id As Integer)
         Try
             Usuario.BorrarUsuario(id)
 
         Catch ex As Exception
             Throw New Exception("Error al borrar el usuario: " & ex.Message)
         End Try
-    End Function
+    End Sub
 
-    Public Function CrearUsuario(Nombre As String, apellido_1 As String, apellido_2 As String, Telefono As Integer)
+    Public Sub CrearUsuario(Nombre As String, apellido_1 As String, apellido_2 As String, Telefono As Integer)
         Try
             Dim usuario As Usuario = New Usuario(Nombre, apellido_1, apellido_2, Telefono)
 
@@ -42,7 +42,7 @@ Public Class UsuarioController
         Catch ex As Exception
             Throw New Exception("Error al crear el usuario: " & ex.Message)
         End Try
-    End Function
+    End Sub
 
     Public Function BuscarUsuario(id As Integer)
         Try
@@ -68,7 +68,7 @@ Public Class UsuarioController
         End Try
     End Function
 
-    Public Function ActualizarUsuario(id As Integer, Nombre As String, apellido_1 As String, apellido_2 As String, Telefono As Integer)
+    Public Sub ActualizarUsuario(id As Integer, Nombre As String, apellido_1 As String, apellido_2 As String, Telefono As Integer)
         Try
             Dim usuario As Usuario = New Usuario(Nombre, apellido_1, apellido_2, Telefono)
             usuario.id = id
@@ -78,5 +78,5 @@ Public Class UsuarioController
         Catch ex As Exception
             Throw New Exception("Error al crear el usuario: " & ex.Message)
         End Try
-    End Function
+    End Sub
 End Class

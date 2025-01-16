@@ -32,7 +32,7 @@ Partial Class AgregarLibroForm
         Me.liAnyoEdicion = New ControlesBiblioteca.LabelledInput()
         Me.liTitulo = New ControlesBiblioteca.LabelledInput()
         Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.RichTextBox2 = New System.Windows.Forms.RichTextBox()
+        Me.rtbSinopsis = New System.Windows.Forms.RichTextBox()
         Me.lSinopsis = New System.Windows.Forms.Label()
         Me.tlpPrincipal.SuspendLayout()
         Me.gbCrearEditarLibro.SuspendLayout()
@@ -156,7 +156,7 @@ Partial Class AgregarLibroForm
         Me.liAnyoEdicion.TabIndex = 10
         Me.liAnyoEdicion.TextboxBackColor = System.Drawing.Color.White
         Me.liAnyoEdicion.TextboxForeColor = System.Drawing.Color.Black
-        Me.liAnyoEdicion.Titulo = "Año edicion"
+        Me.liAnyoEdicion.Titulo = "Año Edicion"
         Me.liAnyoEdicion.TituloColor = System.Drawing.Color.Black
         '
         'liTitulo
@@ -178,7 +178,7 @@ Partial Class AgregarLibroForm
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.RichTextBox2, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.rtbSinopsis, 0, 1)
         Me.TableLayoutPanel1.Controls.Add(Me.lSinopsis, 0, 0)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(57, 216)
@@ -189,14 +189,14 @@ Partial Class AgregarLibroForm
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(432, 54)
         Me.TableLayoutPanel1.TabIndex = 13
         '
-        'RichTextBox2
+        'rtbSinopsis
         '
-        Me.RichTextBox2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.RichTextBox2.Location = New System.Drawing.Point(3, 30)
-        Me.RichTextBox2.Name = "RichTextBox2"
-        Me.RichTextBox2.Size = New System.Drawing.Size(426, 21)
-        Me.RichTextBox2.TabIndex = 15
-        Me.RichTextBox2.Text = ""
+        Me.rtbSinopsis.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rtbSinopsis.Location = New System.Drawing.Point(3, 30)
+        Me.rtbSinopsis.Name = "rtbSinopsis"
+        Me.rtbSinopsis.Size = New System.Drawing.Size(426, 21)
+        Me.rtbSinopsis.TabIndex = 15
+        Me.rtbSinopsis.Text = ""
         '
         'lSinopsis
         '
@@ -238,6 +238,6 @@ Partial Class AgregarLibroForm
     Friend WithEvents liAnyoEdicion As ControlesBiblioteca.LabelledInput
     Friend WithEvents liTitulo As ControlesBiblioteca.LabelledInput
     Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents RichTextBox2 As RichTextBox
+    Friend WithEvents rtbSinopsis As RichTextBox
     Friend WithEvents lSinopsis As Label
 End Class

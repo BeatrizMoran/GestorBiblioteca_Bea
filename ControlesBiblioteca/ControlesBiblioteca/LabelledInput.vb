@@ -112,4 +112,12 @@
             tbCampo.ForeColor = value
         End Set
     End Property
+
+
+
+    Private Sub tbCampo_Enter(sender As Object, e As EventArgs) Handles tbCampo.Enter
+        lTitulo.ForeColor = Color.Black
+        tbCampo.BackColor = Color.White
+        tbCampo.ForeColor = Color.Black
+    End Sub
 End Class

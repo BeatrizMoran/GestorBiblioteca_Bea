@@ -12,7 +12,7 @@ Public Class Form1
     Dim formularioActual As Form = dashboard
 
     ' Pila para almacenar el historial de formularios
-    Private formHistory As New Stack(Of Form)
+    Public formHistory As New Stack(Of Form)
 
     Dim mostrado As Boolean = False
 
@@ -151,7 +151,7 @@ Public Class Form1
         MostrarHistorial()
     End Sub
 
-    Public Sub AbrirLibrosForm(pagina As String)
+    Public Sub AbrirLibrosForm(pagina As String, Optional libro As LibroDTO = Nothing)
         ' Guardar el formulario activo en el historial
         If formularioActual IsNot Nothing Then
             Console.WriteLine("Página anterior: " & formularioActual.Name)
@@ -174,6 +174,15 @@ Public Class Form1
                     crearLibro = New AgregarLibroForm()
 
                 End If
+                crearLibro.accion = "crear"
+                nuevoFormulario = crearLibro
+            Case "editar"
+                If crearLibro Is Nothing OrElse crearLibro.IsDisposed Then
+                    crearLibro = New AgregarLibroForm()
+
+                End If
+                crearLibro.accion = "editar"
+                crearLibro.datosLibro = libro
                 nuevoFormulario = crearLibro
         End Select
         ' Configurar y mostrar el nuevo formulario

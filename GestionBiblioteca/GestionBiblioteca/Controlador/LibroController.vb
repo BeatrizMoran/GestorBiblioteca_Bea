@@ -46,4 +46,23 @@ Public Class LibroController
         End Try
 
     End Function
+
+    Public Sub CrearLibro(titulo As String, escritor As String, anyoEdicion As Integer, sinopsis As String)
+        Try
+            Dim libro As Libro = New Libro(titulo, escritor, anyoEdicion, sinopsis)
+            Libro.CrearLibro(libro)
+        Catch ex As Exception
+            Throw New Exception("Error al intentar crear el libro: " & ex.Message)
+        End Try
+    End Sub
+
+    Public Sub ActualizarLibro(id As Integer, titulo As String, escritor As String, anyoEdicion As Integer, sinopsis As String)
+        Try
+            Dim libro As Libro = New Libro(titulo, escritor, anyoEdicion, sinopsis)
+            libro.id = id
+            Libro.ActualizarLibro(libro)
+        Catch ex As Exception
+            Throw New Exception("Error al intentar actualizar el libro: " & ex.Message)
+        End Try
+    End Sub
 End Class
