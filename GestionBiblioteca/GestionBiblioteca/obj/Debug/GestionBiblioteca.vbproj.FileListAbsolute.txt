@@ -45,3 +45,4 @@ C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\Gestion
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\bin\Debug\images\libroInfo.png
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\bin\Debug\images\prestamoInfo.png
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\bin\Debug\images\usuarioInfo.png
+C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.GestionPrestamoForm.resources

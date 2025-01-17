@@ -224,9 +224,6 @@ Public Class UsuariosForm
     Private Sub UsuariosForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         CType(Me.MdiParent, Form1).OcultarMostrarBotonVolver()
         mostrado = True
-
-
-
     End Sub
 
     Private Sub bCrearUsuario_Click(sender As Object, e As EventArgs) Handles bCrearUsuario.Click

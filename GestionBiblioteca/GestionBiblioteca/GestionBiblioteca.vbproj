@@ -93,8 +93,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controlador\LibroController.vb" />
+    <Compile Include="Controlador\PrestamoController.vb" />
     <Compile Include="Controlador\UsuarioController.vb" />
     <Compile Include="DTOs\LibroDTO .vb" />
+    <Compile Include="DTOs\PrestamoDTO.vb" />
     <Compile Include="DTOs\UsuarioDTO.vb" />
     <Compile Include="Vista\AgregarLibroForm.Designer.vb">
       <DependentUpon>AgregarLibroForm.vb</DependentUpon>
@@ -146,6 +148,12 @@
     <Compile Include="Vista\GestionLibroForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\GestionPrestamoForm.Designer.vb">
+      <DependentUpon>GestionPrestamoForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\GestionPrestamoForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\InformacionUsuarioForm.Designer.vb">
       <DependentUpon>InformacionUsuarioForm.vb</DependentUpon>
     </Compile>
@@ -180,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\GestionLibroForm.resx">
       <DependentUpon>GestionLibroForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\GestionPrestamoForm.resx">
+      <DependentUpon>GestionPrestamoForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\InformacionUsuarioForm.resx">
       <DependentUpon>InformacionUsuarioForm.vb</DependentUpon>

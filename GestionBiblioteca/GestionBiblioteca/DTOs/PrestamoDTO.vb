@@ -1,0 +1,8 @@
+﻿Public Class PrestamoDTO
+    Public Property Id As Integer
+    Public Property LibroTitulo As String
+    Public Property UsuarioNombre As String
+    Public Property FechaInicio As String ' Fecha formateada para la vista
+    Public Property FechaFin As String ' Fecha formateada para la vista
+    Public Property Estado As String ' "En préstamo" o "Disponible"
+End Class

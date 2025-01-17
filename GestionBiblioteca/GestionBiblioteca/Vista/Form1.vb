@@ -7,6 +7,7 @@ Public Class Form1
     Public gestionUsuarios As New UsuariosForm
     Public crearLibro As New AgregarLibroForm
     Dim informacionFOrm As New InformacionUsuarioForm
+    Dim gestionPrestamos As New GestionPrestamoForm
 
     Dim crearUsuario As New AgregarUsuarioForm
     Dim formularioActual As Form = dashboard
@@ -249,6 +250,45 @@ Public Class Form1
 
     End Sub
 
+    Public Sub AbrirPaginaPrestamos(pagina As String)
+        ' Guardar el formulario activo en el historial
+        If formularioActual IsNot Nothing Then
+            Console.WriteLine("Página anterior: " & formularioActual.Name)
+            formularioActual.Hide()
+            formHistory.Push(formularioActual)
+        End If
+
+        Dim nuevoFormulario As Form = Nothing
+
+        Select Case pagina
+            Case "gestion"
+                If gestionPrestamos Is Nothing OrElse gestionPrestamos.IsDisposed Then
+                    gestionPrestamos = New GestionPrestamoForm()
+
+                End If
+
+                nuevoFormulario = gestionPrestamos
+
+        End Select
+
+        ' Configurar y mostrar el nuevo formulario
+        If nuevoFormulario IsNot Nothing Then
+            If ActiveMdiChild IsNot nuevoFormulario Then
+                nuevoFormulario.MdiParent = Me
+                nuevoFormulario.Dock = DockStyle.Fill
+                nuevoFormulario.Show()
+                Me.ActivateMdiChild(nuevoFormulario)
+                formularioActual = nuevoFormulario
+                Console.WriteLine("Formulario activo: " & formularioActual.Name)
+            End If
+        End If
+
+        ' Mostrar historial de formularios
+        MostrarHistorial()
+
+
+    End Sub
+
 
     ' Mostrar el historial de formularios en consola
     Private Sub MostrarHistorial()
@@ -311,5 +351,13 @@ Public Class Form1
         formularioActual.MdiParent = Me
         formularioActual.Dock = DockStyle.Fill
         formularioActual.Show()
+    End Sub
+
+    Private Sub LibrosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LibrosToolStripMenuItem.Click
+        AbrirLibrosForm("gestion")
+    End Sub
+
+    Private Sub PrestamosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrestamosToolStripMenuItem.Click
+        AbrirPaginaPrestamos("gestion")
     End Sub
 End Class
