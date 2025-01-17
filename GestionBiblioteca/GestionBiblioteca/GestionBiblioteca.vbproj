@@ -104,6 +104,12 @@
     <Compile Include="Vista\AgregarLibroForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Vista\AgregarPrestamoForm.Designer.vb">
+      <DependentUpon>AgregarPrestamoForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Vista\AgregarPrestamoForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Vista\AgregarUsuarioForm .Designer.vb">
       <DependentUpon>AgregarUsuarioForm .vb</DependentUpon>
     </Compile>
@@ -170,6 +176,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Vista\AgregarLibroForm.resx">
       <DependentUpon>AgregarLibroForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vista\AgregarPrestamoForm.resx">
+      <DependentUpon>AgregarPrestamoForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\AgregarUsuarioForm .resx">
       <DependentUpon>AgregarUsuarioForm .vb</DependentUpon>

@@ -8,6 +8,7 @@ Public Class Form1
     Public crearLibro As New AgregarLibroForm
     Dim informacionFOrm As New InformacionUsuarioForm
     Dim gestionPrestamos As New GestionPrestamoForm
+    Dim crearPrestamo As New AgregarPrestamoForm
 
     Dim crearUsuario As New AgregarUsuarioForm
     Dim formularioActual As Form = dashboard
@@ -250,7 +251,7 @@ Public Class Form1
 
     End Sub
 
-    Public Sub AbrirPaginaPrestamos(pagina As String)
+    Public Sub AbrirPaginaPrestamos(pagina As String, Optional prestamo As PrestamoDTO = Nothing)
         ' Guardar el formulario activo en el historial
         If formularioActual IsNot Nothing Then
             Console.WriteLine("Página anterior: " & formularioActual.Name)
@@ -266,8 +267,19 @@ Public Class Form1
                     gestionPrestamos = New GestionPrestamoForm()
 
                 End If
-
                 nuevoFormulario = gestionPrestamos
+
+
+            Case "editar"
+                If crearPrestamo Is Nothing OrElse crearPrestamo.IsDisposed Then
+                    crearPrestamo = New AgregarPrestamoForm()
+
+                End If
+
+                crearPrestamo.opcion = pagina
+                crearPrestamo.datosPrestamo = prestamo
+
+                nuevoFormulario = crearPrestamo
 
         End Select
 

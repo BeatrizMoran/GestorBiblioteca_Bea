@@ -6,7 +6,7 @@
     Dim controlador As New PrestamoController
     ' Variables para paginación
     Private paginaActual As Integer = 1
-    Private tamañoPagina As Integer = 2
+    Private tamañoPagina As Integer = 10
     Private totalPaginas As Integer = 1
 
     Private fuenteActual As Font = New Font("Microsoft Sans Serif", 8) ' Tamaño inicial predeterminado
@@ -27,6 +27,9 @@
 
             dgvPrestamos.Rows.Clear()
             dgvPrestamos.Columns.Clear()
+
+            dgvPrestamos.Columns.Add("Id", "ID")
+            dgvPrestamos.Columns("id").Visible = False
 
             dgvPrestamos.Columns.Add("Libro", "Libro")
             dgvPrestamos.Columns.Add("NombreUsuario", "Usuario")
@@ -61,17 +64,16 @@
 
             dgvPrestamos.AllowUserToAddRows = False
 
+
             Dim estado = ""
-            ' Verificar si la lista de usuarios tiene elementos
             If prestamos.Count > 0 Then
-                ' Agregar usuarios de la página actual al DataGridView
                 For Each prestamo As PrestamoDTO In prestamosPagina
                     If prestamo.Estado Then
                         estado = "Disponible"
                     Else
                         estado = "En prestamo"
                     End If
-                    dgvPrestamos.Rows.Add(prestamo.LibroTitulo, prestamo.UsuarioNombre, estado)
+                    dgvPrestamos.Rows.Add(prestamo.Id, prestamo.LibroTitulo, prestamo.UsuarioNombre, estado)
 
                 Next
             Else
@@ -133,12 +135,24 @@
         If e.RowIndex >= 0 Then
             If dgvPrestamos.Columns(e.ColumnIndex).Name = "Editar" Then
                 Dim id As Integer = Convert.ToInt32(dgvPrestamos.Rows(e.RowIndex).Cells("Id").Value)
+                EditarPrestamo(id)
             ElseIf dgvPrestamos.Columns(e.ColumnIndex).Name = "Ver" Then
                 Dim id As Integer = Convert.ToInt32(dgvPrestamos.Rows(e.RowIndex).Cells("Id").Value)
             ElseIf dgvPrestamos.Columns(e.ColumnIndex).Name = "Borrar" Then
                 Dim id As Integer = Convert.ToInt32(dgvPrestamos.Rows(e.RowIndex).Cells("Id").Value)
             End If
         End If
+    End Sub
+
+    Private Sub EditarPrestamo(id As Integer)
+        Try
+            Dim datosPrestamo As PrestamoDTO = controlador.BuscarPrestamo(id)
+            CType(Me.MdiParent, Form1).AbrirPaginaPrestamos("editar", datosPrestamo)
+        Catch ex As Exception
+            MessageBox.Show("Error al intentar editar el préstamo: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+
+        End Try
+
     End Sub
 
 End Class

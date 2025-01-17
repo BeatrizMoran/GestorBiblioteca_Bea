@@ -52,4 +52,62 @@ Public Class Prestamo
             Throw New Exception("Error al oobtener los prestamos: " & ex.Message)
         End Try
     End Function
+
+    Public Shared Function BuscarPrestamo(id As Integer) As PrestamoDTO
+        Try
+            Dim conn As New SQLiteConnection(My.Settings.conexion)
+            conn.Open()
+
+            Dim prestamo As PrestamoDTO
+            Dim Cmd As New SQLiteCommand("SELECT 
+                                     p.ID,
+                                     p.Fecha_Inicio,
+                                     p.Fecha_Fin,
+                                     p.Disponible AS Estado,
+                                     l.Titulo AS LibroTitulo,
+                                     CONCAT(u.Nombre, ' ', u.Apellido_1) AS UsuarioNombre
+                                   FROM 
+                                     Prestamos p
+                                   JOIN 
+                                     Libros l ON p.ID_Libro = l.ID
+                                   JOIN 
+                                     Usuarios u ON p.ID_Usuario = u.ID
+                                   WHERE p.ID = @Id", conn)
+
+
+            Cmd.Parameters.Add("@Id", DbType.Int32).Value = id
+
+            Dim lector As SQLiteDataReader = Cmd.ExecuteReader()
+
+            If lector.Read() Then
+                Dim estado
+
+                If lector("Estado") = True Then
+                    estado = "Disponible"
+                Else
+                    estado = "En prestamo"
+                End If
+                prestamo = New PrestamoDTO With {
+                .Id = Convert.ToInt32(lector("ID")),
+                .LibroTitulo = lector("LibroTitulo").ToString(),
+                .UsuarioNombre = lector("UsuarioNombre").ToString(),
+                .FechaInicio = DateTime.Parse(lector("Fecha_Inicio").ToString()),
+                .FechaFin = DateTime.Parse(lector("Fecha_Fin").ToString()),
+                .Estado = estado
+                }
+
+            End If
+            ' Cerrar el lector y la conexión después de usarlos
+            lector.Close()
+            conn.Close()
+
+
+            Return prestamo
+        Catch ex As Exception
+            Console.WriteLine(ex.Message)
+            Throw New Exception("Error al buscar el prestamo: " & ex.Message)
+
+        End Try
+    End Function
+
 End Class
