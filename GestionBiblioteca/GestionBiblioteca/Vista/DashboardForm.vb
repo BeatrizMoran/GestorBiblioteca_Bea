@@ -30,4 +30,9 @@ Public Class DashboardForm
     Private Sub DashboardForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         CType(Me.MdiParent, Form1).OcultarMostrarBotonVolver()
     End Sub
+
+    Private Sub bdPrestamos_ClickarBlock() Handles bdPrestamos.ClickarBlock
+        CType(Me.MdiParent, Form1).AbrirPaginaPrestamos("gestion")
+
+    End Sub
 End Class

@@ -9,6 +9,8 @@ Public Class GestionLibroForm
     Private Sub GestionLibroForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         bCrearLibro.BackColor = Color.FromArgb(0, 123, 255) ' Color RGB personalizado
 
+
+
     End Sub
 
     Public Function CargarLibros()

@@ -268,6 +268,13 @@ Public Class Form1
 
                 End If
                 nuevoFormulario = gestionPrestamos
+            Case "crear"
+                If crearPrestamo Is Nothing OrElse crearPrestamo.IsDisposed Then
+                    crearPrestamo = New AgregarPrestamoForm()
+
+                End If
+                crearPrestamo.opcion = pagina
+                nuevoFormulario = crearPrestamo
 
 
             Case "editar"
@@ -275,6 +282,7 @@ Public Class Form1
                     crearPrestamo = New AgregarPrestamoForm()
 
                 End If
+
 
                 crearPrestamo.opcion = pagina
                 crearPrestamo.datosPrestamo = prestamo

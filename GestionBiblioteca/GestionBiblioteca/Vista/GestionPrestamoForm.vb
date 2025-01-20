@@ -1,6 +1,8 @@
-﻿Public Class GestionPrestamoForm
+﻿Imports System.Data.SQLite
+
+Public Class GestionPrestamoForm
     Private Sub GestionPrestamoForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CargarPrestamos()
+        ActualizarVista()
     End Sub
 
     Dim controlador As New PrestamoController
@@ -13,21 +15,20 @@
 
 
 
-    Public Sub CargarPrestamos()
+    Private Sub CargarYActualizarPrestamos(filtrarActivos As Boolean, filtrarDisponibles As Boolean)
         Try
+            ' Obtener los préstamos del controlador con los filtros activos y disponibles
+            Dim prestamos As List(Of PrestamoDTO) = controlador.FiltrarPrestamos(filtrarActivos, filtrarDisponibles)
 
-
-            Dim prestamos As List(Of PrestamoDTO) = controlador.ObtenerPrestamos()
-
+            ' Paginación
             totalPaginas = Math.Ceiling(prestamos.Count / tamañoPagina)
-            ' Filtrar los usuarios según la página actual
             Dim prestamosPagina = prestamos.Skip((paginaActual - 1) * tamañoPagina).Take(tamañoPagina).ToList()
 
-
-
+            ' Limpiar la tabla
             dgvPrestamos.Rows.Clear()
             dgvPrestamos.Columns.Clear()
 
+            ' Crear las columnas de la tabla
             dgvPrestamos.Columns.Add("Id", "ID")
             dgvPrestamos.Columns("id").Visible = False
 
@@ -37,10 +38,9 @@
 
             dgvPrestamos.ColumnHeadersDefaultCellStyle.BackColor = Color.FromArgb(0, 123, 255)
             dgvPrestamos.ColumnHeadersDefaultCellStyle.ForeColor = Color.White
-
             dgvPrestamos.EnableHeadersVisualStyles = False
 
-            ' Crear una columna de botones para las acciones (editar, ver, borrar)
+            ' Crear las columnas de botones para las acciones (editar, ver, borrar)
             Dim colEditar As New DataGridViewButtonColumn()
             colEditar.Name = "Editar"
             colEditar.HeaderText = ""
@@ -64,51 +64,37 @@
 
             dgvPrestamos.AllowUserToAddRows = False
 
-
-            Dim estado = ""
+            ' Agregar los datos de los préstamos filtrados
+            Dim estado As String = ""
             If prestamos.Count > 0 Then
                 For Each prestamo As PrestamoDTO In prestamosPagina
                     If prestamo.Estado Then
                         estado = "Disponible"
                     Else
-                        estado = "En prestamo"
+                        estado = "En préstamo"
                     End If
                     dgvPrestamos.Rows.Add(prestamo.Id, prestamo.LibroTitulo, prestamo.UsuarioNombre, estado)
-
                 Next
             Else
                 MessageBox.Show("No hay prestamos disponibles", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
 
-            For Each control As Control In tlpGestionPrestamos.Controls
-                control.Font = fuenteActual
-            Next
-
-
-            ' Mostrar el estado de la paginación
+            ' Ajustar la paginación
             lblPaginacion.Text = $"Página {paginaActual} de {totalPaginas}"
 
+            ' Ajustar el DataGridView
             dgvPrestamos.Dock = DockStyle.Fill
-
-            ' Ajustar las columnas para repartir proporcionalmente el espacio disponible
             dgvPrestamos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
-
-            ' Ajustar las filas para ocupar el espacio adecuado, manteniendo el contenido visible
             dgvPrestamos.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells
 
-
+            ' Ajustar las celdas
             For Each column As DataGridViewColumn In dgvPrestamos.Columns
                 column.DefaultCellStyle.Padding = New Padding(5)
-            Next
-            For Each column As DataGridViewColumn In dgvPrestamos.Columns
                 column.DefaultCellStyle.Font = fuenteActual
             Next
 
-
-            ' Establecer el modo de edición del DataGridView
+            ' Establecer el modo de edición
             dgvPrestamos.EditMode = DataGridViewEditMode.EditOnKeystrokeOrF2
-
-
 
         Catch ex As Exception
             MessageBox.Show("Error al cargar los prestamos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -119,14 +105,14 @@
     Private Sub bAnterior_Click(sender As Object, e As EventArgs) Handles bAnterior.Click
         If paginaActual > 1 Then
             paginaActual -= 1
-            CargarPrestamos()
+            ActualizarVista()
         End If
     End Sub
 
     Private Sub bSiguiente_Click(sender As Object, e As EventArgs) Handles bSiguiente.Click
         If paginaActual < totalPaginas Then
             paginaActual += 1
-            CargarPrestamos()
+            ActualizarVista()
         End If
     End Sub
 
@@ -155,4 +141,26 @@
 
     End Sub
 
+    Private Sub bCrearPrestamo_Click(sender As Object, e As EventArgs) Handles bCrearPrestamo.Click
+        Try
+            CType(Me.MdiParent, Form1).AbrirPaginaPrestamos("crear")
+        Catch ex As Exception
+            MessageBox.Show("Error al intentar editar el préstamo: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Private Sub chbActivos_CheckedChanged(sender As Object, e As EventArgs) Handles chbActivos.CheckedChanged, chbDisponibles.CheckedChanged
+        ActualizarVista()
+
+    End Sub
+
+    ' Función que se llama para actualizar la vista
+    Private Sub ActualizarVista()
+        ' Obtener los filtros de los CheckBoxes
+        Dim filtrarActivos As Boolean = chbActivos.Checked
+        Dim filtrarDisponibles As Boolean = chbDisponibles.Checked
+
+        ' Llamar a la función para cargar los préstamos con los filtros seleccionados
+        CargarYActualizarPrestamos(filtrarActivos, filtrarDisponibles)
+    End Sub
 End Class

@@ -2,7 +2,7 @@
 Imports GestionBiblioteca.DTOs
 
 Public Class UsuarioController
-    Public Shared Function ObtenerUsuariosParaVista() As List(Of UsuarioDTO)
+    Public Function ObtenerUsuariosParaVista() As List(Of UsuarioDTO)
         ' Llamamos al método del modelo que obtiene la lista de usuarios
 
         Dim usuarios As List(Of Usuario) = New List(Of Usuario)

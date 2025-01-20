@@ -25,13 +25,17 @@ Partial Class AgregarPrestamoForm
         Me.tlpPrincipal = New System.Windows.Forms.TableLayoutPanel()
         Me.gbCrearUsuario = New System.Windows.Forms.GroupBox()
         Me.tlpFormulario = New System.Windows.Forms.TableLayoutPanel()
+        Me.lLibro = New System.Windows.Forms.Label()
+        Me.cbLibros = New System.Windows.Forms.ComboBox()
+        Me.lUsuario = New System.Windows.Forms.Label()
+        Me.cbUsuarios = New System.Windows.Forms.ComboBox()
         Me.tlpBotones = New System.Windows.Forms.TableLayoutPanel()
         Me.bAceptar = New System.Windows.Forms.Button()
         Me.bCancelar = New System.Windows.Forms.Button()
-        Me.liApellido1 = New ControlesBiblioteca.LabelledInput()
-        Me.liEstado = New ControlesBiblioteca.LabelledInput()
-        Me.liApellido2 = New ControlesBiblioteca.LabelledInput()
-        Me.liNombre = New ControlesBiblioteca.LabelledInput()
+        Me.lFechaInicio = New System.Windows.Forms.Label()
+        Me.lFechaFin = New System.Windows.Forms.Label()
+        Me.dtpFechaInicio = New System.Windows.Forms.DateTimePicker()
+        Me.dtpFechaFin = New System.Windows.Forms.DateTimePicker()
         Me.tlpPrincipal.SuspendLayout()
         Me.gbCrearUsuario.SuspendLayout()
         Me.tlpFormulario.SuspendLayout()
@@ -72,24 +76,74 @@ Partial Class AgregarPrestamoForm
         Me.tlpFormulario.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
         Me.tlpFormulario.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
         Me.tlpFormulario.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlpFormulario.Controls.Add(Me.tlpBotones, 1, 5)
-        Me.tlpFormulario.Controls.Add(Me.liApellido1, 1, 2)
-        Me.tlpFormulario.Controls.Add(Me.liEstado, 1, 4)
-        Me.tlpFormulario.Controls.Add(Me.liApellido2, 1, 3)
-        Me.tlpFormulario.Controls.Add(Me.liNombre, 1, 1)
+        Me.tlpFormulario.Controls.Add(Me.lLibro, 1, 1)
+        Me.tlpFormulario.Controls.Add(Me.cbLibros, 1, 2)
+        Me.tlpFormulario.Controls.Add(Me.lUsuario, 1, 3)
+        Me.tlpFormulario.Controls.Add(Me.cbUsuarios, 1, 4)
+        Me.tlpFormulario.Controls.Add(Me.tlpBotones, 1, 9)
+        Me.tlpFormulario.Controls.Add(Me.lFechaInicio, 1, 5)
+        Me.tlpFormulario.Controls.Add(Me.lFechaFin, 1, 7)
+        Me.tlpFormulario.Controls.Add(Me.dtpFechaInicio, 1, 6)
+        Me.tlpFormulario.Controls.Add(Me.dtpFechaFin, 1, 8)
         Me.tlpFormulario.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlpFormulario.Location = New System.Drawing.Point(3, 16)
         Me.tlpFormulario.Name = "tlpFormulario"
-        Me.tlpFormulario.RowCount = 7
-        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.0!))
-        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.0!))
-        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.0!))
-        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.0!))
-        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.0!))
-        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpFormulario.RowCount = 11
+        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 0.6849315!))
+        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.9589!))
+        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.9589!))
+        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.9589!))
+        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.9589!))
+        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.9589!))
+        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.9589!))
+        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.9589!))
+        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.9589!))
+        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.9589!))
+        Me.tlpFormulario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 0.6849315!))
         Me.tlpFormulario.Size = New System.Drawing.Size(548, 335)
         Me.tlpFormulario.TabIndex = 12
+        '
+        'lLibro
+        '
+        Me.lLibro.AutoSize = True
+        Me.lLibro.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lLibro.Location = New System.Drawing.Point(57, 2)
+        Me.lLibro.Name = "lLibro"
+        Me.lLibro.Size = New System.Drawing.Size(432, 36)
+        Me.lLibro.TabIndex = 20
+        Me.lLibro.Text = "Libro:"
+        Me.lLibro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'cbLibros
+        '
+        Me.cbLibros.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cbLibros.FormattingEnabled = True
+        Me.cbLibros.Location = New System.Drawing.Point(57, 41)
+        Me.cbLibros.Name = "cbLibros"
+        Me.cbLibros.Size = New System.Drawing.Size(432, 21)
+        Me.cbLibros.TabIndex = 18
+        Me.cbLibros.Text = "-- Selecciona el libro --"
+        '
+        'lUsuario
+        '
+        Me.lUsuario.AutoSize = True
+        Me.lUsuario.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lUsuario.Location = New System.Drawing.Point(57, 74)
+        Me.lUsuario.Name = "lUsuario"
+        Me.lUsuario.Size = New System.Drawing.Size(432, 36)
+        Me.lUsuario.TabIndex = 21
+        Me.lUsuario.Text = "Usuario: "
+        Me.lUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'cbUsuarios
+        '
+        Me.cbUsuarios.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.cbUsuarios.FormattingEnabled = True
+        Me.cbUsuarios.Location = New System.Drawing.Point(57, 113)
+        Me.cbUsuarios.Name = "cbUsuarios"
+        Me.cbUsuarios.Size = New System.Drawing.Size(432, 21)
+        Me.cbUsuarios.TabIndex = 19
+        Me.cbUsuarios.Text = "-- Selecciona el usuario --"
         '
         'tlpBotones
         '
@@ -99,11 +153,11 @@ Partial Class AgregarPrestamoForm
         Me.tlpBotones.Controls.Add(Me.bAceptar, 0, 0)
         Me.tlpBotones.Controls.Add(Me.bCancelar, 1, 0)
         Me.tlpBotones.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tlpBotones.Location = New System.Drawing.Point(57, 276)
+        Me.tlpBotones.Location = New System.Drawing.Point(57, 293)
         Me.tlpBotones.Name = "tlpBotones"
         Me.tlpBotones.RowCount = 1
         Me.tlpBotones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlpBotones.Size = New System.Drawing.Size(432, 20)
+        Me.tlpBotones.Size = New System.Drawing.Size(432, 30)
         Me.tlpBotones.TabIndex = 12
         '
         'bAceptar
@@ -113,7 +167,7 @@ Partial Class AgregarPrestamoForm
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.bAceptar.Location = New System.Drawing.Point(3, 3)
         Me.bAceptar.Name = "bAceptar"
-        Me.bAceptar.Size = New System.Drawing.Size(210, 14)
+        Me.bAceptar.Size = New System.Drawing.Size(210, 24)
         Me.bAceptar.TabIndex = 0
         Me.bAceptar.Text = "Aceptar"
         Me.bAceptar.UseVisualStyleBackColor = True
@@ -123,66 +177,48 @@ Partial Class AgregarPrestamoForm
         Me.bCancelar.Dock = System.Windows.Forms.DockStyle.Fill
         Me.bCancelar.Location = New System.Drawing.Point(219, 3)
         Me.bCancelar.Name = "bCancelar"
-        Me.bCancelar.Size = New System.Drawing.Size(210, 14)
+        Me.bCancelar.Size = New System.Drawing.Size(210, 24)
         Me.bCancelar.TabIndex = 1
         Me.bCancelar.Text = "Cancelar"
         Me.bCancelar.UseVisualStyleBackColor = True
         '
-        'liApellido1
+        'lFechaInicio
         '
-        Me.liApellido1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.liApellido1.InputText = "Escribe aquí"
-        Me.liApellido1.Location = New System.Drawing.Point(57, 96)
-        Me.liApellido1.Name = "liApellido1"
-        Me.liApellido1.Placeholder = "Escribe aquí"
-        Me.liApellido1.Size = New System.Drawing.Size(432, 54)
-        Me.liApellido1.TabIndex = 9
-        Me.liApellido1.TextboxBackColor = System.Drawing.Color.White
-        Me.liApellido1.TextboxForeColor = System.Drawing.Color.Black
-        Me.liApellido1.Titulo = "Apellido1"
-        Me.liApellido1.TituloColor = System.Drawing.Color.Black
+        Me.lFechaInicio.AutoSize = True
+        Me.lFechaInicio.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lFechaInicio.Location = New System.Drawing.Point(57, 146)
+        Me.lFechaInicio.Name = "lFechaInicio"
+        Me.lFechaInicio.Size = New System.Drawing.Size(432, 36)
+        Me.lFechaInicio.TabIndex = 22
+        Me.lFechaInicio.Text = "Fecha Inicio:"
+        Me.lFechaInicio.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'liEstado
+        'lFechaFin
         '
-        Me.liEstado.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.liEstado.InputText = "Escribe aquí"
-        Me.liEstado.Location = New System.Drawing.Point(57, 216)
-        Me.liEstado.Name = "liEstado"
-        Me.liEstado.Placeholder = "Escribe aquí"
-        Me.liEstado.Size = New System.Drawing.Size(432, 54)
-        Me.liEstado.TabIndex = 11
-        Me.liEstado.TextboxBackColor = System.Drawing.Color.White
-        Me.liEstado.TextboxForeColor = System.Drawing.Color.Black
-        Me.liEstado.Titulo = "Estado"
-        Me.liEstado.TituloColor = System.Drawing.Color.Black
+        Me.lFechaFin.AutoSize = True
+        Me.lFechaFin.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lFechaFin.Location = New System.Drawing.Point(57, 218)
+        Me.lFechaFin.Name = "lFechaFin"
+        Me.lFechaFin.Size = New System.Drawing.Size(432, 36)
+        Me.lFechaFin.TabIndex = 23
+        Me.lFechaFin.Text = "Fecha Fin: "
+        Me.lFechaFin.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'liApellido2
+        'dtpFechaInicio
         '
-        Me.liApellido2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.liApellido2.InputText = "Escribe aquí"
-        Me.liApellido2.Location = New System.Drawing.Point(57, 156)
-        Me.liApellido2.Name = "liApellido2"
-        Me.liApellido2.Placeholder = "Escribe aquí"
-        Me.liApellido2.Size = New System.Drawing.Size(432, 54)
-        Me.liApellido2.TabIndex = 10
-        Me.liApellido2.TextboxBackColor = System.Drawing.Color.White
-        Me.liApellido2.TextboxForeColor = System.Drawing.Color.Black
-        Me.liApellido2.Titulo = "Apellido2"
-        Me.liApellido2.TituloColor = System.Drawing.Color.Black
+        Me.dtpFechaInicio.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dtpFechaInicio.Location = New System.Drawing.Point(57, 185)
+        Me.dtpFechaInicio.Name = "dtpFechaInicio"
+        Me.dtpFechaInicio.Size = New System.Drawing.Size(432, 20)
+        Me.dtpFechaInicio.TabIndex = 24
         '
-        'liNombre
+        'dtpFechaFin
         '
-        Me.liNombre.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.liNombre.InputText = "Escribe aquí"
-        Me.liNombre.Location = New System.Drawing.Point(57, 36)
-        Me.liNombre.Name = "liNombre"
-        Me.liNombre.Placeholder = "Escribe aquí"
-        Me.liNombre.Size = New System.Drawing.Size(432, 54)
-        Me.liNombre.TabIndex = 7
-        Me.liNombre.TextboxBackColor = System.Drawing.Color.White
-        Me.liNombre.TextboxForeColor = System.Drawing.Color.Black
-        Me.liNombre.Titulo = "Nombre"
-        Me.liNombre.TituloColor = System.Drawing.Color.Black
+        Me.dtpFechaFin.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dtpFechaFin.Location = New System.Drawing.Point(57, 257)
+        Me.dtpFechaFin.Name = "dtpFechaFin"
+        Me.dtpFechaFin.Size = New System.Drawing.Size(432, 20)
+        Me.dtpFechaFin.TabIndex = 25
         '
         'AgregarPrestamoForm
         '
@@ -196,6 +232,7 @@ Partial Class AgregarPrestamoForm
         Me.tlpPrincipal.ResumeLayout(False)
         Me.gbCrearUsuario.ResumeLayout(False)
         Me.tlpFormulario.ResumeLayout(False)
+        Me.tlpFormulario.PerformLayout()
         Me.tlpBotones.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -207,8 +244,12 @@ Partial Class AgregarPrestamoForm
     Friend WithEvents tlpBotones As TableLayoutPanel
     Friend WithEvents bAceptar As Button
     Friend WithEvents bCancelar As Button
-    Friend WithEvents liApellido1 As ControlesBiblioteca.LabelledInput
-    Friend WithEvents liEstado As ControlesBiblioteca.LabelledInput
-    Friend WithEvents liApellido2 As ControlesBiblioteca.LabelledInput
-    Friend WithEvents liNombre As ControlesBiblioteca.LabelledInput
+    Friend WithEvents lLibro As Label
+    Friend WithEvents cbLibros As ComboBox
+    Friend WithEvents lUsuario As Label
+    Friend WithEvents cbUsuarios As ComboBox
+    Friend WithEvents lFechaInicio As Label
+    Friend WithEvents lFechaFin As Label
+    Friend WithEvents dtpFechaInicio As DateTimePicker
+    Friend WithEvents dtpFechaFin As DateTimePicker
 End Class

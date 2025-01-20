@@ -32,10 +32,14 @@ Partial Class GestionPrestamoForm
         Me.bAnterior = New System.Windows.Forms.Button()
         Me.bSiguiente = New System.Windows.Forms.Button()
         Me.lblPaginacion = New System.Windows.Forms.Label()
+        Me.tlpFiltro = New System.Windows.Forms.TableLayoutPanel()
+        Me.chbDisponibles = New System.Windows.Forms.CheckBox()
+        Me.chbActivos = New System.Windows.Forms.CheckBox()
         Me.tlpTabla.SuspendLayout()
         Me.tlpGestionPrestamos.SuspendLayout()
         CType(Me.dgvPrestamos, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tlpPaginacion.SuspendLayout()
+        Me.tlpFiltro.SuspendLayout()
         Me.SuspendLayout()
         '
         'tlpTabla
@@ -45,14 +49,16 @@ Partial Class GestionPrestamoForm
         Me.tlpTabla.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
         Me.tlpTabla.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
         Me.tlpTabla.Controls.Add(Me.tlpGestionPrestamos, 0, 0)
-        Me.tlpTabla.Controls.Add(Me.dgvPrestamos, 1, 2)
-        Me.tlpTabla.Controls.Add(Me.tlpPaginacion, 1, 3)
+        Me.tlpTabla.Controls.Add(Me.dgvPrestamos, 1, 3)
+        Me.tlpTabla.Controls.Add(Me.tlpPaginacion, 1, 4)
+        Me.tlpTabla.Controls.Add(Me.tlpFiltro, 1, 2)
         Me.tlpTabla.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlpTabla.Location = New System.Drawing.Point(0, 0)
         Me.tlpTabla.Name = "tlpTabla"
-        Me.tlpTabla.RowCount = 5
+        Me.tlpTabla.RowCount = 6
         Me.tlpTabla.RowStyles.Add(New System.Windows.Forms.RowStyle())
         Me.tlpTabla.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpTabla.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
         Me.tlpTabla.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
         Me.tlpTabla.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
         Me.tlpTabla.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
@@ -106,9 +112,9 @@ Partial Class GestionPrestamoForm
         Me.dgvPrestamos.BackgroundColor = System.Drawing.Color.White
         Me.dgvPrestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPrestamos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvPrestamos.Location = New System.Drawing.Point(83, 101)
+        Me.dgvPrestamos.Location = New System.Drawing.Point(83, 146)
         Me.dgvPrestamos.Name = "dgvPrestamos"
-        Me.dgvPrestamos.Size = New System.Drawing.Size(634, 262)
+        Me.dgvPrestamos.Size = New System.Drawing.Size(634, 222)
         Me.dgvPrestamos.TabIndex = 2
         '
         'tlpPaginacion
@@ -122,7 +128,7 @@ Partial Class GestionPrestamoForm
         Me.tlpPaginacion.Controls.Add(Me.bSiguiente, 3, 0)
         Me.tlpPaginacion.Controls.Add(Me.lblPaginacion, 2, 0)
         Me.tlpPaginacion.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tlpPaginacion.Location = New System.Drawing.Point(83, 369)
+        Me.tlpPaginacion.Location = New System.Drawing.Point(83, 374)
         Me.tlpPaginacion.Name = "tlpPaginacion"
         Me.tlpPaginacion.RowCount = 1
         Me.tlpPaginacion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -160,6 +166,43 @@ Partial Class GestionPrestamoForm
         Me.lblPaginacion.Text = "Label2"
         Me.lblPaginacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
+        'tlpFiltro
+        '
+        Me.tlpFiltro.ColumnCount = 1
+        Me.tlpFiltro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpFiltro.Controls.Add(Me.chbDisponibles, 0, 0)
+        Me.tlpFiltro.Controls.Add(Me.chbActivos, 0, 1)
+        Me.tlpFiltro.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlpFiltro.Location = New System.Drawing.Point(83, 96)
+        Me.tlpFiltro.Name = "tlpFiltro"
+        Me.tlpFiltro.RowCount = 2
+        Me.tlpFiltro.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpFiltro.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpFiltro.Size = New System.Drawing.Size(634, 44)
+        Me.tlpFiltro.TabIndex = 5
+        '
+        'chbDisponibles
+        '
+        Me.chbDisponibles.AutoSize = True
+        Me.chbDisponibles.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.chbDisponibles.Location = New System.Drawing.Point(3, 3)
+        Me.chbDisponibles.Name = "chbDisponibles"
+        Me.chbDisponibles.Size = New System.Drawing.Size(628, 16)
+        Me.chbDisponibles.TabIndex = 0
+        Me.chbDisponibles.Text = "Ver Prestamos anteriores"
+        Me.chbDisponibles.UseVisualStyleBackColor = True
+        '
+        'chbActivos
+        '
+        Me.chbActivos.AutoSize = True
+        Me.chbActivos.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.chbActivos.Location = New System.Drawing.Point(3, 25)
+        Me.chbActivos.Name = "chbActivos"
+        Me.chbActivos.Size = New System.Drawing.Size(628, 16)
+        Me.chbActivos.TabIndex = 1
+        Me.chbActivos.Text = "Ver prestamos activos"
+        Me.chbActivos.UseVisualStyleBackColor = True
+        '
         'GestionPrestamoForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -175,6 +218,8 @@ Partial Class GestionPrestamoForm
         CType(Me.dgvPrestamos, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tlpPaginacion.ResumeLayout(False)
         Me.tlpPaginacion.PerformLayout()
+        Me.tlpFiltro.ResumeLayout(False)
+        Me.tlpFiltro.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -188,4 +233,7 @@ Partial Class GestionPrestamoForm
     Friend WithEvents bAnterior As Button
     Friend WithEvents bSiguiente As Button
     Friend WithEvents lblPaginacion As Label
+    Friend WithEvents tlpFiltro As TableLayoutPanel
+    Friend WithEvents chbDisponibles As CheckBox
+    Friend WithEvents chbActivos As CheckBox
 End Class
