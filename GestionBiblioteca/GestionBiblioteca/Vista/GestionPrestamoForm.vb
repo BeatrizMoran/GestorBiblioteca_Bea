@@ -2,6 +2,7 @@
 
 Public Class GestionPrestamoForm
     Private Sub GestionPrestamoForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
         ActualizarVista()
     End Sub
 
@@ -71,7 +72,7 @@ Public Class GestionPrestamoForm
                     If prestamo.Estado Then
                         estado = "Disponible"
                     Else
-                        estado = "En préstamo"
+                        estado = "En prestamo"
                     End If
                     dgvPrestamos.Rows.Add(prestamo.Id, prestamo.LibroTitulo, prestamo.UsuarioNombre, estado)
                 Next
@@ -155,12 +156,10 @@ Public Class GestionPrestamoForm
     End Sub
 
     ' Función que se llama para actualizar la vista
-    Private Sub ActualizarVista()
-        ' Obtener los filtros de los CheckBoxes
+    Public Sub ActualizarVista()
         Dim filtrarActivos As Boolean = chbActivos.Checked
         Dim filtrarDisponibles As Boolean = chbDisponibles.Checked
 
-        ' Llamar a la función para cargar los préstamos con los filtros seleccionados
         CargarYActualizarPrestamos(filtrarActivos, filtrarDisponibles)
     End Sub
 End Class

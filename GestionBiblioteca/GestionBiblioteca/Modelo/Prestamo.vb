@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SQLite
+Imports System.Globalization
 
 Public Class Prestamo
 
@@ -193,6 +194,27 @@ Public Class Prestamo
             Throw New Exception("Error al obtener los préstamos: " & ex.Message)
         End Try
     End Function
+
+
+    Public Sub ActualizarPrestamo()
+        Try
+            Dim Cmd As New SQLiteCommand
+            Dim Sql As String = "UPDATE Prestamos SET Id_Libro = @Id_Libro, Id_Usuario = @Id_Usuario, Fecha_Inicio = @FechaInicio, Fecha_Fin = @FechaFin, Disponible = @Disponible WHERE Id = @Id"
+
+            Cmd.CommandText = Sql
+
+            Cmd.Parameters.AddWithValue("@Id_Libro", IdLibro)
+            Cmd.Parameters.AddWithValue("@Id_Usuario", IdUsuario)
+            Cmd.Parameters.Add("@FechaInicio", DbType.String).Value = FechaInicio
+            Cmd.Parameters.Add("@FechaFin", DbType.String).Value = FechaFin
+            Cmd.Parameters.AddWithValue("@Disponible", If(Disponible, 1, 0))
+            Cmd.Parameters.AddWithValue("@Id", Id)
+
+            SQLLite.Ejecuta(My.Settings.conexion, Cmd)
+        Catch ex As Exception
+            Throw New Exception("Error al actualizar el préstamo: " & ex.Message)
+        End Try
+    End Sub
 
 
 End Class

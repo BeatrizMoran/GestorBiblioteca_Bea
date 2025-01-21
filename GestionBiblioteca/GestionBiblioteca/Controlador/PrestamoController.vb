@@ -24,9 +24,11 @@
 
     End Sub
 
-    Public Sub ActualizarPrestamo(id As Integer)
+    Public Sub ActualizarPrestamo(idPrestamo As Integer, idLibro As Integer, idUsuario As Integer, fechaInicio As Date, fechaFIn As Date, disponible As Boolean)
         Try
-            '  Prestamo.ActualizarPrestamo()
+            Dim prestamo As Prestamo = New Prestamo(idLibro, idUsuario, fechaInicio, fechaFIn, disponible)
+            prestamo.Id = idPrestamo
+            prestamo.ActualizarPrestamo()
         Catch ex As Exception
             Throw New Exception("Error al intentar actualizar el prestamo: " & ex.Message)
 

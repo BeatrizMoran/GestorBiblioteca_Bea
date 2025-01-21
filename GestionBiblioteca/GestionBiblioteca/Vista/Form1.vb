@@ -261,11 +261,14 @@ Public Class Form1
 
         Dim nuevoFormulario As Form = Nothing
 
+
+
         Select Case pagina
             Case "gestion"
                 If gestionPrestamos Is Nothing OrElse gestionPrestamos.IsDisposed Then
                     gestionPrestamos = New GestionPrestamoForm()
-
+                Else
+                    gestionPrestamos.ActualizarVista()
                 End If
                 nuevoFormulario = gestionPrestamos
             Case "crear"

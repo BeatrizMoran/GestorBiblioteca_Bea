@@ -1,4 +1,5 @@
 ﻿Imports System.ComponentModel
+Imports System.Globalization
 Imports GestionBiblioteca.DTOs
 
 Public Class AgregarPrestamoForm
@@ -13,9 +14,42 @@ Public Class AgregarPrestamoForm
     End Sub
 
     Private Sub AgregarPrestamoForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        pEstado.Visible = False
         If opcion = "editar" Then
-            'liEstado.InputText = datosPrestamo.Estado
+            pEstado.Visible = True
+
+            InicializarDatosPrestamo()
         End If
+    End Sub
+
+    Private Sub InicializarDatosPrestamo()
+        For Each item As KeyValuePair(Of Integer, String) In cbLibros.Items
+            If item.Value = datosPrestamo.LibroTitulo Then
+                cbLibros.SelectedItem = item
+                Exit For
+            End If
+        Next
+        For Each item As KeyValuePair(Of Integer, String) In cbUsuarios.Items
+            If item.Value = datosPrestamo.UsuarioNombre Then
+                cbUsuarios.SelectedItem = item
+                Exit For
+            End If
+        Next
+
+        dtpFechaInicio.Value = DateTime.ParseExact(datosPrestamo.FechaInicio, "dd/MM/yyyy", CultureInfo.InvariantCulture)
+        dtpFechaFin.Value = DateTime.ParseExact(datosPrestamo.FechaFin, "dd/MM/yyyy", CultureInfo.InvariantCulture)
+
+
+
+        For Each item As KeyValuePair(Of Integer, String) In cbEstado.Items
+            If item.Value = datosPrestamo.Estado Then
+                cbEstado.SelectedItem = item
+                Exit For
+            End If
+        Next
+
+
+
     End Sub
 
     Private Sub AgregarPrestamoForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -52,22 +86,33 @@ Public Class AgregarPrestamoForm
             cbLibros.DisplayMember = "Value"
             cbLibros.ValueMember = "Key"
 
-           
+
 
             'usuarios:
             cbUsuarios.Items.Clear()
 
             cbUsuarios.Items.Add(New KeyValuePair(Of Integer, String)(-1, "Seleccione un Usuario"))
 
+            Dim nombre = ""
+
             For Each usuario In listaUsuarios
-                cbUsuarios.Items.Add(New KeyValuePair(Of Integer, String)(usuario.Id, usuario.Nombre))
+                nombre = usuario.Nombre & " " & usuario.Apellido1
+                cbUsuarios.Items.Add(New KeyValuePair(Of Integer, String)(usuario.Id, nombre))
             Next
 
             cbUsuarios.DisplayMember = "Value"
             cbUsuarios.ValueMember = "Key"
 
+            'ESTADO
+
+            cbEstado.Items.Add(New KeyValuePair(Of Integer, String)(1, "Disponible"))
+            cbEstado.Items.Add(New KeyValuePair(Of Integer, String)(0, "En prestamo"))
+
+            cbEstado.DisplayMember = "Value"
+            cbEstado.ValueMember = "Key"
+
         Catch ex As Exception
-            MessageBox.Show("Erro al cargar los libros: " & ex.Message)
+            MessageBox.Show("Error al cargar los libros: " & ex.Message)
         End Try
     End Sub
     Private Sub RestaurarColores(sender As Object, e As EventArgs)
@@ -80,29 +125,32 @@ Public Class AgregarPrestamoForm
 
     Private Sub bAceptar_Click(sender As Object, e As EventArgs) Handles bAceptar.Click
         Try
-            ' Validar campos
             ValidarFormulario()
 
-            ' Obtener el ID del libro seleccionado
             Dim libroId As Integer = CType(cbLibros.SelectedItem, KeyValuePair(Of Integer, String)).Key
             Dim usuarioId As Integer = CType(cbUsuarios.SelectedItem, KeyValuePair(Of Integer, String)).Key
-
-
-
-
 
             Dim fechaInicio As String = dtpFechaInicio.Value.ToString("dd/MM/yyyy")
             Dim fechaFin As String = dtpFechaFin.Value.ToString("dd/MM/yyyy")
 
-            ' Llamar al controlador para crear el préstamo
-            MessageBox.Show(libroId)
-            controladorPrestamo.CrearPrestamo(libroId, usuarioId, fechaInicio, fechaFin, False)
+            Dim estado As Integer = CType(cbEstado.SelectedItem, KeyValuePair(Of Integer, String)).Key
 
-            ' Confirmar éxito
-            MessageBox.Show("Préstamo agregado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
 
-            ' Cerrar el formulario actual
-            'Me.Close()
+            If opcion = "editar" Then
+                MessageBox.Show(estado)
+                controladorPrestamo.ActualizarPrestamo(datosPrestamo.Id, libroId, usuarioId, fechaInicio, fechaFin, estado)
+                MessageBox.Show("Préstamo Actualizado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            Else
+                controladorPrestamo.CrearPrestamo(libroId, usuarioId, fechaInicio, fechaFin, False)
+
+                MessageBox.Show("Préstamo agregado con éxito.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information)
+
+            End If
+
+            CType(Me.MdiParent, Form1).AbrirPaginaPrestamos("gestion")
+
+            Me.Close()
 
         Catch ex As Exception
             ' Mostrar el mensaje de error
@@ -111,10 +159,8 @@ Public Class AgregarPrestamoForm
     End Sub
 
     Public Sub CambiarColorError(campo As Control)
-
-
         campo.BackColor = Color.Red
-            campo.ForeColor = Color.White
+        campo.ForeColor = Color.White
 
     End Sub
     Private Sub ValidarFormulario()
@@ -131,15 +177,17 @@ Public Class AgregarPrestamoForm
 
         End If
 
-        If dtpFechaInicio.Value.Date < DateTime.Now.Date Then
-            errores.Add("La fecha de inicio no puede ser anterior a hoy.")
-            CambiarColorError(dtpFechaInicio)
-        End If
+        If opcion IsNot "editar" Then
+            If dtpFechaInicio.Value.Date < DateTime.Now.Date Then
+                errores.Add("La fecha de inicio no puede ser anterior a hoy.")
+                CambiarColorError(dtpFechaInicio)
+            End If
 
-        If dtpFechaFin.Value.Date <= dtpFechaInicio.Value.Date Then
-            errores.Add("La fecha de fin debe ser posterior a la fecha de inicio.")
-            CambiarColorError(dtpFechaFin)
+            If dtpFechaFin.Value.Date <= dtpFechaInicio.Value.Date Then
+                errores.Add("La fecha de fin debe ser posterior a la fecha de inicio.")
+                CambiarColorError(dtpFechaFin)
 
+            End If
         End If
 
         If errores.Any() Then
@@ -148,13 +196,13 @@ Public Class AgregarPrestamoForm
     End Sub
 
     Private Sub dtpFechaInicio_ValueChanged(sender As Object, e As EventArgs) Handles dtpFechaInicio.ValueChanged
-        ' Obtener la fecha seleccionada en el DateTimePicker de Fecha de Inicio
         Dim fechaInicio As DateTime = dtpFechaInicio.Value
 
         ' Sumar un mes a la fecha de inicio
         Dim fechaFin As DateTime = fechaInicio.AddMonths(1)
 
-        ' Asignar la nueva fecha al DateTimePicker de Fecha de Fin
         dtpFechaFin.Value = fechaFin
     End Sub
+
+
 End Class
