@@ -204,7 +204,7 @@ Public Class Form1
 
 
     End Sub
-    Public Sub AbrirPaginaInformacion(pagina As String, Optional usuario As UsuarioDTO = Nothing, Optional libro As LibroDTO = Nothing)
+    Public Sub AbrirPaginaInformacion(pagina As String, Optional usuario As UsuarioDTO = Nothing, Optional libro As LibroDTO = Nothing, Optional prestamo As PrestamoDTO = Nothing)
         ' Guardar el formulario activo en el historial
         If formularioActual IsNot Nothing Then
             Console.WriteLine("Página anterior: " & formularioActual.Name)
@@ -222,7 +222,6 @@ Public Class Form1
                 End If
                 informacionFOrm.tipoPagina = pagina
                 informacionFOrm.datosUsuario = usuario
-                nuevoFormulario = informacionFOrm
             Case "libro"
                 If informacionFOrm Is Nothing OrElse informacionFOrm.IsDisposed Then
                     informacionFOrm = New InformacionUsuarioForm()
@@ -230,8 +229,17 @@ Public Class Form1
                 End If
                 informacionFOrm.tipoPagina = pagina
                 informacionFOrm.datosLibro = libro
-                nuevoFormulario = informacionFOrm
+            Case "prestamo"
+                If informacionFOrm Is Nothing OrElse informacionFOrm.IsDisposed Then
+                    informacionFOrm = New InformacionUsuarioForm()
+
+                End If
+                informacionFOrm.tipoPagina = pagina
+                informacionFOrm.datosPrestamo = prestamo
         End Select
+        nuevoFormulario = informacionFOrm
+
+
 
         ' Configurar y mostrar el nuevo formulario
         If nuevoFormulario IsNot Nothing Then

@@ -6,6 +6,7 @@ Public Class InformacionUsuarioForm
     Dim mostrado As Boolean = False
     Public datosUsuario As UsuarioDTO
     Public datosLibro As LibroDTO
+    Public datosPrestamo As PrestamoDTO
 
     Private Sub InformacionUsuarioForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         rtbSinopsis.Height = 100
@@ -18,7 +19,13 @@ Public Class InformacionUsuarioForm
                 tlpPrestamo.Visible = False
 
                 pbImagen.Image = Image.FromFile("images\usuarioInfo.png")
+                tlpInformacion.RowStyles(5).SizeType = SizeType.AutoSize
+
                 InicializarDatosUsuarios()
+                'restaurar fila prestamos'
+                RestaurarAlturaFila(5)
+                'restaurar fila libros'
+                RestaurarAlturaFila(4)
 
             Case "libro"
                 tlpLibro.Visible = True
@@ -26,7 +33,13 @@ Public Class InformacionUsuarioForm
                 tlpPrestamo.Visible = False
 
                 pbImagen.Image = Image.FromFile("images\libroInfo.png")
+
                 InicializarDatosLibros()
+                'restaurar fila prestamos'
+                RestaurarAlturaFila(5)
+
+                AjustarFila(4, 200)
+
 
             Case "prestamo"
                 tlpPrestamo.Visible = True
@@ -34,10 +47,25 @@ Public Class InformacionUsuarioForm
                 tlpUsuario.Visible = False
                 InicializarDatosPrestamo()
 
+                'fila 6 indice 5
+                AjustarFila(5, 200)
+                'restaurar fila libros'
+                RestaurarAlturaFila(4)
+
+
                 pbImagen.Image = Image.FromFile("images\prestamoInfo.png")
         End Select
 
     End Sub
+    Private Sub AjustarFila(indexFila As Integer, altura As Integer)
+        tlpInformacion.RowStyles(indexFila).Height = altura
+        tlpInformacion.RowStyles(indexFila).SizeType = SizeType.Absolute
+    End Sub
+
+    Private Sub RestaurarAlturaFila(indexFila)
+        tlpInformacion.RowStyles(indexFila).SizeType = SizeType.AutoSize
+    End Sub
+
 
     Private Sub InicializarDatosUsuarios()
         gbDatos.Text = "Datos del Usuario"
@@ -64,6 +92,14 @@ Public Class InformacionUsuarioForm
 
     Private Sub InicializarDatosPrestamo()
         gbDatos.Text = "Datos del Prestamo"
+        lTitulo.Text = "Prestamo"
+        lTitulo2.Text = ""
+        lTituloLibro.Text = datosPrestamo.LibroTitulo
+        lNombreUsuario.Text = datosPrestamo.UsuarioNombre
+        lFechaInicio.Text = datosPrestamo.FechaInicio
+        lFechaFin.Text = datosPrestamo.FechaFin
+        lEstadoPrestamo.Text = datosPrestamo.Estado
+
     End Sub
 
     Private Sub bSalir_Click(sender As Object, e As EventArgs)
@@ -144,4 +180,6 @@ Public Class InformacionUsuarioForm
     Private Sub bSalir_Click_1(sender As Object, e As EventArgs) Handles bSalir.Click
         CType(Me.MdiParent, Form1).VolverAtras()
     End Sub
+
+
 End Class

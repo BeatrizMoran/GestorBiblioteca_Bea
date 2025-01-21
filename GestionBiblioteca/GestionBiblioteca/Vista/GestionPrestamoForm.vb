@@ -125,6 +125,7 @@ Public Class GestionPrestamoForm
                 EditarPrestamo(id)
             ElseIf dgvPrestamos.Columns(e.ColumnIndex).Name = "Ver" Then
                 Dim id As Integer = Convert.ToInt32(dgvPrestamos.Rows(e.RowIndex).Cells("Id").Value)
+                VerInformacion(id)
             ElseIf dgvPrestamos.Columns(e.ColumnIndex).Name = "Borrar" Then
                 Dim id As Integer = Convert.ToInt32(dgvPrestamos.Rows(e.RowIndex).Cells("Id").Value)
             End If
@@ -141,6 +142,11 @@ Public Class GestionPrestamoForm
         End Try
 
     End Sub
+    Private Sub VerInformacion(id As Integer)
+        Dim prestamo As PrestamoDTO = controlador.BuscarPrestamo(id)
+        CType(Me.MdiParent, Form1).AbrirPaginaInformacion("prestamo", Nothing, Nothing, prestamo)
+    End Sub
+
 
     Private Sub bCrearPrestamo_Click(sender As Object, e As EventArgs) Handles bCrearPrestamo.Click
         Try
@@ -161,5 +167,10 @@ Public Class GestionPrestamoForm
         Dim filtrarDisponibles As Boolean = chbDisponibles.Checked
 
         CargarYActualizarPrestamos(filtrarActivos, filtrarDisponibles)
+    End Sub
+
+    Private Sub GestionPrestamoForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        CType(Me.MdiParent, Form1).OcultarMostrarBotonVolver()
+
     End Sub
 End Class
