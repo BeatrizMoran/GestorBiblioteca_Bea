@@ -183,10 +183,12 @@ Public Class Prestamo
                 .Id = Convert.ToInt32(row("Id")),
                 .LibroTitulo = row("LibroTitulo").ToString(),
                 .UsuarioNombre = row("UsuarioNombre").ToString(),
-                .Estado = Convert.ToBoolean(row("Estado"))
+                .Estado = Convert.ToBoolean(row("Estado")),
+                .FechaFin = row("Fecha_Fin").ToString()
             }
                 prestamos.Add(prestamo)
             Next
+
 
             Return prestamos
 

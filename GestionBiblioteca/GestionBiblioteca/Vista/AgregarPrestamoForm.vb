@@ -55,7 +55,8 @@ Public Class AgregarPrestamoForm
     End Sub
 
     Private Sub AgregarPrestamoForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        cbEstado.Items.Add(New KeyValuePair(Of Integer, String)(1, "Disponible"))
+        cbEstado.Items.Add(New KeyValuePair(Of Integer, String)(0, "En prestamo"))
     End Sub
 
     Private Sub InicializarDatosCombo()
@@ -111,8 +112,7 @@ Public Class AgregarPrestamoForm
 
             'ESTADO
 
-            cbEstado.Items.Add(New KeyValuePair(Of Integer, String)(1, "Disponible"))
-            cbEstado.Items.Add(New KeyValuePair(Of Integer, String)(0, "En prestamo"))
+
 
             cbEstado.DisplayMember = "Value"
             cbEstado.ValueMember = "Key"

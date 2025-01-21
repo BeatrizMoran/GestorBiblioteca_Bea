@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SQLite
+Imports System.Globalization
 
 Public Class GestionPrestamoForm
     Private Sub GestionPrestamoForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -31,6 +32,7 @@ Public Class GestionPrestamoForm
 
             ' Crear las columnas de la tabla
             dgvPrestamos.Columns.Add("Id", "ID")
+            'ocultar columna id
             dgvPrestamos.Columns("id").Visible = False
 
             dgvPrestamos.Columns.Add("Libro", "Libro")
@@ -73,8 +75,22 @@ Public Class GestionPrestamoForm
                         estado = "Disponible"
                     Else
                         estado = "En prestamo"
+
                     End If
-                    dgvPrestamos.Rows.Add(prestamo.Id, prestamo.LibroTitulo, prestamo.UsuarioNombre, estado)
+                    Dim rowIndex As Integer = dgvPrestamos.Rows.Add(prestamo.Id, prestamo.LibroTitulo, prestamo.UsuarioNombre, estado)
+                    Dim estadoCell As DataGridViewCell = dgvPrestamos.Rows(rowIndex).Cells("Estado") ' Acceso a la celda Estado
+
+                    Dim fechaFin As DateTime = DateTime.ParseExact(prestamo.FechaFin, "dd/MM/yyyy", CultureInfo.InvariantCulture)
+
+
+                    If estado = "En prestamo" AndAlso fechaFin < DateTime.Now Then
+                        estadoCell.Style.ForeColor = Color.Red ' Rojo para En préstamo vencido
+                    ElseIf estado = "En prestamo" Then
+                        estadoCell.Style.ForeColor = Color.Orange ' Naranja para En préstamo no vencido
+                    Else
+                        estadoCell.Style.ForeColor = Color.Green ' Verde para Disponible
+                    End If
+
                 Next
             Else
                 MessageBox.Show("No hay prestamos disponibles", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
