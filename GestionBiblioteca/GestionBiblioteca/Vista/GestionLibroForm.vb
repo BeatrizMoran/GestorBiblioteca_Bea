@@ -104,7 +104,7 @@ Public Class GestionLibroForm
         Try
             Dim respuesta As DialogResult = MessageBox.Show("¿Seguro que quieres eliminar el libro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
-            If respuesta.Yes Then
+            If respuesta = DialogResult.Yes Then
                 controlador.BorrarLibro(id)
                 MessageBox.Show("Libro borrado correctamente", "Libro borrado", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 CargarLibros()

@@ -128,6 +128,7 @@ Public Class GestionPrestamoForm
                 VerInformacion(id)
             ElseIf dgvPrestamos.Columns(e.ColumnIndex).Name = "Borrar" Then
                 Dim id As Integer = Convert.ToInt32(dgvPrestamos.Rows(e.RowIndex).Cells("Id").Value)
+                BorrarPrestamo(id)
             End If
         End If
     End Sub
@@ -143,8 +144,28 @@ Public Class GestionPrestamoForm
 
     End Sub
     Private Sub VerInformacion(id As Integer)
-        Dim prestamo As PrestamoDTO = controlador.BuscarPrestamo(id)
-        CType(Me.MdiParent, Form1).AbrirPaginaInformacion("prestamo", Nothing, Nothing, prestamo)
+        Try
+            Dim prestamo As PrestamoDTO = controlador.BuscarPrestamo(id)
+            CType(Me.MdiParent, Form1).AbrirPaginaInformacion("prestamo", Nothing, Nothing, prestamo)
+        Catch ex As Exception
+            MessageBox.Show("Error al consultar el préstamo: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
+    End Sub
+
+    Public Sub BorrarPrestamo(id)
+        Try
+            Dim respuesta As DialogResult = MessageBox.Show("¿Seguro que quieres eliminar el prestamo?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+
+            If respuesta = DialogResult.Yes Then
+                controlador.BorrarPrestamo(id)
+                MessageBox.Show("Prestamo borrado correctamente", "Prestamo borrado", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                ActualizarVista()
+            End If
+
+
+        Catch ex As Exception
+            MessageBox.Show("Error al intentar borrar el préstamo: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
 

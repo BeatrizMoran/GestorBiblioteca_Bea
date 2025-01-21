@@ -16,6 +16,7 @@ Public Class AgregarPrestamoForm
 
     Private Sub AgregarPrestamoForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         pEstado.Visible = False
+        InicializarDatosCombo()
         If opcion = "editar" Then
             pEstado.Visible = True
 
@@ -54,6 +55,10 @@ Public Class AgregarPrestamoForm
     End Sub
 
     Private Sub AgregarPrestamoForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
+
+    Private Sub InicializarDatosCombo()
         Try
 
             For Each control As Control In tlpFormulario.Controls
@@ -113,7 +118,7 @@ Public Class AgregarPrestamoForm
             cbEstado.ValueMember = "Key"
 
         Catch ex As Exception
-            MessageBox.Show("Error al cargar los libros: " & ex.Message)
+            MessageBox.Show("Error al cargar los datos: " & ex.Message)
         End Try
     End Sub
     Private Sub RestaurarColores(sender As Object, e As EventArgs)

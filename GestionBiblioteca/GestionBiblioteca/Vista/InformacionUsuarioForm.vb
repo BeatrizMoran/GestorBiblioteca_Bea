@@ -144,6 +144,10 @@ Public Class InformacionUsuarioForm
                 Case "libro"
                     GestionLibroForm.LibroControl_ClickBorrar(datosLibro.Id)
                     CType(Me.MdiParent, Form1).AbrirLibrosForm("gestion")
+                Case "prestamo"
+                    GestionPrestamoForm.BorrarPrestamo(datosPrestamo.Id)
+                    CType(Me.MdiParent, Form1).AbrirPaginaPrestamos("gestion")
+
 
             End Select
             Dim formHistory = CType(Me.MdiParent, Form1).formHistory

@@ -217,4 +217,17 @@ Public Class Prestamo
     End Sub
 
 
+    Public Shared Sub BorrarPrestamo(id As Integer)
+        Try
+            Dim cmd As New SQLiteCommand
+            Dim Sql As String = "DELETE FROM Prestamos where Id=@Id"
+            cmd.CommandText = Sql
+
+            cmd.Parameters.Add("@Id", DbType.Int32).Value = id
+
+            SQLLite.Ejecuta(My.Settings.conexion, cmd)
+        Catch ex As Exception
+            Throw New Exception("Error al borrar el prestamo: " & ex.Message)
+        End Try
+    End Sub
 End Class
