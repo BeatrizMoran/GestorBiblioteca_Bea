@@ -11,7 +11,6 @@ C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestionBiblioteca\GestionBib
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.xml
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.pdb
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestionBiblioteca\GestionBiblioteca\obj\Debug\GestionBiblioteca.DashboardForm.resources
-C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\bin\Debug\Biblioteca.db
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\bin\Debug\GestionBiblioteca.exe.config
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\bin\Debug\GestionBiblioteca.exe
 C:\Users\beatr\Documents\DAM\DI\Proyecto_Biblioteca\GestorBiblioteca_Bea\GestionBiblioteca\GestionBiblioteca\bin\Debug\GestionBiblioteca.pdb

@@ -11,17 +11,38 @@ Public Class GestionLibroForm
 
 
 
+
+    End Sub
+
+    Private Sub CambiarEstadoLibro(id As Integer, disponible As Boolean)
+        Try
+            If disponible Then
+                Dim respuesta As DialogResult = MessageBox.Show("¿Seguro que quieres marcar como NO disponible el libro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                If respuesta = DialogResult.Yes Then
+                    controlador.ActualizarEstadoLibro(id, False)
+
+                End If
+            Else
+                Dim respuesta As DialogResult = MessageBox.Show("¿Seguro que quieres marcar como DISPONIBLE el libro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                If respuesta = DialogResult.Yes Then
+                    controlador.ActualizarEstadoLibro(id, True)
+
+                End If
+            End If
+            MessageBox.Show("Estado actualizado correctamente", "Estado actualizado", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            CargarLibros()
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Public Function CargarLibros()
         Try
-            ' Obtener la lista de DTOs desde el controlador
             Dim libros As List(Of LibroDTO) = controlador.ObtenerLibros()
 
-            ' Limpiar el panel antes de cargar los nuevos controles
             panelLibros.Controls.Clear()
 
-            ' Configurar el TableLayoutPanel para organizar los controles en filas y columnas
             Dim layout As New TableLayoutPanel()
             layout.Dock = DockStyle.Top ' Para evitar que ocupe todo el espacio vertical
             layout.AutoSize = True
@@ -42,6 +63,8 @@ Public Class GestionLibroForm
             ' Crear controles para cada libro y configurarlos con los datos del DTO
             Dim row As Integer = 0
             Dim col As Integer = 0
+            Dim esCargando As Boolean = True
+
             For Each libroDTO In libros
                 ' Crear una instancia del control para cada libro
                 Dim libroControl As New LibroControl()
@@ -50,9 +73,14 @@ Public Class GestionLibroForm
                 libroControl.Titulo = libroDTO.Titulo
                 libroControl.Escritor = libroDTO.Escritor
                 libroControl.AnyoEdicion = libroDTO.AnyoEdicion
+                If libroDTO.Disponible = True Then
+                    libroControl.Estado = "Disponible"
+                Else
+                    libroControl.Estado = "En prestamo"
+                End If
                 libroControl.Dock = DockStyle.Fill
 
-
+                ' Deshabilitar el evento temporalmente antes de actualizar el estado
 
                 ' Agregar eventos para los botones de acción
                 AddHandler libroControl.ClickEditar, Sub()
@@ -67,6 +95,15 @@ Public Class GestionLibroForm
                                                          LibroControl_ClickBorrar(libroDTO.Id)
                                                      End Sub
 
+                AddHandler libroControl.ClickCambiarEstado, Sub()
+                                                                If Not esCargando Then
+                                                                    CambiarEstadoLibro(libroDTO.Id, libroDTO.Disponible)
+                                                                End If
+                                                            End Sub
+
+                ' Aquí actualizamos el estado sin disparar el evento
+                libroControl.Disponible = libroDTO.Disponible ' Esto no dispara el evento
+
                 ' Agregar el control a la posición correspondiente en la cuadrícula
                 layout.Controls.Add(libroControl, col, row)
 
@@ -78,8 +115,10 @@ Public Class GestionLibroForm
                 End If
             Next
 
+            esCargando = False
             ' Agregar el TableLayoutPanel al panel principal
             panelLibros.Controls.Add(layout)
+
         Catch ex As Exception
             ' Manejo de errores en caso de que algo falle al cargar los libros
             MessageBox.Show("Error al cargar los libros: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

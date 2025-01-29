@@ -16,7 +16,7 @@
 
     Public Sub CrearPrestamo(idLibro As Integer, idUsuario As Integer, fechaInicio As Date, fechaFIn As Date, disponible As Boolean)
         Try
-            Dim prestamo As Prestamo = New Prestamo(idLibro, idUsuario, fechaInicio, fechaFIn, disponible)
+            Dim prestamo As Prestamo = New Prestamo(idLibro, idUsuario, fechaInicio, fechaFIn)
             prestamo.CrearPrestamo()
         Catch ex As Exception
             Throw New Exception("Error al intentar crear el prestamo: " & ex.Message)
@@ -26,7 +26,7 @@
 
     Public Sub ActualizarPrestamo(idPrestamo As Integer, idLibro As Integer, idUsuario As Integer, fechaInicio As Date, fechaFIn As Date, disponible As Boolean)
         Try
-            Dim prestamo As Prestamo = New Prestamo(idLibro, idUsuario, fechaInicio, fechaFIn, disponible)
+            Dim prestamo As Prestamo = New Prestamo(idLibro, idUsuario, fechaInicio, fechaFIn)
             prestamo.Id = idPrestamo
             prestamo.ActualizarPrestamo()
         Catch ex As Exception

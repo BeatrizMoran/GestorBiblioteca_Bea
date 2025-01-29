@@ -7,6 +7,8 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "GestionBiblioteca", "Gestio
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "ControlesBiblioteca", "..\ControlesBiblioteca\ControlesBiblioteca\ControlesBiblioteca.vbproj", "{61389190-8AE5-4B06-A0FA-2F4CA152A40E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{70323C0B-14DA-4526-969C-3A9E2F3D4BA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

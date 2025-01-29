@@ -3,6 +3,26 @@
   "WorkspaceRootPath": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\vista\\gestionlibroform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\vista\\gestionlibroform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\modelo\\libro.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\modelo\\libro.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\controlador\\librocontroller.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\controlador\\librocontroller.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\vista\\gestionprestamoform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\vista\\gestionprestamoform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|c:\\users\\beatr\\documents\\dam\\di\\proyecto_biblioteca\\gestorbiblioteca_bea\\gestionbiblioteca\\gestionbiblioteca\\vista\\gestionlibroform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\vista\\gestionlibroform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\vista\\agregarprestamoform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\vista\\agregarprestamoform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
@@ -11,15 +31,15 @@
       "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\vista\\agregarprestamoform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\vista\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\vista\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\vista\\gestionprestamoform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\vista\\gestionprestamoform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\modelo\\prestamo.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\dtos\\librodto .vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\dtos\\librodto .vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|c:\\users\\beatr\\documents\\dam\\di\\proyecto_biblioteca\\gestorbiblioteca_bea\\gestionbiblioteca\\gestionbiblioteca\\modelo\\prestamo.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\modelo\\prestamo.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
@@ -27,32 +47,28 @@
       "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\controlador\\prestamocontroller.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\vista\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\vista\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\dtos\\prestamodto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\dtos\\prestamodto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\vista\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\vista\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\vista\\informacionusuarioform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\vista\\informacionusuarioform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\vista\\gestionprestamoform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\vista\\gestionprestamoform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\vista\\gestionlibroform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\vista\\gestionlibroform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|c:\\users\\beatr\\documents\\dam\\di\\proyecto_biblioteca\\gestorbiblioteca_bea\\gestionbiblioteca\\gestionbiblioteca\\vista\\informacionusuarioform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\vista\\informacionusuarioform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\vista\\informacionusuarioform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\vista\\usuariosform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\vista\\usuariosform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\vista\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\vista\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|c:\\users\\beatr\\documents\\dam\\di\\proyecto_biblioteca\\gestorbiblioteca_bea\\gestionbiblioteca\\gestionbiblioteca\\modelo\\usuario.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\modelo\\usuario.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\vista\\agregarlibroform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -67,14 +83,6 @@
       "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\controlador\\usuariocontroller.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\dtos\\prestamodto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\dtos\\prestamodto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\modelo\\sqllite.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\modelo\\sqllite.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\vista\\dashboardform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
       "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\vista\\dashboardform.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
     },
@@ -85,18 +93,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\vista\\agregarusuarioform .vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\vista\\agregarusuarioform .vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\modelo\\libro.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\modelo\\libro.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\controlador\\librocontroller.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\controlador\\librocontroller.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\dtos\\librodto .vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|solutionrelative:gestionbiblioteca\\dtos\\librodto .vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0AA3EE16-A1C1-4C89-89F0-17DB48E6B646}|GestionBiblioteca\\GestionBiblioteca.vbproj|C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\gestionbiblioteca\\dtos\\usuariodto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
@@ -110,7 +106,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
@@ -120,15 +116,14 @@
               "RelativeDocumentMoniker": "GestionBiblioteca\\Vista\\Form1.vb",
               "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\Form1.vb",
               "RelativeToolTip": "GestionBiblioteca\\Vista\\Form1.vb",
-              "ViewState": "AgIAAAMBAAAAAAAAAAAtwAUBAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-01-09T10:13:43.345Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 16,
               "Title": "UsuariosForm.vb [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\UsuariosForm.vb",
               "RelativeDocumentMoniker": "GestionBiblioteca\\Vista\\UsuariosForm.vb",
@@ -140,7 +135,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 13,
               "Title": "Form1.vb [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\Form1.vb",
               "RelativeDocumentMoniker": "GestionBiblioteca\\Vista\\Form1.vb",
@@ -148,12 +143,11 @@
               "RelativeToolTip": "GestionBiblioteca\\Vista\\Form1.vb [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-01-09T09:44:54.441Z",
-              "IsPinned": true,
-              "EditorCaption": " [Dise\u00F1o]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "AgregarPrestamoForm.vb [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\AgregarPrestamoForm.vb",
               "RelativeDocumentMoniker": "GestionBiblioteca\\Vista\\AgregarPrestamoForm.vb",
@@ -166,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "GestionPrestamoForm.vb [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\GestionPrestamoForm.vb",
               "RelativeDocumentMoniker": "GestionBiblioteca\\Vista\\GestionPrestamoForm.vb",
@@ -187,51 +181,65 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "GestionPrestamoForm.vb",
-              "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\GestionPrestamoForm.vb",
-              "RelativeDocumentMoniker": "GestionBiblioteca\\Vista\\GestionPrestamoForm.vb",
-              "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\GestionPrestamoForm.vb",
-              "RelativeToolTip": "GestionBiblioteca\\Vista\\GestionPrestamoForm.vb",
-              "ViewState": "AgIAABEAAAAAAAAAAAAlwCcAAAAsAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "GestionLibroForm.vb",
+              "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\GestionLibroForm.vb",
+              "RelativeDocumentMoniker": "GestionBiblioteca\\Vista\\GestionLibroForm.vb",
+              "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\GestionLibroForm.vb",
+              "RelativeToolTip": "GestionBiblioteca\\Vista\\GestionLibroForm.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-17T10:03:46.205Z",
+              "WhenOpened": "2025-01-21T12:44:51.087Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "InformacionUsuarioForm.vb [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\InformacionUsuarioForm.vb",
-              "RelativeDocumentMoniker": "GestionBiblioteca\\Vista\\InformacionUsuarioForm.vb",
-              "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\InformacionUsuarioForm.vb [Dise\u00F1o]",
-              "RelativeToolTip": "GestionBiblioteca\\Vista\\InformacionUsuarioForm.vb [Dise\u00F1o]",
+              "DocumentIndex": 8,
+              "Title": "LibroDTO .vb",
+              "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\DTOs\\LibroDTO .vb",
+              "RelativeDocumentMoniker": "GestionBiblioteca\\DTOs\\LibroDTO .vb",
+              "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\DTOs\\LibroDTO .vb",
+              "RelativeToolTip": "GestionBiblioteca\\DTOs\\LibroDTO .vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-15T12:42:14.32Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2025-01-15T10:15:36.584Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Libro.vb",
+              "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Modelo\\Libro.vb",
+              "RelativeDocumentMoniker": "GestionBiblioteca\\Modelo\\Libro.vb",
+              "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Modelo\\Libro.vb",
+              "RelativeToolTip": "GestionBiblioteca\\Modelo\\Libro.vb",
+              "ViewState": "AgIAAIAAAAAAAAAAAADgv5wAAAA+AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-11T10:14:47.143Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LibroController.vb",
+              "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Controlador\\LibroController.vb",
+              "RelativeDocumentMoniker": "GestionBiblioteca\\Controlador\\LibroController.vb",
+              "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Controlador\\LibroController.vb",
+              "RelativeToolTip": "GestionBiblioteca\\Controlador\\LibroController.vb",
+              "ViewState": "AgIAADAAAAAAAAAAAAArwEcAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-14T11:27:35.549Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "PrestamoController.vb",
-              "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Controlador\\PrestamoController.vb",
-              "RelativeDocumentMoniker": "GestionBiblioteca\\Controlador\\PrestamoController.vb",
-              "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Controlador\\PrestamoController.vb",
-              "RelativeToolTip": "GestionBiblioteca\\Controlador\\PrestamoController.vb",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAtwCYAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-17T09:42:34.624Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
               "Title": "AgregarPrestamoForm.vb",
               "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\AgregarPrestamoForm.vb",
               "RelativeDocumentMoniker": "GestionBiblioteca\\Vista\\AgregarPrestamoForm.vb",
               "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\AgregarPrestamoForm.vb",
               "RelativeToolTip": "GestionBiblioteca\\Vista\\AgregarPrestamoForm.vb",
-              "ViewState": "AgIAACEAAAAAAAAAAAAtwDoAAABSAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-01-17T11:32:17.756Z",
               "EditorCaption": ""
@@ -239,19 +247,79 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "GestionLibroForm.vb [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\GestionLibroForm.vb",
+              "RelativeDocumentMoniker": "GestionBiblioteca\\Vista\\GestionLibroForm.vb",
+              "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\GestionLibroForm.vb [Dise\u00F1o]",
+              "RelativeToolTip": "GestionBiblioteca\\Vista\\GestionLibroForm.vb [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-27T10:35:15.659Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GestionPrestamoForm.vb",
+              "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\GestionPrestamoForm.vb",
+              "RelativeDocumentMoniker": "GestionBiblioteca\\Vista\\GestionPrestamoForm.vb",
+              "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\GestionPrestamoForm.vb",
+              "RelativeToolTip": "GestionBiblioteca\\Vista\\GestionPrestamoForm.vb",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAQwLAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-17T10:03:46.205Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PrestamoController.vb",
+              "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Controlador\\PrestamoController.vb",
+              "RelativeDocumentMoniker": "GestionBiblioteca\\Controlador\\PrestamoController.vb",
+              "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Controlador\\PrestamoController.vb",
+              "RelativeToolTip": "GestionBiblioteca\\Controlador\\PrestamoController.vb",
+              "ViewState": "AgIAABYAAAAAAAAAAAAowCsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-17T09:42:34.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "Prestamo.vb",
               "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Modelo\\Prestamo.vb",
               "RelativeDocumentMoniker": "GestionBiblioteca\\Modelo\\Prestamo.vb",
               "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Modelo\\Prestamo.vb",
               "RelativeToolTip": "GestionBiblioteca\\Modelo\\Prestamo.vb",
-              "ViewState": "AgIAAI0AAAAAAAAAAAD4v7oAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAswM8AAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-01-11T10:15:00.682Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
+              "Title": "PrestamoDTO.vb",
+              "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\DTOs\\PrestamoDTO.vb",
+              "RelativeDocumentMoniker": "GestionBiblioteca\\DTOs\\PrestamoDTO.vb",
+              "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\DTOs\\PrestamoDTO.vb",
+              "RelativeToolTip": "GestionBiblioteca\\DTOs\\PrestamoDTO.vb",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-20T11:40:44.013Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "InformacionUsuarioForm.vb [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\InformacionUsuarioForm.vb",
+              "RelativeDocumentMoniker": "GestionBiblioteca\\Vista\\InformacionUsuarioForm.vb",
+              "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\InformacionUsuarioForm.vb [Dise\u00F1o]",
+              "RelativeToolTip": "GestionBiblioteca\\Vista\\InformacionUsuarioForm.vb [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2025-01-15T12:42:14.32Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "InformacionUsuarioForm.vb",
               "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\InformacionUsuarioForm.vb",
               "RelativeDocumentMoniker": "GestionBiblioteca\\Vista\\InformacionUsuarioForm.vb",
@@ -259,25 +327,11 @@
               "RelativeToolTip": "GestionBiblioteca\\Vista\\InformacionUsuarioForm.vb",
               "ViewState": "AgIAAAIAAAAAAAAAAIA9wJQAAABDAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-15T12:20:34.299Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-15T12:20:34.299Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "GestionLibroForm.vb",
-              "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\GestionLibroForm.vb",
-              "RelativeDocumentMoniker": "GestionBiblioteca\\Vista\\GestionLibroForm.vb",
-              "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\GestionLibroForm.vb",
-              "RelativeToolTip": "GestionBiblioteca\\Vista\\GestionLibroForm.vb",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAnwGwAAAAnAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-21T12:44:51.087Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "AgregarLibroForm.vb",
               "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\AgregarLibroForm.vb",
               "RelativeDocumentMoniker": "GestionBiblioteca\\Vista\\AgregarLibroForm.vb",
@@ -289,7 +343,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "AgregarLibroForm.vb [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\AgregarLibroForm.vb",
               "RelativeDocumentMoniker": "GestionBiblioteca\\Vista\\AgregarLibroForm.vb",
@@ -300,7 +354,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "UsuarioController.vb",
               "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Controlador\\UsuarioController.vb",
               "RelativeDocumentMoniker": "GestionBiblioteca\\Controlador\\UsuarioController.vb",
@@ -312,31 +366,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "PrestamoDTO.vb",
-              "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\DTOs\\PrestamoDTO.vb",
-              "RelativeDocumentMoniker": "GestionBiblioteca\\DTOs\\PrestamoDTO.vb",
-              "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\DTOs\\PrestamoDTO.vb",
-              "RelativeToolTip": "GestionBiblioteca\\DTOs\\PrestamoDTO.vb",
-              "ViewState": "AgIAAAEAAAAAAAAAAAA2wAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-20T11:40:44.013Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "SQLLite.vb",
-              "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Modelo\\SQLLite.vb",
-              "RelativeDocumentMoniker": "GestionBiblioteca\\Modelo\\SQLLite.vb",
-              "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Modelo\\SQLLite.vb",
-              "RelativeToolTip": "GestionBiblioteca\\Modelo\\SQLLite.vb",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCQAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-11T10:10:26.023Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 21,
               "Title": "DashboardForm.vb",
               "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\DashboardForm.vb",
               "RelativeDocumentMoniker": "GestionBiblioteca\\Vista\\DashboardForm.vb",
@@ -348,7 +378,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "DashboardForm.vb [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\DashboardForm.vb",
               "RelativeDocumentMoniker": "GestionBiblioteca\\Vista\\DashboardForm.vb",
@@ -359,7 +389,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 22,
               "Title": "AgregarUsuarioForm .vb",
               "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Vista\\AgregarUsuarioForm .vb",
               "RelativeDocumentMoniker": "GestionBiblioteca\\Vista\\AgregarUsuarioForm .vb",
@@ -371,43 +401,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Libro.vb",
-              "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Modelo\\Libro.vb",
-              "RelativeDocumentMoniker": "GestionBiblioteca\\Modelo\\Libro.vb",
-              "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Modelo\\Libro.vb",
-              "RelativeToolTip": "GestionBiblioteca\\Modelo\\Libro.vb",
-              "ViewState": "AgIAADwAAAAAAAAAAAAgwH8AAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-11T10:14:47.143Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "LibroController.vb",
-              "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Controlador\\LibroController.vb",
-              "RelativeDocumentMoniker": "GestionBiblioteca\\Controlador\\LibroController.vb",
-              "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Controlador\\LibroController.vb",
-              "RelativeToolTip": "GestionBiblioteca\\Controlador\\LibroController.vb",
-              "ViewState": "AgIAACUAAAAAAAAAAAAwwD4AAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-14T11:27:35.549Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 23,
-              "Title": "LibroDTO .vb",
-              "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\DTOs\\LibroDTO .vb",
-              "RelativeDocumentMoniker": "GestionBiblioteca\\DTOs\\LibroDTO .vb",
-              "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\DTOs\\LibroDTO .vb",
-              "RelativeToolTip": "GestionBiblioteca\\DTOs\\LibroDTO .vb",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-15T10:15:36.584Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
               "Title": "UsuarioDTO.vb",
               "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\DTOs\\UsuarioDTO.vb",
               "RelativeDocumentMoniker": "GestionBiblioteca\\DTOs\\UsuarioDTO.vb",
@@ -416,40 +410,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
               "WhenOpened": "2025-01-15T10:15:29.268Z"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "Orientation": 0,
-      "VerticalTabListWidth": 256,
-      "FloatingWindowState": {
-        "Id": "4a345ed3-a820-4650-8312-32d15bee8d76",
-        "Display": 0,
-        "X": 160,
-        "Y": 189,
-        "Width": 1499,
-        "Height": 846,
-        "WindowState": 0
-      },
-      "DocumentGroups": [
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Usuario.vb",
-              "DocumentMoniker": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Modelo\\Usuario.vb",
-              "RelativeDocumentMoniker": "GestionBiblioteca\\Modelo\\Usuario.vb",
-              "ToolTip": "C:\\Users\\beatr\\Documents\\DAM\\DI\\Proyecto_Biblioteca\\GestorBiblioteca_Bea\\GestionBiblioteca\\GestionBiblioteca\\Modelo\\Usuario.vb",
-              "RelativeToolTip": "GestionBiblioteca\\Modelo\\Usuario.vb",
-              "ViewState": "AgIAAEAAAAAAAAAAAAApwEoAAABSAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2025-01-15T11:33:09.454Z",
-              "EditorCaption": ""
             }
           ]
         }

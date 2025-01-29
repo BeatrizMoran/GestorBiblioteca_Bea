@@ -152,6 +152,7 @@ Public Class GestionPrestamoForm
     Private Sub EditarPrestamo(id As Integer)
         Try
             Dim datosPrestamo As PrestamoDTO = controlador.BuscarPrestamo(id)
+
             CType(Me.MdiParent, Form1).AbrirPaginaPrestamos("editar", datosPrestamo)
         Catch ex As Exception
             MessageBox.Show("Error al intentar editar el préstamo: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

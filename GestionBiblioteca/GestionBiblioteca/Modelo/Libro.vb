@@ -12,6 +12,8 @@ Public Class Libro
 
     Property sinopsis As String
 
+    Property disponible As Boolean
+
     Public Sub New()
     End Sub
 
@@ -44,7 +46,8 @@ Public Class Libro
                             .titulo = lector.GetString(1),
                             .escritor = lector.GetString(2),
                             .anyoEdicion = lector.GetInt32(3),
-                            .sinopsis = lector.GetString(4)
+                            .sinopsis = lector.GetString(4),
+                            .disponible = lector.GetBoolean(5)
                         }
                         libros.Add(libro.id, libro)
                     End While
@@ -144,6 +147,21 @@ Public Class Libro
         End Try
     End Sub
 
+    Public Shared Sub ActualizarEstadoLibro(id As Integer, estado As Boolean)
+        Try
+            Dim Cmd As New SQLiteCommand
+            Dim consulta As String = "UPDATE Libros SET Disponible = @Estado WHERE Id=@Id"
+            Cmd.CommandText = consulta
+
+            Cmd.Parameters.Add("@Estado", DbType.Int32).Value = If(estado, 1, 0)
+            Cmd.Parameters.Add("@Id", DbType.Int32).Value = id
+
+            SQLLite.Ejecuta(My.Settings.conexion, Cmd)
+
+        Catch ex As Exception
+            Throw New Exception("Error al actualizar el estado: " & ex.Message)
+        End Try
+    End Sub
 
 
 

@@ -4,5 +4,5 @@
     Public Property UsuarioNombre As String
     Public Property FechaInicio As String ' Fecha formateada para la vista
     Public Property FechaFin As String ' Fecha formateada para la vista
-    Public Property Estado As String ' "En préstamo" o "Disponible"
+    Public Property Estado As Boolean ' Estado viene de la tabla Libros
 End Class

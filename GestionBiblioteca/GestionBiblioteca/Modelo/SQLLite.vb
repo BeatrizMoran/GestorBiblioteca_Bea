@@ -12,11 +12,9 @@ Public Module SQLLite
 
     Public Function GetDataReader(ByVal BBDD As String, ByVal Cmd As SQLiteCommand) As SQLiteDataReader
         Try
-            Using Cnx As SQLiteConnection = Conectar(BBDD)
-
-                Cmd.Connection = Cnx
-                Return Cmd.ExecuteReader() ' Deja que el lector maneje el ciclo de vida
-            End Using ' La conexión se cerrará automáticamente aquí
+            Dim Cnx As SQLiteConnection = Conectar(BBDD)
+            Cmd.Connection = Cnx
+            Return Cmd.ExecuteReader() ' Deja que el lector maneje el ciclo de vida
         Catch ex As Exception
             Throw New Exception("No se logró realizar la consulta por: " & ex.Message)
         End Try

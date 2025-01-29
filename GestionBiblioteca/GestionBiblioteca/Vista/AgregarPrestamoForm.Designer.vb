@@ -128,7 +128,6 @@ Partial Class AgregarPrestamoForm
         Me.cbLibros.Name = "cbLibros"
         Me.cbLibros.Size = New System.Drawing.Size(432, 21)
         Me.cbLibros.TabIndex = 18
-        Me.cbLibros.Text = "-- Selecciona el libro --"
         '
         'lUsuario
         '
@@ -149,7 +148,6 @@ Partial Class AgregarPrestamoForm
         Me.cbUsuarios.Name = "cbUsuarios"
         Me.cbUsuarios.Size = New System.Drawing.Size(432, 21)
         Me.cbUsuarios.TabIndex = 19
-        Me.cbUsuarios.Text = "-- Selecciona el usuario --"
         '
         'tlpBotones
         '

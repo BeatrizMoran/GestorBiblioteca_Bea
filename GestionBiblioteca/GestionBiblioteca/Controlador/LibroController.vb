@@ -14,7 +14,8 @@ Public Class LibroController
                     .Titulo = libro.titulo,
                     .Escritor = libro.escritor,
                     .AnyoEdicion = libro.anyoEdicion,
-                    .Sinopsis = libro.sinopsis
+                    .Sinopsis = libro.sinopsis,
+                    .Disponible = libro.disponible
                 })
             Next
 
@@ -63,6 +64,15 @@ Public Class LibroController
             Libro.ActualizarLibro(libro)
         Catch ex As Exception
             Throw New Exception("Error al intentar actualizar el libro: " & ex.Message)
+        End Try
+    End Sub
+
+    Public Sub ActualizarEstadoLibro(id As Integer, estado As Boolean)
+        Try
+            Libro.ActualizarEstadoLibro(id, estado)
+        Catch ex As Exception
+            Throw New Exception("Error al intentar actualizar el estado: " & ex.Message)
+
         End Try
     End Sub
 End Class

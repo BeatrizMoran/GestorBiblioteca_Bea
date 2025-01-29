@@ -7,5 +7,7 @@
         Public Property AnyoEdicion As Integer
 
         Public Property Sinopsis As String
+
+        Public Property Disponible As Boolean
     End Class
 End Namespace
