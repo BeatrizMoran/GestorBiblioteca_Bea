@@ -22,12 +22,12 @@ Public Class GestionLibroForm
                     controlador.ActualizarEstadoLibro(id, False)
 
                 End If
-            Else
-                Dim respuesta As DialogResult = MessageBox.Show("¿Seguro que quieres marcar como DISPONIBLE el libro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-                If respuesta = DialogResult.Yes Then
-                    controlador.ActualizarEstadoLibro(id, True)
+                'Else
+                '    Dim respuesta As DialogResult = MessageBox.Show("¿Seguro que quieres marcar como DISPONIBLE el libro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+                '    If respuesta = DialogResult.Yes Then
+                '        controlador.ActualizarEstadoLibro(id, True)
 
-                End If
+                '    End If
             End If
             MessageBox.Show("Estado actualizado correctamente", "Estado actualizado", MessageBoxButtons.OK, MessageBoxIcon.Information)
             CargarLibros()

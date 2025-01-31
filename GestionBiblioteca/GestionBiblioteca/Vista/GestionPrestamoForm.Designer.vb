@@ -189,7 +189,7 @@ Partial Class GestionPrestamoForm
         Me.chbDisponibles.Name = "chbDisponibles"
         Me.chbDisponibles.Size = New System.Drawing.Size(628, 16)
         Me.chbDisponibles.TabIndex = 0
-        Me.chbDisponibles.Text = "Ver Prestamos anteriores"
+        Me.chbDisponibles.Text = "Ver Prestamos devueltos"
         Me.chbDisponibles.UseVisualStyleBackColor = True
         '
         'chbActivos

@@ -4,5 +4,5 @@
     Public Property UsuarioNombre As String
     Public Property FechaInicio As String ' Fecha formateada para la vista
     Public Property FechaFin As String ' Fecha formateada para la vista
-    Public Property Estado As Boolean ' Estado viene de la tabla Libros
+    Public Property Estado As Boolean ' Estado viene del campo devuelto
 End Class

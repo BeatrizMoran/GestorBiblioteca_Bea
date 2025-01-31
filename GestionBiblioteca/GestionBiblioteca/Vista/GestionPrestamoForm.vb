@@ -67,12 +67,18 @@ Public Class GestionPrestamoForm
 
             dgvPrestamos.AllowUserToAddRows = False
 
+
             ' Agregar los datos de los préstamos filtrados
             Dim estado As String = ""
             If prestamos.Count > 0 Then
+
                 For Each prestamo As PrestamoDTO In prestamosPagina
+                    Dim fechaFin As DateTime = DateTime.ParseExact(prestamo.FechaFin, "dd/MM/yyyy", CultureInfo.InvariantCulture)
+
                     If prestamo.Estado Then
-                        estado = "Disponible"
+                        estado = "Devuelto"
+                    ElseIf prestamo.Estado = False AndAlso fechaFin < DateAndTime.Now Then
+                        estado = "Vencido"
                     Else
                         estado = "En prestamo"
 
@@ -80,10 +86,9 @@ Public Class GestionPrestamoForm
                     Dim rowIndex As Integer = dgvPrestamos.Rows.Add(prestamo.Id, prestamo.LibroTitulo, prestamo.UsuarioNombre, estado)
                     Dim estadoCell As DataGridViewCell = dgvPrestamos.Rows(rowIndex).Cells("Estado") ' Acceso a la celda Estado
 
-                    Dim fechaFin As DateTime = DateTime.ParseExact(prestamo.FechaFin, "dd/MM/yyyy", CultureInfo.InvariantCulture)
 
 
-                    If estado = "En prestamo" AndAlso fechaFin < DateTime.Now Then
+                    If estado = "Vencido" Then
                         estadoCell.Style.ForeColor = Color.Red ' Rojo para En préstamo vencido
                     ElseIf estado = "En prestamo" Then
                         estadoCell.Style.ForeColor = Color.Orange ' Naranja para En préstamo no vencido

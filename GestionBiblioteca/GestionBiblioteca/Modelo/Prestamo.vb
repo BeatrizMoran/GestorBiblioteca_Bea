@@ -25,7 +25,7 @@ Public Class Prestamo
                                     p.ID,
                                     p.Fecha_Inicio,
                                     p.Fecha_Fin,
-                                    l.Disponible AS Estado,
+                                    p.Devuelto as Estado,
                                     l.Titulo AS LibroTitulo,
                                     CONCAT(u.Nombre, ' ', u.Apellido_1) AS UsuarioNombre
                                     FROM 
@@ -64,7 +64,7 @@ Public Class Prestamo
         Try
             ' Verificar si el libro está en préstamo antes de crear el préstamo
             If LibroEnPrestamo(IdLibro) Then
-                Throw New Exception("El libro seleccionado ya está en préstamo.")
+                Throw New Exception("El libro seleccionado ya está en préstamo o no esta disponible en este momento.")
             End If
 
 
@@ -131,7 +131,7 @@ Public Class Prestamo
                                      p.ID,
                                      p.Fecha_Inicio,
                                      p.Fecha_Fin,
-                                     l.Disponible AS Estado,
+                                     p.Devuelto AS Estado,
                                      l.Titulo AS LibroTitulo,
                                      CONCAT(u.Nombre, ' ', u.Apellido_1) AS UsuarioNombre
                                    FROM 
@@ -139,19 +139,20 @@ Public Class Prestamo
                                    JOIN 
                                      Libros l ON p.ID_Libro = l.ID
                                    JOIN 
-                                     Usuarios u ON p.ID_Usuario = u.ID WHERE 1=1"
+                                     Usuarios u ON p.ID_Usuario = u.ID
+                                       WHERE 1=1"
 
             If filtrarActivos AndAlso filtrarDisponibles Then
-                ' No añadir filtro si ambos están seleccionados
+                ' Si ambos están seleccionados, no añadir filtro de disponibilidad
             Else
                 If filtrarActivos Then
-                    query &= " AND l.Disponible = 0" ' Libros en préstamo
+                    query &= " AND p.Devuelto = 0" ' 0: en préstamo
                 End If
-
                 If filtrarDisponibles Then
-                    query &= " AND l.Disponible = 1" ' Libros disponibles
+                    query &= " AND p.Devuelto = 1" ' 1: devuelto
                 End If
             End If
+
 
             Dim Cmd As New SQLiteCommand(query)
             Dim dt As DataTable = SQLLite.GetDataTable(My.Settings.conexion, Cmd)
@@ -177,13 +178,20 @@ Public Class Prestamo
         End Try
     End Function
 
-    Public Sub ActualizarPrestamo()
+    Public Sub ActualizarPrestamo(estadoLibro As Boolean)
         Try
+            Dim disponible
+
+            If estadoLibro Then
+                disponible = 1
+            Else
+                disponible = 0
+            End If
 
             Dim Cmd As New SQLiteCommand
             Dim Sql As String = "
                     UPDATE Prestamos 
-                    SET Id_Libro = @Id_Libro, Id_Usuario = @Id_Usuario, Fecha_Inicio = @FechaInicio, Fecha_Fin = @FechaFin 
+                    SET Id_Libro = @Id_Libro, Id_Usuario = @Id_Usuario, Fecha_Inicio = @FechaInicio, Fecha_Fin = @FechaFin , Devuelto = @Devuelto
                     WHERE ID = @Id"
             Cmd.CommandText = Sql
 
@@ -193,14 +201,23 @@ Public Class Prestamo
             Cmd.Parameters.AddWithValue("@Id_Usuario", IdUsuario)
             Cmd.Parameters.AddWithValue("@FechaInicio", FechaInicio)
             Cmd.Parameters.AddWithValue("@FechaFin", FechaFin)
+            Cmd.Parameters.AddWithValue("@Devuelto", disponible)
+
 
             Cmd.Parameters.AddWithValue("@Id", Id)
 
             SQLLite.Ejecuta(My.Settings.conexion, Cmd)
 
+            'actualizar estado del libro
+            ActualizarEstadoLibro(disponible)
+
         Catch ex As Exception
             Throw New Exception("Error al actualizar el préstamo: " & ex.Message)
         End Try
+    End Sub
+
+    Public Sub ActualizarPrestamoDevuelto(devuelto As Integer)
+
     End Sub
 
     Public Shared Sub BorrarPrestamo(id As Integer)
@@ -232,6 +249,25 @@ Public Class Prestamo
             Dim consultaUpdate As String = "UPDATE Libros SET Disponible = 1 WHERE ID = @IdLibro"
             ActualizarLibroCmd.CommandText = consultaUpdate
             ActualizarLibroCmd.Parameters.Add("@IdLibro", DbType.Int32).Value = IdLibro
+
+            SQLLite.Ejecuta(My.Settings.conexion, ActualizarLibroCmd)
+
+        Catch ex As Exception
+            Throw New Exception("Error al borrar el préstamo: " & ex.Message)
+        End Try
+    End Sub
+
+    Private Sub ActualizarEstadoLibro(disponible As Integer)
+        Try
+
+
+            Dim ActualizarLibroCmd As New SQLiteCommand
+            Dim consultaUpdate As String = "UPDATE Libros SET Disponible = @Disponible WHERE ID = @IdLibro"
+            ActualizarLibroCmd.CommandText = consultaUpdate
+            ActualizarLibroCmd.Parameters.Add("@IdLibro", DbType.Int32).Value = IdLibro
+            ActualizarLibroCmd.Parameters.Add("@Disponible", DbType.Boolean).Value = disponible
+
+
 
             SQLLite.Ejecuta(My.Settings.conexion, ActualizarLibroCmd)
 

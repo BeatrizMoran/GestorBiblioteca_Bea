@@ -16,10 +16,18 @@ Public Class AgregarPrestamoForm
     Private Sub AgregarPrestamoForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         RestaurarControles()
         pEstado.Visible = False
+
         InicializarDatosCombo()
         If opcion = "editar" Then
             pEstado.Visible = True
             InicializarDatosPrestamo()
+            Dim opc As String = CType(cbEstado.SelectedItem, KeyValuePair(Of Boolean, String)).Value
+            'si un libro ya ha sido devuelton o dejar cambiar estado
+            If opc = "Devuelto" Then
+                cbEstado.Enabled = False
+            Else
+                cbEstado.Enabled = True
+            End If
         End If
     End Sub
 
@@ -31,7 +39,7 @@ Public Class AgregarPrestamoForm
 
         cbLibros.Items.Add(New KeyValuePair(Of Integer, String)(-1, "Seleccione un libro"))
         cbUsuarios.Items.Add(New KeyValuePair(Of Integer, String)(-1, "Seleccione un Usuario"))
-        cbEstado.Items.Add(New KeyValuePair(Of Boolean, String)(True, "Disponible"))
+        cbEstado.Items.Add(New KeyValuePair(Of Boolean, String)(True, "Devuelto"))
         cbEstado.Items.Add(New KeyValuePair(Of Boolean, String)(False, "En prestamo"))
 
         cbLibros.SelectedIndex = 0
@@ -74,7 +82,7 @@ Public Class AgregarPrestamoForm
         'ESTADO
         cbEstado.DisplayMember = "Value"
         cbEstado.ValueMember = "Key"
-        cbEstado.Items.Add(New KeyValuePair(Of Boolean, String)(True, "Disponible"))
+        cbEstado.Items.Add(New KeyValuePair(Of Boolean, String)(True, "Devuelto"))
         cbEstado.Items.Add(New KeyValuePair(Of Boolean, String)(False, "En prestamo"))
     End Sub
 
@@ -136,7 +144,7 @@ Public Class AgregarPrestamoForm
             Dim fechaInicio As String = dtpFechaInicio.Value.ToString("dd/MM/yyyy")
             Dim fechaFin As String = dtpFechaFin.Value.ToString("dd/MM/yyyy")
 
-            Dim estado As Integer = CType(cbEstado.SelectedItem, KeyValuePair(Of Integer, String)).Key
+            Dim estado As Boolean = CType(cbEstado.SelectedItem, KeyValuePair(Of Boolean, String)).Key
 
             If opcion = "editar" Then
                 MessageBox.Show(estado)

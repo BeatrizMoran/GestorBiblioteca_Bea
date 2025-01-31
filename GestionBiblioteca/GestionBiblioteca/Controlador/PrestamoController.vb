@@ -28,7 +28,7 @@
         Try
             Dim prestamo As Prestamo = New Prestamo(idLibro, idUsuario, fechaInicio, fechaFIn)
             prestamo.Id = idPrestamo
-            prestamo.ActualizarPrestamo()
+            prestamo.ActualizarPrestamo(disponible)
         Catch ex As Exception
             Throw New Exception("Error al intentar actualizar el prestamo: " & ex.Message)
 

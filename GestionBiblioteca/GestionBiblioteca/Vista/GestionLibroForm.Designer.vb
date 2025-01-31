@@ -92,6 +92,7 @@ Partial Class GestionLibroForm
         '
         'panelLibros
         '
+        Me.panelLibros.AutoScroll = True
         Me.panelLibros.Dock = System.Windows.Forms.DockStyle.Fill
         Me.panelLibros.Location = New System.Drawing.Point(60, 33)
         Me.panelLibros.Name = "panelLibros"
