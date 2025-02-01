@@ -1,4 +1,5 @@
-﻿Imports GestionBiblioteca.DTOs
+﻿Imports ControlesBiblioteca
+Imports GestionBiblioteca.DTOs
 
 Public Class InformacionUsuarioForm
 
@@ -135,20 +136,7 @@ Public Class InformacionUsuarioForm
 
     Private Sub InformacionUsuarioForm_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
         If mostrado Then
-
-            Const MAX_FONTSIZE As Integer = 13
-
-            ' Calcular el tamaño proporcional de la fuente basado en ancho y alto
-            Dim proporciónAncho As Double = Me.Width / Me.MinimumSize.Width
-            Dim proporciónAlto As Double = Me.Height / Me.MinimumSize.Height
-            Dim proporciónPromedio As Double = (proporciónAncho + proporciónAlto) / 2
-            ' Determinar el tamaño de la fuente dentro de los límites
-            Dim fontSize As Integer = Math.Min(proporciónPromedio * 8, MAX_FONTSIZE)
-
-
-            For Each control In tlpPrincipal.Controls
-                control.Font = New Font("Microsoft Sans Serif", fontSize)
-            Next
+            ModuloUtilidades.AjustarFuente(formulario:=Me, tamanoMaximoLetra:=13, tlPanel:=tlpPrincipal)
         End If
     End Sub
 

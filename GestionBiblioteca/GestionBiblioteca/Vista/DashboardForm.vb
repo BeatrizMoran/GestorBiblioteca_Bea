@@ -35,4 +35,6 @@ Public Class DashboardForm
         CType(Me.MdiParent, Form1).AbrirPaginaPrestamos("gestion")
 
     End Sub
+
+
 End Class

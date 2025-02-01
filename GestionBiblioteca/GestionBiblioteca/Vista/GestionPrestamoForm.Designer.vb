@@ -56,9 +56,9 @@ Partial Class GestionPrestamoForm
         Me.tlpTabla.Location = New System.Drawing.Point(0, 0)
         Me.tlpTabla.Name = "tlpTabla"
         Me.tlpTabla.RowCount = 6
-        Me.tlpTabla.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tlpTabla.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80.0!))
         Me.tlpTabla.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlpTabla.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
+        Me.tlpTabla.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80.0!))
         Me.tlpTabla.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
         Me.tlpTabla.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50.0!))
         Me.tlpTabla.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
@@ -77,9 +77,10 @@ Partial Class GestionPrestamoForm
         Me.tlpGestionPrestamos.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlpGestionPrestamos.Location = New System.Drawing.Point(3, 3)
         Me.tlpGestionPrestamos.Name = "tlpGestionPrestamos"
+        Me.tlpGestionPrestamos.Padding = New System.Windows.Forms.Padding(5)
         Me.tlpGestionPrestamos.RowCount = 1
         Me.tlpGestionPrestamos.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlpGestionPrestamos.Size = New System.Drawing.Size(794, 59)
+        Me.tlpGestionPrestamos.Size = New System.Drawing.Size(794, 74)
         Me.tlpGestionPrestamos.TabIndex = 4
         '
         'bCrearPrestamo
@@ -87,10 +88,10 @@ Partial Class GestionPrestamoForm
         Me.bCrearPrestamo.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.bCrearPrestamo.Image = CType(resources.GetObject("bCrearPrestamo.Image"), System.Drawing.Image)
         Me.bCrearPrestamo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.bCrearPrestamo.Location = New System.Drawing.Point(547, 3)
+        Me.bCrearPrestamo.Location = New System.Drawing.Point(544, 8)
         Me.bCrearPrestamo.Name = "bCrearPrestamo"
         Me.bCrearPrestamo.Padding = New System.Windows.Forms.Padding(5)
-        Me.bCrearPrestamo.Size = New System.Drawing.Size(97, 53)
+        Me.bCrearPrestamo.Size = New System.Drawing.Size(97, 58)
         Me.bCrearPrestamo.TabIndex = 0
         Me.bCrearPrestamo.Text = "Añadir"
         Me.bCrearPrestamo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -100,9 +101,9 @@ Partial Class GestionPrestamoForm
         '
         Me.lGestionPrestamos.AutoSize = True
         Me.lGestionPrestamos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lGestionPrestamos.Location = New System.Drawing.Point(3, 0)
+        Me.lGestionPrestamos.Location = New System.Drawing.Point(8, 5)
         Me.lGestionPrestamos.Name = "lGestionPrestamos"
-        Me.lGestionPrestamos.Size = New System.Drawing.Size(391, 59)
+        Me.lGestionPrestamos.Size = New System.Drawing.Size(386, 64)
         Me.lGestionPrestamos.TabIndex = 1
         Me.lGestionPrestamos.Text = "Gestion de prestamos"
         Me.lGestionPrestamos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -112,9 +113,9 @@ Partial Class GestionPrestamoForm
         Me.dgvPrestamos.BackgroundColor = System.Drawing.Color.White
         Me.dgvPrestamos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dgvPrestamos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvPrestamos.Location = New System.Drawing.Point(83, 146)
+        Me.dgvPrestamos.Location = New System.Drawing.Point(83, 187)
         Me.dgvPrestamos.Name = "dgvPrestamos"
-        Me.dgvPrestamos.Size = New System.Drawing.Size(634, 222)
+        Me.dgvPrestamos.Size = New System.Drawing.Size(634, 186)
         Me.dgvPrestamos.TabIndex = 2
         '
         'tlpPaginacion
@@ -128,7 +129,7 @@ Partial Class GestionPrestamoForm
         Me.tlpPaginacion.Controls.Add(Me.bSiguiente, 3, 0)
         Me.tlpPaginacion.Controls.Add(Me.lblPaginacion, 2, 0)
         Me.tlpPaginacion.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tlpPaginacion.Location = New System.Drawing.Point(83, 374)
+        Me.tlpPaginacion.Location = New System.Drawing.Point(83, 379)
         Me.tlpPaginacion.Name = "tlpPaginacion"
         Me.tlpPaginacion.RowCount = 1
         Me.tlpPaginacion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
@@ -173,12 +174,12 @@ Partial Class GestionPrestamoForm
         Me.tlpFiltro.Controls.Add(Me.chbDisponibles, 0, 0)
         Me.tlpFiltro.Controls.Add(Me.chbActivos, 0, 1)
         Me.tlpFiltro.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tlpFiltro.Location = New System.Drawing.Point(83, 96)
+        Me.tlpFiltro.Location = New System.Drawing.Point(83, 107)
         Me.tlpFiltro.Name = "tlpFiltro"
         Me.tlpFiltro.RowCount = 2
         Me.tlpFiltro.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
         Me.tlpFiltro.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.tlpFiltro.Size = New System.Drawing.Size(634, 44)
+        Me.tlpFiltro.Size = New System.Drawing.Size(634, 74)
         Me.tlpFiltro.TabIndex = 5
         '
         'chbDisponibles
@@ -187,7 +188,7 @@ Partial Class GestionPrestamoForm
         Me.chbDisponibles.Dock = System.Windows.Forms.DockStyle.Fill
         Me.chbDisponibles.Location = New System.Drawing.Point(3, 3)
         Me.chbDisponibles.Name = "chbDisponibles"
-        Me.chbDisponibles.Size = New System.Drawing.Size(628, 16)
+        Me.chbDisponibles.Size = New System.Drawing.Size(628, 31)
         Me.chbDisponibles.TabIndex = 0
         Me.chbDisponibles.Text = "Ver Prestamos devueltos"
         Me.chbDisponibles.UseVisualStyleBackColor = True
@@ -196,9 +197,9 @@ Partial Class GestionPrestamoForm
         '
         Me.chbActivos.AutoSize = True
         Me.chbActivos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.chbActivos.Location = New System.Drawing.Point(3, 25)
+        Me.chbActivos.Location = New System.Drawing.Point(3, 40)
         Me.chbActivos.Name = "chbActivos"
-        Me.chbActivos.Size = New System.Drawing.Size(628, 16)
+        Me.chbActivos.Size = New System.Drawing.Size(628, 31)
         Me.chbActivos.TabIndex = 1
         Me.chbActivos.Text = "Ver prestamos activos"
         Me.chbActivos.UseVisualStyleBackColor = True

@@ -88,6 +88,7 @@
     <Compile Include="LibroControl.vb">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="ModuloUtilidades.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>

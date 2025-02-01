@@ -1,5 +1,6 @@
 ﻿Imports System.Data.SQLite
 Imports System.Globalization
+Imports ControlesBiblioteca
 
 Public Class GestionPrestamoForm
     Private Sub GestionPrestamoForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -7,6 +8,7 @@ Public Class GestionPrestamoForm
         ActualizarVista()
     End Sub
 
+    Dim mostrado As Boolean = False
     Dim controlador As New PrestamoController
     ' Variables para paginación
     Private paginaActual As Integer = 1
@@ -112,11 +114,12 @@ Public Class GestionPrestamoForm
             ' Ajustar las celdas
             For Each column As DataGridViewColumn In dgvPrestamos.Columns
                 column.DefaultCellStyle.Padding = New Padding(5)
-                column.DefaultCellStyle.Font = fuenteActual
             Next
 
             ' Establecer el modo de edición
             dgvPrestamos.EditMode = DataGridViewEditMode.EditOnKeystrokeOrF2
+            ModuloUtilidades.AjustarFuente(formulario:=Me, tamanoMaximoLetra:=13, tlPanel:=tlpTabla, tabla:=dgvPrestamos)
+
 
         Catch ex As Exception
             MessageBox.Show("Error al cargar los prestamos: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -140,7 +143,7 @@ Public Class GestionPrestamoForm
 
     Private Sub dgvPrestamos_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvPrestamos.CellClick
         ' Asegurarse de que no se haya hecho clic en el encabezado (Fila 0)
-        If e.RowIndex >= 0 Then
+        If e.RowIndex >= 0 AndAlso e.ColumnIndex > 0 Then
             If dgvPrestamos.Columns(e.ColumnIndex).Name = "Editar" Then
                 Dim id As Integer = Convert.ToInt32(dgvPrestamos.Rows(e.RowIndex).Cells("Id").Value)
                 EditarPrestamo(id)
@@ -213,7 +216,16 @@ Public Class GestionPrestamoForm
     End Sub
 
     Private Sub GestionPrestamoForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        mostrado = True
         CType(Me.MdiParent, Form1).OcultarMostrarBotonVolver()
 
+    End Sub
+
+    Private Sub GestionPrestamoForm_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+        If mostrado Then
+            ModuloUtilidades.AjustarFuente(formulario:=Me, tamanoMaximoLetra:=13, tlPanel:=tlpTabla, tabla:=dgvPrestamos)
+
+
+        End If
     End Sub
 End Class

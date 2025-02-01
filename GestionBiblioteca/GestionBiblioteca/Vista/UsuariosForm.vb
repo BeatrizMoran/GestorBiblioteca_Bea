@@ -1,4 +1,5 @@
-﻿Imports GestionBiblioteca.DTOs
+﻿Imports ControlesBiblioteca
+Imports GestionBiblioteca.DTOs
 
 Public Class UsuariosForm
 
@@ -20,10 +21,7 @@ Public Class UsuariosForm
 
     Public Sub CargarUsuarios()
         Try
-
-
             Dim usuarios As List(Of UsuarioDTO) = controlador.ObtenerUsuariosParaVista()
-            ' Calcular el número total de páginas
             ' Calcular el número total de páginas
             totalPaginas = Math.Ceiling(usuarios.Count / tamañoPagina)
             ' Filtrar los usuarios según la página actual
@@ -101,13 +99,13 @@ Public Class UsuariosForm
             For Each column As DataGridViewColumn In dgvUsuarios.Columns
                 column.DefaultCellStyle.Padding = New Padding(5)
             Next
-            For Each column As DataGridViewColumn In dgvUsuarios.Columns
-                column.DefaultCellStyle.Font = fuenteActual
-            Next
+
 
 
             ' Establecer el modo de edición del DataGridView
             dgvUsuarios.EditMode = DataGridViewEditMode.EditOnKeystrokeOrF2
+
+            ModuloUtilidades.AjustarFuente(formulario:=Me, tamanoMaximoLetra:=13, tlPanel:=tlpGestionUsuarios, tabla:=dgvUsuarios)
 
 
 
@@ -132,7 +130,7 @@ Public Class UsuariosForm
 
     Private Sub dgvUsuarios_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvUsuarios.CellClick
         ' Asegurarse de que no se haya hecho clic en el encabezado (Fila 0)
-        If e.RowIndex >= 0 Then
+        If e.RowIndex >= 0 AndAlso e.ColumnIndex > 0 Then
             If dgvUsuarios.Columns(e.ColumnIndex).Name = "Editar" Then
                 Dim id As Integer = Convert.ToInt32(dgvUsuarios.Rows(e.RowIndex).Cells("Id").Value)
                 EditarUsuario(id)
@@ -163,19 +161,10 @@ Public Class UsuariosForm
             If respuesta = DialogResult.Yes Then
                 controlador.BorrarUsuario(id)
 
-
-
                 ' Restaurar el tamaño de la fuente a su valor anterior
                 dgvUsuarios.DefaultCellStyle.Font = fuenteActual
                 MessageBox.Show("Usuario borrado correctamente ", "Usuario borrado", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 CargarUsuarios()
-
-
-                ' Forzar la actualización visual del DataGridView
-                dgvUsuarios.Invalidate()
-                dgvUsuarios.Refresh()
-
-
             End If
         Catch ex As Exception
             MessageBox.Show(ex.Message)
@@ -187,35 +176,37 @@ Public Class UsuariosForm
 
     Private Sub UsuariosForm_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
         If mostrado Then
-            Const MAX_FONTSIZE As Integer = 13
-            Const MIN_FONTSIZE As Integer = 8 ' Tamaño mínimo de fuente para evitar fuentes demasiado pequeñas
+            ModuloUtilidades.AjustarFuente(formulario:=Me, tamanoMaximoLetra:=13, tlPanel:=tlpGestionUsuarios, tabla:=dgvUsuarios)
+            'ModuloUtilidades.AjustarFuente(formulario:=Me, tamanoMaximoLetra:=15, tlPanel:=tlpGestionUsuarios, tabla:=dgvUsuarios)
+            'Const MAX_FONTSIZE As Integer = 13
+            'Const MIN_FONTSIZE As Integer = 8 ' Tamaño mínimo de fuente para evitar fuentes demasiado pequeñas
 
-            ' Calcular el tamaño proporcional de la fuente basado en ancho y alto
-            Dim proporciónAncho As Double = Me.Width / Me.MinimumSize.Width
-            Dim proporciónAlto As Double = Me.Height / Me.MinimumSize.Height
-            Dim proporciónPromedio As Double = (proporciónAncho + proporciónAlto) / 2
+            '' Calcular el tamaño proporcional de la fuente basado en ancho y alto
+            'Dim proporciónAncho As Double = Me.Width / Me.MinimumSize.Width
+            'Dim proporciónAlto As Double = Me.Height / Me.MinimumSize.Height
+            'Dim proporciónPromedio As Double = (proporciónAncho + proporciónAlto) / 2
 
-            ' Determinar el tamaño de la fuente dentro de los límites
-            Dim fontSize As Integer = Math.Max(Math.Min(CInt(proporciónPromedio * MIN_FONTSIZE), MAX_FONTSIZE), MIN_FONTSIZE)
+            '' Determinar el tamaño de la fuente dentro de los límites
+            'Dim fontSize As Integer = Math.Max(Math.Min(CInt(proporciónPromedio * MIN_FONTSIZE), MAX_FONTSIZE), MIN_FONTSIZE)
 
-            ' Actualizar la variable global con la nueva fuente
-            fuenteActual = New Font("Microsoft Sans Serif", fontSize)
+            '' Actualizar la variable global con la nueva fuente
+            'fuenteActual = New Font("Microsoft Sans Serif", fontSize)
 
-            ' Actualizar las fuentes de los controles en el TableLayoutPanel
-            For Each control As Control In tlpGestionUsuarios.Controls
-                control.Font = fuenteActual
-            Next
+            '' Actualizar las fuentes de los controles en el TableLayoutPanel
+            'For Each control As Control In tlpGestionUsuarios.Controls
+            '    control.Font = fuenteActual
+            'Next
 
-            ' Actualizar las fuentes de las columnas y encabezados del DataGridView
-            For Each column As DataGridViewColumn In dgvUsuarios.Columns
-                column.DefaultCellStyle.Font = fuenteActual
-            Next
+            '' Actualizar las fuentes de las columnas y encabezados del DataGridView
+            'For Each column As DataGridViewColumn In dgvUsuarios.Columns
+            '    column.DefaultCellStyle.Font = fuenteActual
+            'Next
 
-            dgvUsuarios.ColumnHeadersDefaultCellStyle.Font = New Font(fuenteActual.FontFamily, fuenteActual.Size, FontStyle.Bold)
+            'dgvUsuarios.ColumnHeadersDefaultCellStyle.Font = New Font(fuenteActual.FontFamily, fuenteActual.Size, FontStyle.Bold)
 
-            ' Forzar la actualización visual del DataGridView
-            dgvUsuarios.Invalidate()
-            dgvUsuarios.Refresh()
+            '' Forzar la actualización visual del DataGridView
+            'dgvUsuarios.Invalidate()
+            'dgvUsuarios.Refresh()
         End If
     End Sub
 

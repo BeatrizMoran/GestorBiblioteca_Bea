@@ -1,4 +1,5 @@
-﻿Imports GestionBiblioteca.DTOs
+﻿Imports ControlesBiblioteca
+Imports GestionBiblioteca.DTOs
 
 Public Class Form1
 
@@ -12,7 +13,6 @@ Public Class Form1
 
     Dim crearUsuario As New AgregarUsuarioForm
     Dim formularioActual As Form = dashboard
-
     ' Pila para almacenar el historial de formularios
     Public formHistory As New Stack(Of Form)
 
@@ -66,7 +66,8 @@ Public Class Form1
 
     Private Sub Form1_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
         If mostrado Then
-            AjustarFuenteYImagenes()
+            AjustarFuente(Me, 24, msNavbar, dashboard.tlpPrincipal)
+            'AjustarFuenteYImagenes()
         End If
     End Sub
 
