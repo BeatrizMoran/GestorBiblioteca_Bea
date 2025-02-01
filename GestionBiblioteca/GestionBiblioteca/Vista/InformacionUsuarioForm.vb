@@ -7,6 +7,7 @@ Public Class InformacionUsuarioForm
     Public datosUsuario As UsuarioDTO
     Public datosLibro As LibroDTO
     Public datosPrestamo As PrestamoDTO
+    Dim controladorUsuario As New UsuarioController
 
     Private Sub InformacionUsuarioForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
         rtbSinopsis.Height = 100
@@ -27,6 +28,9 @@ Public Class InformacionUsuarioForm
                 'restaurar fila libros'
                 RestaurarAlturaFila(4)
 
+                AjustarFila(3, 150)
+
+
             Case "libro"
                 tlpLibro.Visible = True
                 tlpUsuario.Visible = False
@@ -37,6 +41,10 @@ Public Class InformacionUsuarioForm
                 InicializarDatosLibros()
                 'restaurar fila prestamos'
                 RestaurarAlturaFila(5)
+                'restaurar fila usuarioa'
+
+                RestaurarAlturaFila(3)
+
 
                 AjustarFila(4, 200)
 
@@ -51,6 +59,9 @@ Public Class InformacionUsuarioForm
                 AjustarFila(5, 200)
                 'restaurar fila libros'
                 RestaurarAlturaFila(4)
+                'restaurar fila usuarioa'
+
+                RestaurarAlturaFila(3)
 
 
                 pbImagen.Image = Image.FromFile("images\prestamoInfo.png")
@@ -68,6 +79,9 @@ Public Class InformacionUsuarioForm
 
 
     Private Sub InicializarDatosUsuarios()
+        'obtener numero prestamos y ultimo prestamo:
+        Dim datos As Dictionary(Of String, Object) = controladorUsuario.ObtenerInformacionPrestamo(datosUsuario.Id)
+
         gbDatos.Text = "Datos del Usuario"
 
         Dim nombreCompleto = datosUsuario.Nombre + " " + datosUsuario.Apellido1 + " " + datosUsuario.Apellido2
@@ -75,6 +89,9 @@ Public Class InformacionUsuarioForm
         lTitulo2.Text = nombreCompleto
         lId.Text = datosUsuario.Id
         lTelefono.Text = datosUsuario.Telefono
+        lNumeroTotalPrestamos.Text = datos("TotalPrestamos").ToString()
+        lUltimoLibroPrestamo.Text = datos("UltimoLibroPrestado").ToString()
+
     End Sub
 
     Private Sub InicializarDatosLibros()
@@ -91,14 +108,24 @@ Public Class InformacionUsuarioForm
 
 
     Private Sub InicializarDatosPrestamo()
+        'estado prestamo:
+        Dim estado = ""
+        If datosPrestamo.Estado Then
+            estado = "Devuelto"
+        ElseIf datosPrestamo.Estado = False AndAlso datosPrestamo.FechaFin < DateTime.Now Then
+            estado = "Vencido"
+        Else
+            estado = "En prestamo"
+        End If
         gbDatos.Text = "Datos del Prestamo"
         lTitulo.Text = "Prestamo"
         lTitulo2.Text = ""
+        lId.Text = datosPrestamo.Id
         lTituloLibro.Text = datosPrestamo.LibroTitulo
         lNombreUsuario.Text = datosPrestamo.UsuarioNombre
         lFechaInicio.Text = datosPrestamo.FechaInicio
         lFechaFin.Text = datosPrestamo.FechaFin
-        lEstadoPrestamo.Text = datosPrestamo.Estado
+        lEstadoPrestamo.Text = estado
 
     End Sub
 

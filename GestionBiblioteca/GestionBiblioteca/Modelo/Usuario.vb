@@ -1,4 +1,5 @@
 ﻿Imports System.Data.SQLite
+Imports System.Diagnostics.Eventing
 
 Public Class Usuario
 
@@ -136,6 +137,32 @@ Public Class Usuario
     End Function
 
 
+    Public Shared Function ObtenerInfoPrestamo(idUsuario As Integer) As Dictionary(Of String, Object)
+        Try
+            Dim datos As New Dictionary(Of String, Object)
 
+            Dim cmd As New SQLiteCommand
+            Dim sql As String = "SELECT 
+                (SELECT COUNT(*) FROM Prestamos WHERE id_usuario = @idUsuario) AS TotalPrestamos,
+                (SELECT l.Titulo FROM Prestamos p 
+                 JOIN Libros l ON p.id_libro = l.ID 
+                 WHERE p.id_usuario = @idUsuario AND p.devuelto = 0 
+                 ORDER BY p.fecha_inicio DESC LIMIT 1) AS UltimoLibroPrestado;"
+
+            cmd.CommandText = sql
+            cmd.Parameters.Add("@idUsuario", DbType.Int32).Value = idUsuario
+
+            Dim lector = SQLLite.GetDataReader(My.Settings.conexion, cmd)
+            If lector.Read() Then
+                datos("TotalPrestamos") = If(IsDBNull(lector("TotalPrestamos")), 0, lector("TotalPrestamos"))
+                datos("UltimoLibroPrestado") = If(IsDBNull(lector("UltimoLibroPrestado")), "Ninguno", lector("UltimoLibroPrestado"))
+            End If
+
+            Return datos
+
+        Catch ex As Exception
+            Throw New Exception("Error al buscar prestamo de usuario")
+        End Try
+    End Function
 
 End Class

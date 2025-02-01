@@ -79,4 +79,12 @@ Public Class UsuarioController
             Throw New Exception("Error al crear el usuario: " & ex.Message)
         End Try
     End Sub
+
+    Public Function ObtenerInformacionPrestamo(idUsuario As Integer) As Dictionary(Of String, Object)
+        Try
+            Return Usuario.ObtenerInfoPrestamo(idUsuario)
+        Catch ex As Exception
+            Throw New Exception(ex.Message)
+        End Try
+    End Function
 End Class
