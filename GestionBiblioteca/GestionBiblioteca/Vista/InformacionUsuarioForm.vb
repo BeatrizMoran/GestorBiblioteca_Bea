@@ -29,7 +29,7 @@ Public Class InformacionUsuarioForm
                 'restaurar fila libros'
                 RestaurarAlturaFila(4)
 
-                AjustarFila(3, 150)
+                AjustarFila(3, 200)
 
 
             Case "libro"
@@ -80,23 +80,44 @@ Public Class InformacionUsuarioForm
 
 
     Private Sub InicializarDatosUsuarios()
-        'obtener numero prestamos y ultimo prestamo:
+        ' Obtener número de préstamos y lista de libros en préstamo:
         Dim datos As Dictionary(Of String, Object) = controladorUsuario.ObtenerInformacionPrestamo(datosUsuario.Id)
 
         gbDatos.Text = "Datos del Usuario"
 
-        Dim nombreCompleto = datosUsuario.Nombre + " " + datosUsuario.Apellido1 + " " + datosUsuario.Apellido2
+        ' Mostrar el nombre completo del usuario
+        Dim nombreCompleto As String = datosUsuario.Nombre & " " & datosUsuario.Apellido1 & " " & datosUsuario.Apellido2
         lTitulo.Text = "Nombre: "
         lTitulo2.Text = nombreCompleto
-        lId.Text = datosUsuario.Id
+        lId.Text = datosUsuario.Id.ToString()
         lTelefono.Text = datosUsuario.Telefono
         lNumeroTotalPrestamos.Text = datos("TotalPrestamos").ToString()
-        lUltimoLibroPrestamo.Text = datos("UltimoLibroPrestado").ToString()
 
+        ' Obtener la lista de libros prestados
+        Dim listaLibros As List(Of String) = CType(datos("ListaLibros"), List(Of String))
+
+
+        Console.WriteLine(listaLibros.Count)
+
+        ' Limpiar el contenido anterior
+        rtbLibrosEnPrestamoActivo.Clear()
+
+        ' Habilitar el scroll sin permitir edición
+        rtbLibrosEnPrestamoActivo.ReadOnly = True
+        rtbLibrosEnPrestamoActivo.ScrollBars = RichTextBoxScrollBars.Vertical ' 
+
+
+        If listaLibros.Count = 0 Then
+            rtbLibrosEnPrestamoActivo.Text = "No tiene libros actualmente en préstamo."
+        Else
+            For Each tituloLibro As String In listaLibros
+                rtbLibrosEnPrestamoActivo.AppendText("📖 " & tituloLibro & Environment.NewLine)
+            Next
+        End If
     End Sub
 
+
     Private Sub InicializarDatosLibros()
-        ' Configuración de etiquetas y texto
         gbDatos.Text = "Datos del Libro"
         lTitulo.Text = "Titulo: "
         lTitulo2.Text = datosLibro.Titulo

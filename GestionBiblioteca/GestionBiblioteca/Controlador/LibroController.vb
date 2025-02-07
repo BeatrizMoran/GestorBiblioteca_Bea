@@ -75,4 +75,18 @@ Public Class LibroController
 
         End Try
     End Sub
+    Public Function ContarPrestamosAsociados(id As Integer)
+        Try
+
+            Dim numPrestamos As Integer = Libro.ContarPrestamosAsociados(id)
+
+
+            Return numPrestamos
+        Catch ex As Exception
+            Throw New Exception("Error al buscar el libro: " & ex.Message)
+
+        End Try
+
+    End Function
+
 End Class

@@ -24,14 +24,14 @@ Partial Class GestionLibroForm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GestionLibroForm))
         Me.tlpPrincipal = New System.Windows.Forms.TableLayoutPanel()
+        Me.tlpLibros = New System.Windows.Forms.TableLayoutPanel()
+        Me.panelLibros = New System.Windows.Forms.Panel()
         Me.tlpTitulo = New System.Windows.Forms.TableLayoutPanel()
         Me.lGestionLibros = New System.Windows.Forms.Label()
         Me.bCrearLibro = New System.Windows.Forms.Button()
-        Me.tlpLibros = New System.Windows.Forms.TableLayoutPanel()
-        Me.panelLibros = New System.Windows.Forms.Panel()
         Me.tlpPrincipal.SuspendLayout()
-        Me.tlpTitulo.SuspendLayout()
         Me.tlpLibros.SuspendLayout()
+        Me.tlpTitulo.SuspendLayout()
         Me.SuspendLayout()
         '
         'tlpPrincipal
@@ -48,6 +48,32 @@ Partial Class GestionLibroForm
         Me.tlpPrincipal.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.tlpPrincipal.Size = New System.Drawing.Size(574, 363)
         Me.tlpPrincipal.TabIndex = 0
+        '
+        'tlpLibros
+        '
+        Me.tlpLibros.ColumnCount = 3
+        Me.tlpLibros.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpLibros.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
+        Me.tlpLibros.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpLibros.Controls.Add(Me.panelLibros, 1, 1)
+        Me.tlpLibros.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlpLibros.Location = New System.Drawing.Point(3, 83)
+        Me.tlpLibros.Name = "tlpLibros"
+        Me.tlpLibros.RowCount = 3
+        Me.tlpLibros.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpLibros.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
+        Me.tlpLibros.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpLibros.Size = New System.Drawing.Size(568, 277)
+        Me.tlpLibros.TabIndex = 4
+        '
+        'panelLibros
+        '
+        Me.panelLibros.AutoScroll = True
+        Me.panelLibros.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.panelLibros.Location = New System.Drawing.Point(59, 30)
+        Me.panelLibros.Name = "panelLibros"
+        Me.panelLibros.Size = New System.Drawing.Size(448, 215)
+        Me.panelLibros.TabIndex = 2
         '
         'tlpTitulo
         '
@@ -90,32 +116,6 @@ Partial Class GestionLibroForm
         Me.bCrearLibro.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.bCrearLibro.UseVisualStyleBackColor = True
         '
-        'tlpLibros
-        '
-        Me.tlpLibros.ColumnCount = 3
-        Me.tlpLibros.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlpLibros.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
-        Me.tlpLibros.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlpLibros.Controls.Add(Me.panelLibros, 1, 1)
-        Me.tlpLibros.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tlpLibros.Location = New System.Drawing.Point(3, 83)
-        Me.tlpLibros.Name = "tlpLibros"
-        Me.tlpLibros.RowCount = 3
-        Me.tlpLibros.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlpLibros.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
-        Me.tlpLibros.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlpLibros.Size = New System.Drawing.Size(568, 277)
-        Me.tlpLibros.TabIndex = 4
-        '
-        'panelLibros
-        '
-        Me.panelLibros.AutoScroll = True
-        Me.panelLibros.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelLibros.Location = New System.Drawing.Point(59, 30)
-        Me.panelLibros.Name = "panelLibros"
-        Me.panelLibros.Size = New System.Drawing.Size(448, 215)
-        Me.panelLibros.TabIndex = 2
-        '
         'GestionLibroForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -127,9 +127,9 @@ Partial Class GestionLibroForm
         Me.Name = "GestionLibroForm"
         Me.Text = "<"
         Me.tlpPrincipal.ResumeLayout(False)
+        Me.tlpLibros.ResumeLayout(False)
         Me.tlpTitulo.ResumeLayout(False)
         Me.tlpTitulo.PerformLayout()
-        Me.tlpLibros.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub

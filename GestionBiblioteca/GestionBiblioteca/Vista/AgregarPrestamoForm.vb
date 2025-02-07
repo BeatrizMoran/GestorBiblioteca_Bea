@@ -1,8 +1,10 @@
 ﻿Imports System.ComponentModel
 Imports System.Globalization
+Imports ControlesBiblioteca
 Imports GestionBiblioteca.DTOs
 
 Public Class AgregarPrestamoForm
+    Dim mostrado As Boolean = False
     Dim controladorLibro As New LibroController
     Dim controladorUsuario As New UsuarioController
     Dim controladorPrestamo As New PrestamoController
@@ -14,11 +16,13 @@ Public Class AgregarPrestamoForm
     End Sub
 
     Private Sub AgregarPrestamoForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        mostrado = True
         RestaurarControles()
         pEstado.Visible = False
 
         InicializarDatosCombo()
         If opcion = "editar" Then
+            gbCrearUsuario.Text = "Editar prestamo"
             pEstado.Visible = True
             InicializarDatosPrestamo()
             Dim opc As String = CType(cbEstado.SelectedItem, KeyValuePair(Of Boolean, String)).Value
@@ -203,5 +207,11 @@ Public Class AgregarPrestamoForm
         Dim fechaInicio As DateTime = dtpFechaInicio.Value
         Dim fechaFin As DateTime = fechaInicio.AddMonths(1)
         dtpFechaFin.Value = fechaFin
+    End Sub
+
+    Private Sub AgregarPrestamoForm_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+        If mostrado Then
+            ModuloUtilidades.AjustarFuente(formulario:=Me, tamanoMaximoLetra:=13, tlPanel:=tlpPrincipal)
+        End If
     End Sub
 End Class

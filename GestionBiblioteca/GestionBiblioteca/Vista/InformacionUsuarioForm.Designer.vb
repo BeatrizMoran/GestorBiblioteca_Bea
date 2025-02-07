@@ -36,6 +36,9 @@ Partial Class InformacionUsuarioForm
         Me.lNumeroPrestamos = New System.Windows.Forms.Label()
         Me.lTituloTelefono = New System.Windows.Forms.Label()
         Me.lTelefono = New System.Windows.Forms.Label()
+        Me.lUltimoPrestamo = New System.Windows.Forms.Label()
+        Me.lUltimoLibroPrestamo = New System.Windows.Forms.Label()
+        Me.rtbLibrosEnPrestamoActivo = New System.Windows.Forms.RichTextBox()
         Me.tlpLibro = New System.Windows.Forms.TableLayoutPanel()
         Me.lTituloSinopsis = New System.Windows.Forms.Label()
         Me.lAnyoPublicacion = New System.Windows.Forms.Label()
@@ -59,8 +62,6 @@ Partial Class InformacionUsuarioForm
         Me.bSalir = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.lUltimoPrestamo = New System.Windows.Forms.Label()
-        Me.lUltimoLibroPrestamo = New System.Windows.Forms.Label()
         Me.tlpPrincipal.SuspendLayout()
         Me.gbDatos.SuspendLayout()
         Me.tlpInformacion.SuspendLayout()
@@ -223,13 +224,15 @@ Partial Class InformacionUsuarioForm
         Me.tlpUsuario.Controls.Add(Me.lTelefono, 2, 0)
         Me.tlpUsuario.Controls.Add(Me.lUltimoPrestamo, 1, 2)
         Me.tlpUsuario.Controls.Add(Me.lUltimoLibroPrestamo, 2, 2)
+        Me.tlpUsuario.Controls.Add(Me.rtbLibrosEnPrestamoActivo, 1, 3)
         Me.tlpUsuario.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlpUsuario.Location = New System.Drawing.Point(57, 134)
         Me.tlpUsuario.Name = "tlpUsuario"
-        Me.tlpUsuario.RowCount = 3
-        Me.tlpUsuario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.tlpUsuario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
-        Me.tlpUsuario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333!))
+        Me.tlpUsuario.RowCount = 4
+        Me.tlpUsuario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.tlpUsuario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.tlpUsuario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.tlpUsuario.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.tlpUsuario.Size = New System.Drawing.Size(433, 75)
         Me.tlpUsuario.TabIndex = 1
         Me.tlpUsuario.Visible = False
@@ -238,10 +241,10 @@ Partial Class InformacionUsuarioForm
         '
         Me.lNumeroTotalPrestamos.AutoSize = True
         Me.lNumeroTotalPrestamos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lNumeroTotalPrestamos.Location = New System.Drawing.Point(190, 33)
+        Me.lNumeroTotalPrestamos.Location = New System.Drawing.Point(200, 26)
         Me.lNumeroTotalPrestamos.Margin = New System.Windows.Forms.Padding(8)
         Me.lNumeroTotalPrestamos.Name = "lNumeroTotalPrestamos"
-        Me.lNumeroTotalPrestamos.Size = New System.Drawing.Size(235, 9)
+        Me.lNumeroTotalPrestamos.Size = New System.Drawing.Size(225, 2)
         Me.lNumeroTotalPrestamos.TabIndex = 3
         Me.lNumeroTotalPrestamos.Text = "Label5"
         Me.lNumeroTotalPrestamos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -250,10 +253,10 @@ Partial Class InformacionUsuarioForm
         '
         Me.lNumeroPrestamos.AutoSize = True
         Me.lNumeroPrestamos.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lNumeroPrestamos.Location = New System.Drawing.Point(35, 33)
+        Me.lNumeroPrestamos.Location = New System.Drawing.Point(34, 26)
         Me.lNumeroPrestamos.Margin = New System.Windows.Forms.Padding(8)
         Me.lNumeroPrestamos.Name = "lNumeroPrestamos"
-        Me.lNumeroPrestamos.Size = New System.Drawing.Size(139, 9)
+        Me.lNumeroPrestamos.Size = New System.Drawing.Size(150, 2)
         Me.lNumeroPrestamos.TabIndex = 2
         Me.lNumeroPrestamos.Text = "Numero total de prestamos: "
         Me.lNumeroPrestamos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -262,10 +265,10 @@ Partial Class InformacionUsuarioForm
         '
         Me.lTituloTelefono.AutoSize = True
         Me.lTituloTelefono.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lTituloTelefono.Location = New System.Drawing.Point(35, 8)
+        Me.lTituloTelefono.Location = New System.Drawing.Point(34, 8)
         Me.lTituloTelefono.Margin = New System.Windows.Forms.Padding(8)
         Me.lTituloTelefono.Name = "lTituloTelefono"
-        Me.lTituloTelefono.Size = New System.Drawing.Size(139, 9)
+        Me.lTituloTelefono.Size = New System.Drawing.Size(150, 2)
         Me.lTituloTelefono.TabIndex = 0
         Me.lTituloTelefono.Text = "Telefono: "
         Me.lTituloTelefono.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -274,13 +277,45 @@ Partial Class InformacionUsuarioForm
         '
         Me.lTelefono.AutoSize = True
         Me.lTelefono.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lTelefono.Location = New System.Drawing.Point(190, 8)
+        Me.lTelefono.Location = New System.Drawing.Point(200, 8)
         Me.lTelefono.Margin = New System.Windows.Forms.Padding(8)
         Me.lTelefono.Name = "lTelefono"
-        Me.lTelefono.Size = New System.Drawing.Size(235, 9)
+        Me.lTelefono.Size = New System.Drawing.Size(225, 2)
         Me.lTelefono.TabIndex = 1
         Me.lTelefono.Text = "xxxxxxxxx"
         Me.lTelefono.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lUltimoPrestamo
+        '
+        Me.lUltimoPrestamo.AutoSize = True
+        Me.lUltimoPrestamo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lUltimoPrestamo.Location = New System.Drawing.Point(29, 36)
+        Me.lUltimoPrestamo.Name = "lUltimoPrestamo"
+        Me.lUltimoPrestamo.Size = New System.Drawing.Size(160, 18)
+        Me.lUltimoPrestamo.TabIndex = 4
+        Me.lUltimoPrestamo.Text = "Libros actualemnte en prestamo:"
+        Me.lUltimoPrestamo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'lUltimoLibroPrestamo
+        '
+        Me.lUltimoLibroPrestamo.AutoSize = True
+        Me.lUltimoLibroPrestamo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lUltimoLibroPrestamo.Location = New System.Drawing.Point(195, 36)
+        Me.lUltimoLibroPrestamo.Name = "lUltimoLibroPrestamo"
+        Me.lUltimoLibroPrestamo.Size = New System.Drawing.Size(235, 18)
+        Me.lUltimoLibroPrestamo.TabIndex = 5
+        Me.lUltimoLibroPrestamo.Text = "Label2"
+        Me.lUltimoLibroPrestamo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'rtbLibrosEnPrestamoActivo
+        '
+        Me.tlpUsuario.SetColumnSpan(Me.rtbLibrosEnPrestamoActivo, 2)
+        Me.rtbLibrosEnPrestamoActivo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rtbLibrosEnPrestamoActivo.Location = New System.Drawing.Point(29, 57)
+        Me.rtbLibrosEnPrestamoActivo.Name = "rtbLibrosEnPrestamoActivo"
+        Me.rtbLibrosEnPrestamoActivo.Size = New System.Drawing.Size(401, 15)
+        Me.rtbLibrosEnPrestamoActivo.TabIndex = 6
+        Me.rtbLibrosEnPrestamoActivo.Text = ""
         '
         'tlpLibro
         '
@@ -363,6 +398,7 @@ Partial Class InformacionUsuarioForm
         'rtbSinopsis
         '
         Me.rtbSinopsis.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.rtbSinopsis.Enabled = False
         Me.rtbSinopsis.Location = New System.Drawing.Point(121, 29)
         Me.rtbSinopsis.Name = "rtbSinopsis"
         Me.rtbSinopsis.Size = New System.Drawing.Size(309, 43)
@@ -561,28 +597,6 @@ Partial Class InformacionUsuarioForm
         Me.Panel2.Size = New System.Drawing.Size(433, 13)
         Me.Panel2.TabIndex = 6
         '
-        'lUltimoPrestamo
-        '
-        Me.lUltimoPrestamo.AutoSize = True
-        Me.lUltimoPrestamo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lUltimoPrestamo.Location = New System.Drawing.Point(30, 50)
-        Me.lUltimoPrestamo.Name = "lUltimoPrestamo"
-        Me.lUltimoPrestamo.Size = New System.Drawing.Size(149, 25)
-        Me.lUltimoPrestamo.TabIndex = 4
-        Me.lUltimoPrestamo.Text = "Ultimo libro en prestamo: "
-        Me.lUltimoPrestamo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lUltimoLibroPrestamo
-        '
-        Me.lUltimoLibroPrestamo.AutoSize = True
-        Me.lUltimoLibroPrestamo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lUltimoLibroPrestamo.Location = New System.Drawing.Point(185, 50)
-        Me.lUltimoLibroPrestamo.Name = "lUltimoLibroPrestamo"
-        Me.lUltimoLibroPrestamo.Size = New System.Drawing.Size(245, 25)
-        Me.lUltimoLibroPrestamo.TabIndex = 5
-        Me.lUltimoLibroPrestamo.Text = "Label2"
-        Me.lUltimoLibroPrestamo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
         'InformacionUsuarioForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -649,4 +663,5 @@ Partial Class InformacionUsuarioForm
     Friend WithEvents rtbSinopsis As RichTextBox
     Friend WithEvents lUltimoPrestamo As Label
     Friend WithEvents lUltimoLibroPrestamo As Label
+    Friend WithEvents rtbLibrosEnPrestamoActivo As RichTextBox
 End Class

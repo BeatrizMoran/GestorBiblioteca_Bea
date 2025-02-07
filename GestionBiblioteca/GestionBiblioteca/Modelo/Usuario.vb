@@ -143,11 +143,7 @@ Public Class Usuario
 
             Dim cmd As New SQLiteCommand
             Dim sql As String = "SELECT 
-                (SELECT COUNT(*) FROM Prestamos WHERE id_usuario = @idUsuario) AS TotalPrestamos,
-                (SELECT l.Titulo FROM Prestamos p 
-                 JOIN Libros l ON p.id_libro = l.ID 
-                 WHERE p.id_usuario = @idUsuario AND p.devuelto = 0 
-                 ORDER BY p.fecha_inicio DESC LIMIT 1) AS UltimoLibroPrestado;"
+                                 (SELECT COUNT(*) FROM Prestamos WHERE id_usuario = @idUsuario) AS TotalPrestamos"
 
             cmd.CommandText = sql
             cmd.Parameters.Add("@idUsuario", DbType.Int32).Value = idUsuario
@@ -155,13 +151,35 @@ Public Class Usuario
             Dim lector = SQLLite.GetDataReader(My.Settings.conexion, cmd)
             If lector.Read() Then
                 datos("TotalPrestamos") = If(IsDBNull(lector("TotalPrestamos")), 0, lector("TotalPrestamos"))
-                datos("UltimoLibroPrestado") = If(IsDBNull(lector("UltimoLibroPrestado")), "Ninguno", lector("UltimoLibroPrestado"))
             End If
+
+            lector.Close()
+
+            ' Ahora obtenemos todos los libros en préstamo
+            Dim listaLibros As New List(Of String)
+            Dim sqlLista As String = "SELECT l.Titulo 
+                          FROM Prestamos p 
+                          JOIN Libros l ON p.id_libro = l.ID 
+                          WHERE p.id_usuario = @idUsuario AND p.devuelto = 0 
+                          ORDER BY p.fecha_inicio DESC;"
+
+            Dim cmdLista As New SQLiteCommand
+            cmdLista.CommandText = sqlLista
+            cmdLista.Parameters.Add("@idUsuario", DbType.Int32).Value = idUsuario
+
+            Dim lectorLista = SQLLite.GetDataReader(My.Settings.conexion, cmdLista)
+            While lectorLista.Read()
+                listaLibros.Add(lectorLista("Titulo").ToString())
+            End While
+
+            datos("ListaLibros") = listaLibros
+
+            lectorLista.Close()
 
             Return datos
 
         Catch ex As Exception
-            Throw New Exception("Error al buscar prestamo de usuario")
+            Throw New Exception("Error al buscar prestamo de usuario" & ex.Message)
         End Try
     End Function
 

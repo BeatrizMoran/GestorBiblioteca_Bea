@@ -27,6 +27,7 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
+        bTituloLogo.FlatAppearance.BorderSize = 0
 
 
         dashboard.MdiParent = Me
@@ -45,12 +46,7 @@ Public Class Form1
         AjustarMenuItems()
         msNavbar.Padding = New Padding(0, 30, 0, 0)
 
-        'AddHandler dashboard.bdUsuarios.ClickarBlock, Sub()
-        '                                                  AbrirUsuariosForm("gestion")
-        '                                              End Sub
-        'AddHandler gestionUsuarios.bCrearUsuario.Click, Sub()
-        '                                                    AbrirUsuariosForm("crear")
-        '                                                End Sub
+
     End Sub
 
     Private Sub AjustarMenuItems()
@@ -66,27 +62,11 @@ Public Class Form1
 
     Private Sub Form1_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
         If mostrado Then
-            AjustarFuente(Me, 24, msNavbar, dashboard.tlpPrincipal)
-            'AjustarFuenteYImagenes()
+            AjustarFuente(formulario:=Me, tamanoMaximoLetra:=18, menuStrip:=msNavbar, tlPanel:=dashboard.tlpPrincipal)
+
         End If
     End Sub
 
-    Private Sub AjustarFuenteYImagenes()
-        Dim proporcionAncho As Double = Me.Width / Me.MinimumSize.Width
-        Dim tamanoFuente As Integer = Math.Min(proporcionAncho * FONTSIZE, 14)
-
-        ' Ajustar la fuente en el menú
-        For Each item As ToolStripMenuItem In msNavbar.Items
-            item.Font = New Font("Arial", tamanoFuente)
-        Next
-
-        ' Ajustar la fuente de los controles en el formulario de Dashboard
-        For Each control In dashboard.tlpPrincipal.Controls
-            control.Font = New Font("Microsoft Sans Serif", proporcionAncho * FONTSIZE)
-        Next
-
-
-    End Sub
 
     Public Sub OcultarMostrarBotonVolver()
         If formHistory.Count = 0 Then
@@ -392,4 +372,6 @@ Public Class Form1
     Private Sub PrestamosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrestamosToolStripMenuItem.Click
         AbrirPaginaPrestamos("gestion")
     End Sub
+
+
 End Class

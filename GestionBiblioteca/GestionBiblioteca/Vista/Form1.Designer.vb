@@ -28,12 +28,11 @@ Partial Class Form1
         Me.msNavbar = New System.Windows.Forms.MenuStrip()
         Me.InicioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LibrosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.AutoresToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CategoriasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.UsuariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PrestamosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.bVolver = New System.Windows.Forms.Button()
+        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.TableLayoutPanel1.SuspendLayout()
         Me.msNavbar.SuspendLayout()
         Me.Panel1.SuspendLayout()
@@ -49,7 +48,7 @@ Partial Class Form1
         Me.bTituloLogo.Location = New System.Drawing.Point(40, 3)
         Me.bTituloLogo.Margin = New System.Windows.Forms.Padding(40, 3, 3, 3)
         Me.bTituloLogo.Name = "bTituloLogo"
-        Me.bTituloLogo.Size = New System.Drawing.Size(153, 45)
+        Me.bTituloLogo.Size = New System.Drawing.Size(153, 77)
         Me.bTituloLogo.TabIndex = 7
         Me.bTituloLogo.Text = "BIBLIOMUNDO"
         Me.bTituloLogo.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -60,12 +59,14 @@ Partial Class Form1
         Me.TableLayoutPanel1.ColumnCount = 1
         Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Controls.Add(Me.bTituloLogo, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.msNavbar, 0, 1)
+        Me.TableLayoutPanel1.Controls.Add(Me.msNavbar, 0, 2)
+        Me.TableLayoutPanel1.Controls.Add(Me.Panel2, 0, 1)
         Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
         Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 2
+        Me.TableLayoutPanel1.RowCount = 3
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10.0!))
         Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
         Me.TableLayoutPanel1.Size = New System.Drawing.Size(196, 416)
         Me.TableLayoutPanel1.TabIndex = 8
@@ -74,11 +75,11 @@ Partial Class Form1
         '
         Me.msNavbar.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.msNavbar.Dock = System.Windows.Forms.DockStyle.Left
-        Me.msNavbar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.LibrosToolStripMenuItem, Me.AutoresToolStripMenuItem, Me.CategoriasToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.PrestamosToolStripMenuItem})
-        Me.msNavbar.Location = New System.Drawing.Point(0, 51)
+        Me.msNavbar.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.InicioToolStripMenuItem, Me.LibrosToolStripMenuItem, Me.UsuariosToolStripMenuItem, Me.PrestamosToolStripMenuItem})
+        Me.msNavbar.Location = New System.Drawing.Point(0, 93)
         Me.msNavbar.MinimumSize = New System.Drawing.Size(196, 0)
         Me.msNavbar.Name = "msNavbar"
-        Me.msNavbar.Size = New System.Drawing.Size(196, 365)
+        Me.msNavbar.Size = New System.Drawing.Size(196, 323)
         Me.msNavbar.TabIndex = 8
         Me.msNavbar.Text = "MenuStrip1"
         '
@@ -86,42 +87,28 @@ Partial Class Form1
         '
         Me.InicioToolStripMenuItem.Image = CType(resources.GetObject("InicioToolStripMenuItem.Image"), System.Drawing.Image)
         Me.InicioToolStripMenuItem.Name = "InicioToolStripMenuItem"
-        Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(113, 20)
+        Me.InicioToolStripMenuItem.Size = New System.Drawing.Size(83, 20)
         Me.InicioToolStripMenuItem.Text = "Inicio"
         '
         'LibrosToolStripMenuItem
         '
         Me.LibrosToolStripMenuItem.Image = CType(resources.GetObject("LibrosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.LibrosToolStripMenuItem.Name = "LibrosToolStripMenuItem"
-        Me.LibrosToolStripMenuItem.Size = New System.Drawing.Size(113, 20)
+        Me.LibrosToolStripMenuItem.Size = New System.Drawing.Size(83, 20)
         Me.LibrosToolStripMenuItem.Text = "Libros"
-        '
-        'AutoresToolStripMenuItem
-        '
-        Me.AutoresToolStripMenuItem.Image = CType(resources.GetObject("AutoresToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.AutoresToolStripMenuItem.Name = "AutoresToolStripMenuItem"
-        Me.AutoresToolStripMenuItem.Size = New System.Drawing.Size(113, 20)
-        Me.AutoresToolStripMenuItem.Text = "Autores"
-        '
-        'CategoriasToolStripMenuItem
-        '
-        Me.CategoriasToolStripMenuItem.Image = CType(resources.GetObject("CategoriasToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.CategoriasToolStripMenuItem.Name = "CategoriasToolStripMenuItem"
-        Me.CategoriasToolStripMenuItem.Size = New System.Drawing.Size(113, 20)
-        Me.CategoriasToolStripMenuItem.Text = "Categorias"
         '
         'UsuariosToolStripMenuItem
         '
         Me.UsuariosToolStripMenuItem.Image = CType(resources.GetObject("UsuariosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.UsuariosToolStripMenuItem.Name = "UsuariosToolStripMenuItem"
-        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(113, 20)
+        Me.UsuariosToolStripMenuItem.Size = New System.Drawing.Size(83, 20)
         Me.UsuariosToolStripMenuItem.Text = "Usuarios"
         '
         'PrestamosToolStripMenuItem
         '
         Me.PrestamosToolStripMenuItem.Image = CType(resources.GetObject("PrestamosToolStripMenuItem.Image"), System.Drawing.Image)
         Me.PrestamosToolStripMenuItem.Name = "PrestamosToolStripMenuItem"
-        Me.PrestamosToolStripMenuItem.Size = New System.Drawing.Size(113, 20)
+        Me.PrestamosToolStripMenuItem.Size = New System.Drawing.Size(83, 20)
         Me.PrestamosToolStripMenuItem.Text = "Prestamos"
         '
         'Panel1
@@ -148,6 +135,15 @@ Partial Class Form1
         Me.bVolver.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.bVolver.UseVisualStyleBackColor = False
         '
+        'Panel2
+        '
+        Me.Panel2.BackColor = System.Drawing.Color.White
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel2.Location = New System.Drawing.Point(3, 86)
+        Me.Panel2.Name = "Panel2"
+        Me.Panel2.Size = New System.Drawing.Size(190, 4)
+        Me.Panel2.TabIndex = 9
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -172,10 +168,9 @@ Partial Class Form1
     Friend WithEvents msNavbar As MenuStrip
     Friend WithEvents InicioToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LibrosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AutoresToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents CategoriasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents UsuariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PrestamosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Panel1 As Panel
     Friend WithEvents bVolver As Button
+    Friend WithEvents Panel2 As Panel
 End Class

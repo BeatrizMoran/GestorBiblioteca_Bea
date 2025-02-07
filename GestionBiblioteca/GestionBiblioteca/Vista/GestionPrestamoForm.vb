@@ -183,7 +183,7 @@ Public Class GestionPrestamoForm
 
             If respuesta = DialogResult.Yes Then
                 controlador.BorrarPrestamo(id)
-                MessageBox.Show("Prestamo borrado correctamente", "Prestamo borrado", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Prestamo borrado correctamente", "Prestamo borrado", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 ActualizarVista()
             End If
 

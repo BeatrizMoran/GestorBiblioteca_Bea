@@ -29,19 +29,14 @@ Public Class Libro
         Dim libros As New Dictionary(Of Integer, Libro)
 
         Try
-            Dim Sql As String = "SELECT * FROM Libros"
+            Dim Sql As String = "SELECT * FROM Libros ORDER BY id DESC"
 
             Dim Cmd As New SQLiteCommand(Sql)
 
-            ' Abrir la conexión manualmente
-            Using conexion As New SQLiteConnection(My.Settings.conexion)
-                conexion.Open()
-                Cmd.Connection = conexion
 
-                Using lector As SQLiteDataReader = Cmd.ExecuteReader()
-                    ' Leer los resultados
-                    While lector.Read()
-                        Dim libro As New Libro With {
+            Dim lector = SQLLite.GetDataReader(My.Settings.conexion, Cmd)
+            While lector.Read()
+                Dim libro As New Libro With {
                             .id = lector.GetInt32(0),
                             .titulo = lector.GetString(1),
                             .escritor = lector.GetString(2),
@@ -51,9 +46,8 @@ Public Class Libro
                         }
                         libros.Add(libro.id, libro)
                     End While
-                End Using
-            End Using
 
+            lector.Close()
         Catch ex As Exception
             Throw New Exception("Error al obtener los libros: " & ex.Message)
         End Try
@@ -81,17 +75,12 @@ Public Class Libro
             Dim libroDTO As New LibroDTO()
 
             Dim consulta As String = "SELECT * FROM Libros WHERE Id = @id"
-            Using conexion As New SQLiteConnection(My.Settings.conexion),
-                  cmd As New SQLiteCommand(consulta, conexion)
+            Dim cmd As New SQLiteCommand(consulta)
 
-                cmd.Parameters.Add("@id", DbType.Int32).Value = id
+            cmd.Parameters.Add("@id", DbType.Int32).Value = id
 
-                ' Abrir la conexión
-                conexion.Open()
-
-                ' Ejecutar la consulta y leer los datos
-                Using lector As SQLiteDataReader = cmd.ExecuteReader()
-                    If lector.Read() Then
+            Dim lector = SQLLite.GetDataReader(My.Settings.conexion, cmd)
+            If lector.Read() Then
                         ' Asignar valores al objeto libroDTO
                         libroDTO.Id = Convert.ToInt32(lector("Id"))
                         libroDTO.Titulo = lector("Titulo").ToString()
@@ -101,8 +90,8 @@ Public Class Libro
                     Else
                         Throw New Exception("No se encontró un libro con el ID especificado.")
                     End If
-                End Using
-            End Using
+
+            lector.Close()
 
             Return libroDTO
         Catch ex As SQLiteException
@@ -162,6 +151,27 @@ Public Class Libro
             Throw New Exception("Error al actualizar el estado: " & ex.Message)
         End Try
     End Sub
+    Public Shared Function ContarPrestamosAsociados(id As Integer) As Integer
+        Try
+            Dim cantidadPrestamos As Integer
+            Dim Cmd As New SQLiteCommand
+            Dim consulta As String = "SELECT COUNT(*) as TotalPrestamos FROM Prestamos WHERE id_libro = @id"
+            Cmd.CommandText = consulta
+
+            Cmd.Parameters.Add("@id", DbType.Int32).Value = id
+
+            Dim lector = SQLLite.GetDataReader(My.Settings.conexion, Cmd)
+            If lector.Read() Then
+                cantidadPrestamos = If(IsDBNull(lector("TotalPrestamos")), 0, Convert.ToInt32(lector("TotalPrestamos")))
+            End If
+            lector.Close()
+            Return cantidadPrestamos
+
+        Catch ex As Exception
+            Throw New Exception("Error al contar prestamos: " & ex.Message)
+        End Try
+    End Function
+
 
 
 

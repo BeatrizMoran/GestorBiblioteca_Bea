@@ -143,7 +143,7 @@ Partial Class GestionPrestamoForm
         Me.bAnterior.Name = "bAnterior"
         Me.bAnterior.Size = New System.Drawing.Size(75, 38)
         Me.bAnterior.TabIndex = 0
-        Me.bAnterior.Text = "Anterior"
+        Me.bAnterior.Text = "<"
         Me.bAnterior.UseVisualStyleBackColor = True
         '
         'bSiguiente
@@ -153,7 +153,7 @@ Partial Class GestionPrestamoForm
         Me.bSiguiente.Name = "bSiguiente"
         Me.bSiguiente.Size = New System.Drawing.Size(75, 38)
         Me.bSiguiente.TabIndex = 1
-        Me.bSiguiente.Text = "Siguiente"
+        Me.bSiguiente.Text = ">"
         Me.bSiguiente.UseVisualStyleBackColor = True
         '
         'lblPaginacion

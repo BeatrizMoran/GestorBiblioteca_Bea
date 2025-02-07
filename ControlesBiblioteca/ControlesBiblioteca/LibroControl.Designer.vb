@@ -30,30 +30,28 @@ Partial Class LibroControl
         Me.bEditar = New System.Windows.Forms.Button()
         Me.bInfo = New System.Windows.Forms.Button()
         Me.bBorrar = New System.Windows.Forms.Button()
-        Me.cbDisponible = New System.Windows.Forms.CheckBox()
         Me.lEstado = New System.Windows.Forms.Label()
         Me.tlpControlLibro.SuspendLayout()
         Me.SuspendLayout()
         '
         'tlpControlLibro
         '
-        Me.tlpControlLibro.ColumnCount = 8
-        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
-        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlpControlLibro.ColumnCount = 7
+        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
+        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
         Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.tlpControlLibro.Controls.Add(Me.lAnyo, 3, 0)
-        Me.tlpControlLibro.Controls.Add(Me.lTitulo, 1, 0)
-        Me.tlpControlLibro.Controls.Add(Me.lEscritor, 2, 0)
-        Me.tlpControlLibro.Controls.Add(Me.bEditar, 5, 0)
-        Me.tlpControlLibro.Controls.Add(Me.bInfo, 6, 0)
-        Me.tlpControlLibro.Controls.Add(Me.bBorrar, 7, 0)
-        Me.tlpControlLibro.Controls.Add(Me.cbDisponible, 0, 0)
-        Me.tlpControlLibro.Controls.Add(Me.lEstado, 4, 0)
+        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tlpControlLibro.Controls.Add(Me.lAnyo, 2, 0)
+        Me.tlpControlLibro.Controls.Add(Me.lTitulo, 0, 0)
+        Me.tlpControlLibro.Controls.Add(Me.lEscritor, 1, 0)
+        Me.tlpControlLibro.Controls.Add(Me.bEditar, 4, 0)
+        Me.tlpControlLibro.Controls.Add(Me.bInfo, 5, 0)
+        Me.tlpControlLibro.Controls.Add(Me.bBorrar, 6, 0)
+        Me.tlpControlLibro.Controls.Add(Me.lEstado, 3, 0)
         Me.tlpControlLibro.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlpControlLibro.Location = New System.Drawing.Point(0, 0)
         Me.tlpControlLibro.Name = "tlpControlLibro"
@@ -66,9 +64,9 @@ Partial Class LibroControl
         '
         Me.lAnyo.AutoSize = True
         Me.lAnyo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lAnyo.Location = New System.Drawing.Point(111, 0)
+        Me.lAnyo.Location = New System.Drawing.Point(93, 0)
         Me.lAnyo.Name = "lAnyo"
-        Me.lAnyo.Size = New System.Drawing.Size(30, 41)
+        Me.lAnyo.Size = New System.Drawing.Size(39, 41)
         Me.lAnyo.TabIndex = 3
         Me.lAnyo.Text = "Año"
         Me.lAnyo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -77,9 +75,9 @@ Partial Class LibroControl
         '
         Me.lTitulo.AutoSize = True
         Me.lTitulo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lTitulo.Location = New System.Drawing.Point(39, 0)
+        Me.lTitulo.Location = New System.Drawing.Point(3, 0)
         Me.lTitulo.Name = "lTitulo"
-        Me.lTitulo.Size = New System.Drawing.Size(30, 41)
+        Me.lTitulo.Size = New System.Drawing.Size(39, 41)
         Me.lTitulo.TabIndex = 1
         Me.lTitulo.Text = "Titulo"
         Me.lTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -88,9 +86,9 @@ Partial Class LibroControl
         '
         Me.lEscritor.AutoSize = True
         Me.lEscritor.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lEscritor.Location = New System.Drawing.Point(75, 0)
+        Me.lEscritor.Location = New System.Drawing.Point(48, 0)
         Me.lEscritor.Name = "lEscritor"
-        Me.lEscritor.Size = New System.Drawing.Size(30, 41)
+        Me.lEscritor.Size = New System.Drawing.Size(39, 41)
         Me.lEscritor.TabIndex = 2
         Me.lEscritor.Text = "Escritor"
         Me.lEscritor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -128,25 +126,13 @@ Partial Class LibroControl
         Me.bBorrar.TabIndex = 6
         Me.bBorrar.UseVisualStyleBackColor = True
         '
-        'cbDisponible
-        '
-        Me.cbDisponible.AutoSize = True
-        Me.cbDisponible.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.cbDisponible.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.cbDisponible.Location = New System.Drawing.Point(3, 3)
-        Me.cbDisponible.Name = "cbDisponible"
-        Me.cbDisponible.Size = New System.Drawing.Size(30, 35)
-        Me.cbDisponible.TabIndex = 7
-        Me.cbDisponible.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
-        Me.cbDisponible.UseVisualStyleBackColor = True
-        '
         'lEstado
         '
         Me.lEstado.AutoSize = True
         Me.lEstado.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lEstado.Location = New System.Drawing.Point(147, 0)
+        Me.lEstado.Location = New System.Drawing.Point(138, 0)
         Me.lEstado.Name = "lEstado"
-        Me.lEstado.Size = New System.Drawing.Size(30, 41)
+        Me.lEstado.Size = New System.Drawing.Size(39, 41)
         Me.lEstado.TabIndex = 8
         Me.lEstado.Text = "Estado"
         Me.lEstado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -172,6 +158,5 @@ Partial Class LibroControl
     Friend WithEvents lEscritor As Label
     Friend WithEvents bEditar As Button
     Friend WithEvents bInfo As Button
-    Friend WithEvents cbDisponible As CheckBox
     Friend WithEvents lEstado As Label
 End Class

@@ -54,7 +54,8 @@ Public Class Prestamo
                 Console.WriteLine("prestamo estado: " & prestamo.Estado)
             End If
 
-                Return prestamo
+            lector.Close()
+            Return prestamo
         Catch ex As Exception
             Throw New Exception("Error al buscar el préstamo: " & ex.Message)
         End Try
@@ -116,8 +117,11 @@ Public Class Prestamo
 
 
             If lector.Read() Then
+                lector.Close()
                 Return True
             Else
+                lector.Close()
+
                 Return False
             End If
         Catch ex As Exception

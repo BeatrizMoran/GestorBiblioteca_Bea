@@ -3,7 +3,6 @@
     Private _escritor As String
     Private _anyoEdicion As Integer
     Private _estado As String
-    Private _disponible As Boolean
 
 
     Public Property Titulo As String
@@ -43,19 +42,7 @@
         End Set
     End Property
 
-    Public Property Disponible As Boolean
-        Get
-            Return _disponible
-        End Get
-        Set(value As Boolean)
-            If _disponible <> value Then
-                _disponible = value
-                cbDisponible.Checked = value ' Actualizar el estado del CheckBox
-                ' Solo disparamos el evento si realmente cambia el estado
-                RaiseEvent ClickCambiarEstado()
-            End If
-        End Set
-    End Property
+
 
     ' Evento que se dispara cuando cambia el estado del CheckBox
     Public Event ClickEditar()
@@ -75,27 +62,12 @@
         RaiseEvent ClickBorrar()
     End Sub
 
-    ' Este evento se dispara cuando el CheckBox cambia
-    Private Sub cbDisponible_CheckedChanged(sender As Object, e As EventArgs) Handles cbDisponible.CheckedChanged
-        ' Solo actualizamos la propiedad _disponible si el estado del CheckBox cambia
-        _disponible = cbDisponible.Checked
-        ' Disparar el evento de cambio de estado
-        RaiseEvent ClickCambiarEstado()
+    Private Sub LibroControl_MouseEnter(sender As Object, e As EventArgs) Handles tlpControlLibro.MouseEnter, MyBase.MouseEnter, lTitulo.MouseEnter, lEstado.MouseEnter, lEscritor.MouseEnter, lAnyo.MouseEnter
+        tlpControlLibro.BackColor = Color.LightGray
     End Sub
 
-    ' Método para actualizar la fuente de los subcontroles
-    Public Sub ActualizarFuente(fuente As Font)
-        Me.Font = fuente
-        ' Cambiar la fuente de los subcontroles
-        lTitulo.Font = fuente
-        lEscritor.Font = fuente
-        lAnyo.Font = fuente
-        bEditar.Font = fuente
-        bInfo.Font = fuente
-        bBorrar.Font = fuente
-
-        ' Ajustar el tamaño del control basado en el tamaño de la fuente
-        Me.Height = CInt(fuente.Size * 5) ' Ajusta según el diseño
-        Me.Width = CInt(fuente.Size * 15) ' Ajusta según el diseño
+    Private Sub LibroControl_MouseLeave(sender As Object, e As EventArgs) Handles tlpControlLibro.MouseLeave, MyBase.MouseLeave, lTitulo.MouseLeave, lEstado.MouseLeave, lEscritor.MouseLeave, lAnyo.MouseLeave
+        tlpControlLibro.BackColor = Color.White
     End Sub
+
 End Class

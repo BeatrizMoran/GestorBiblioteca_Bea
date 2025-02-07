@@ -10,10 +10,18 @@
         ' Determinar el tamaño de la fuente dentro de los límites
         Dim tamanoFuente As Integer = Math.Min(proporcionPromedio * FONTSIZE, tamanoMaximoLetra)
 
+
+
         ' Actualizar la fuente para los controles en el formulario si se proporciona un TableLayoutPanel
         If tlPanel IsNot Nothing Then
             For Each control As Control In tlPanel.Controls
                 control.Font = New Font("Microsoft Sans Serif", tamanoFuente)
+            Next
+        End If
+
+        If menuStrip IsNot Nothing Then
+            For Each item As ToolStripItem In menuStrip.Items
+                item.Font = New Font("Microsoft Sans Serif", tamanoFuente)
             Next
         End If
 
@@ -31,4 +39,6 @@
             tabla.Refresh()
         End If
     End Sub
+
+
 End Module

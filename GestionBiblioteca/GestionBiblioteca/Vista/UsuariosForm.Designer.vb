@@ -24,18 +24,18 @@ Partial Class UsuariosForm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(UsuariosForm))
         Me.tlpTabla = New System.Windows.Forms.TableLayoutPanel()
+        Me.tlpGestionUsuarios = New System.Windows.Forms.TableLayoutPanel()
+        Me.bCrearUsuario = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvUsuarios = New System.Windows.Forms.DataGridView()
         Me.tlpPaginacion = New System.Windows.Forms.TableLayoutPanel()
         Me.bAnterior = New System.Windows.Forms.Button()
         Me.bSiguiente = New System.Windows.Forms.Button()
         Me.lblPaginacion = New System.Windows.Forms.Label()
-        Me.tlpGestionUsuarios = New System.Windows.Forms.TableLayoutPanel()
-        Me.bCrearUsuario = New System.Windows.Forms.Button()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.tlpTabla.SuspendLayout()
+        Me.tlpGestionUsuarios.SuspendLayout()
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tlpPaginacion.SuspendLayout()
-        Me.tlpGestionUsuarios.SuspendLayout()
         Me.SuspendLayout()
         '
         'tlpTabla
@@ -58,65 +58,6 @@ Partial Class UsuariosForm
         Me.tlpTabla.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
         Me.tlpTabla.Size = New System.Drawing.Size(574, 363)
         Me.tlpTabla.TabIndex = 3
-        '
-        'dgvUsuarios
-        '
-        Me.dgvUsuarios.BackgroundColor = System.Drawing.Color.White
-        Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgvUsuarios.Location = New System.Drawing.Point(60, 92)
-        Me.dgvUsuarios.Name = "dgvUsuarios"
-        Me.dgvUsuarios.Size = New System.Drawing.Size(453, 192)
-        Me.dgvUsuarios.TabIndex = 2
-        '
-        'tlpPaginacion
-        '
-        Me.tlpPaginacion.ColumnCount = 4
-        Me.tlpPaginacion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlpPaginacion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.tlpPaginacion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.tlpPaginacion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.tlpPaginacion.Controls.Add(Me.bAnterior, 1, 0)
-        Me.tlpPaginacion.Controls.Add(Me.bSiguiente, 3, 0)
-        Me.tlpPaginacion.Controls.Add(Me.lblPaginacion, 2, 0)
-        Me.tlpPaginacion.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.tlpPaginacion.Location = New System.Drawing.Point(60, 290)
-        Me.tlpPaginacion.Name = "tlpPaginacion"
-        Me.tlpPaginacion.RowCount = 1
-        Me.tlpPaginacion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.tlpPaginacion.Size = New System.Drawing.Size(453, 44)
-        Me.tlpPaginacion.TabIndex = 3
-        '
-        'bAnterior
-        '
-        Me.bAnterior.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.bAnterior.Location = New System.Drawing.Point(249, 3)
-        Me.bAnterior.Name = "bAnterior"
-        Me.bAnterior.Size = New System.Drawing.Size(75, 38)
-        Me.bAnterior.TabIndex = 0
-        Me.bAnterior.Text = "Anterior"
-        Me.bAnterior.UseVisualStyleBackColor = True
-        '
-        'bSiguiente
-        '
-        Me.bSiguiente.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.bSiguiente.Location = New System.Drawing.Point(375, 3)
-        Me.bSiguiente.Name = "bSiguiente"
-        Me.bSiguiente.Size = New System.Drawing.Size(75, 38)
-        Me.bSiguiente.TabIndex = 1
-        Me.bSiguiente.Text = "Siguiente"
-        Me.bSiguiente.UseVisualStyleBackColor = True
-        '
-        'lblPaginacion
-        '
-        Me.lblPaginacion.AutoSize = True
-        Me.lblPaginacion.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lblPaginacion.Location = New System.Drawing.Point(330, 0)
-        Me.lblPaginacion.Name = "lblPaginacion"
-        Me.lblPaginacion.Size = New System.Drawing.Size(39, 44)
-        Me.lblPaginacion.TabIndex = 2
-        Me.lblPaginacion.Text = "Label2"
-        Me.lblPaginacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'tlpGestionUsuarios
         '
@@ -160,6 +101,65 @@ Partial Class UsuariosForm
         Me.Label1.Text = "Gestion de usuarios"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'dgvUsuarios
+        '
+        Me.dgvUsuarios.BackgroundColor = System.Drawing.Color.White
+        Me.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgvUsuarios.Location = New System.Drawing.Point(60, 92)
+        Me.dgvUsuarios.Name = "dgvUsuarios"
+        Me.dgvUsuarios.Size = New System.Drawing.Size(453, 192)
+        Me.dgvUsuarios.TabIndex = 2
+        '
+        'tlpPaginacion
+        '
+        Me.tlpPaginacion.ColumnCount = 4
+        Me.tlpPaginacion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlpPaginacion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.tlpPaginacion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.tlpPaginacion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.tlpPaginacion.Controls.Add(Me.bAnterior, 1, 0)
+        Me.tlpPaginacion.Controls.Add(Me.bSiguiente, 3, 0)
+        Me.tlpPaginacion.Controls.Add(Me.lblPaginacion, 2, 0)
+        Me.tlpPaginacion.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlpPaginacion.Location = New System.Drawing.Point(60, 290)
+        Me.tlpPaginacion.Name = "tlpPaginacion"
+        Me.tlpPaginacion.RowCount = 1
+        Me.tlpPaginacion.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlpPaginacion.Size = New System.Drawing.Size(453, 44)
+        Me.tlpPaginacion.TabIndex = 3
+        '
+        'bAnterior
+        '
+        Me.bAnterior.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.bAnterior.Location = New System.Drawing.Point(249, 3)
+        Me.bAnterior.Name = "bAnterior"
+        Me.bAnterior.Size = New System.Drawing.Size(75, 38)
+        Me.bAnterior.TabIndex = 0
+        Me.bAnterior.Text = "<"
+        Me.bAnterior.UseVisualStyleBackColor = True
+        '
+        'bSiguiente
+        '
+        Me.bSiguiente.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.bSiguiente.Location = New System.Drawing.Point(375, 3)
+        Me.bSiguiente.Name = "bSiguiente"
+        Me.bSiguiente.Size = New System.Drawing.Size(75, 38)
+        Me.bSiguiente.TabIndex = 1
+        Me.bSiguiente.Text = ">"
+        Me.bSiguiente.UseVisualStyleBackColor = True
+        '
+        'lblPaginacion
+        '
+        Me.lblPaginacion.AutoSize = True
+        Me.lblPaginacion.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lblPaginacion.Location = New System.Drawing.Point(330, 0)
+        Me.lblPaginacion.Name = "lblPaginacion"
+        Me.lblPaginacion.Size = New System.Drawing.Size(39, 44)
+        Me.lblPaginacion.TabIndex = 2
+        Me.lblPaginacion.Text = "Label2"
+        Me.lblPaginacion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
         'UsuariosForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -172,11 +172,11 @@ Partial Class UsuariosForm
         Me.Name = "UsuariosForm"
         Me.Text = "UsuariosForm"
         Me.tlpTabla.ResumeLayout(False)
+        Me.tlpGestionUsuarios.ResumeLayout(False)
+        Me.tlpGestionUsuarios.PerformLayout()
         CType(Me.dgvUsuarios, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tlpPaginacion.ResumeLayout(False)
         Me.tlpPaginacion.PerformLayout()
-        Me.tlpGestionUsuarios.ResumeLayout(False)
-        Me.tlpGestionUsuarios.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

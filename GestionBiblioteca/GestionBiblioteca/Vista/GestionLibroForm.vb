@@ -11,33 +11,9 @@ Public Class GestionLibroForm
     Private Sub GestionLibroForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         bCrearLibro.BackColor = Color.FromArgb(0, 123, 255) ' Color RGB personalizado
 
-
-
-
     End Sub
 
-    Private Sub CambiarEstadoLibro(id As Integer, disponible As Boolean)
-        Try
-            If disponible Then
-                Dim respuesta As DialogResult = MessageBox.Show("¿Seguro que quieres marcar como NO disponible el libro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-                If respuesta = DialogResult.Yes Then
-                    controlador.ActualizarEstadoLibro(id, False)
 
-                End If
-                'Else
-                '    Dim respuesta As DialogResult = MessageBox.Show("¿Seguro que quieres marcar como DISPONIBLE el libro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
-                '    If respuesta = DialogResult.Yes Then
-                '        controlador.ActualizarEstadoLibro(id, True)
-
-                '    End If
-            End If
-            MessageBox.Show("Estado actualizado correctamente", "Estado actualizado", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            CargarLibros()
-        Catch ex As Exception
-
-        End Try
-
-    End Sub
 
     Public Function CargarLibros()
         Try
@@ -98,17 +74,11 @@ Public Class GestionLibroForm
                                                          LibroControl_ClickBorrar(libroDTO.Id)
                                                      End Sub
 
-                AddHandler libroControl.ClickCambiarEstado, Sub()
-                                                                If Not esCargando Then
-                                                                    CambiarEstadoLibro(libroDTO.Id, libroDTO.Disponible)
-                                                                End If
-                                                            End Sub
 
-                ' Aquí actualizamos el estado sin disparar el evento
-                libroControl.Disponible = libroDTO.Disponible ' Esto no dispara el evento
+
 
                 ' Agregar el control a la posición correspondiente en la cuadrícula
-                Layout.Controls.Add(libroControl, col, row)
+                layout.Controls.Add(libroControl, col, row)
 
                 ' Actualizar las posiciones de fila y columna
                 col += 1
@@ -147,12 +117,20 @@ Public Class GestionLibroForm
             Dim respuesta As DialogResult = MessageBox.Show("¿Seguro que quieres eliminar el libro?", "Confirmacion", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
             If respuesta = DialogResult.Yes Then
-                controlador.BorrarLibro(id)
-                MessageBox.Show("Libro borrado correctamente", "Libro borrado", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                CargarLibros()
+                Dim prestamosAsociados As Integer = controlador.ContarPrestamosAsociados(id)
+                If prestamosAsociados = 0 Then
+                    controlador.BorrarLibro(id)
+                    MessageBox.Show("Libro borrado correctamente", "Libro borrado", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    CargarLibros()
+                Else
+                    MessageBox.Show("No se puede borrar el libro. Existen " & prestamosAsociados.ToString() &
+                       " préstamo(s) asociados a este libro. Por favor, revise o gestione esos préstamos antes de borrar.",
+                       "Eliminación no permitida", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                End If
+
             End If
         Catch ex As Exception
-            MessageBox.Show("Error al borra el libro: " & ex.Message)
+            MessageBox.Show("Error al borrar el libro: " & ex.Message)
         End Try
     End Sub
 
@@ -172,7 +150,7 @@ Public Class GestionLibroForm
         End If
     End Sub
 
-    Private Sub bCrearLibro_Click(sender As Object, e As EventArgs)
+    Private Sub bCrearLibro_Click(sender As Object, e As EventArgs) Handles bCrearLibro.Click
         CType(Me.MdiParent, Form1).AbrirLibrosForm("crear")
     End Sub
 End Class

@@ -156,16 +156,24 @@ Public Class UsuariosForm
 
     Public Sub BorrarUsuario(id As Integer)
         Try
-            Dim respuesta As DialogResult = MessageBox.Show("¿Estás seguro de querer borrar el usuario con id: " & id.ToString(), "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
+            Dim respuesta As DialogResult = MessageBox.Show("¿Estás seguro de querer borrar el usuario? ", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning)
 
             If respuesta = DialogResult.Yes Then
-                controlador.BorrarUsuario(id)
+                Dim prestamoActivo As Dictionary(Of String, Object) = controlador.ObtenerInformacionPrestamo(id)
+                If Convert.ToInt32(prestamoActivo("TotalPrestamos")) = 0 Then
 
-                ' Restaurar el tamaño de la fuente a su valor anterior
-                dgvUsuarios.DefaultCellStyle.Font = fuenteActual
-                MessageBox.Show("Usuario borrado correctamente ", "Usuario borrado", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                CargarUsuarios()
+                    controlador.BorrarUsuario(id)
+
+                    ' Restaurar el tamaño de la fuente a su valor anterior
+                    dgvUsuarios.DefaultCellStyle.Font = fuenteActual
+                    MessageBox.Show("Usuario borrado correctamente ", "Usuario borrado", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    CargarUsuarios()
+                Else
+                    MessageBox.Show("No se puede borrar el usuario. Existen préstamo(s) activos asociados a este usuario. Por favor, revise o gestione esos préstamos antes de borrar.",
+                                           "Eliminación no permitida", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                End If
             End If
+
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -177,36 +185,6 @@ Public Class UsuariosForm
     Private Sub UsuariosForm_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
         If mostrado Then
             ModuloUtilidades.AjustarFuente(formulario:=Me, tamanoMaximoLetra:=13, tlPanel:=tlpGestionUsuarios, tabla:=dgvUsuarios)
-            'ModuloUtilidades.AjustarFuente(formulario:=Me, tamanoMaximoLetra:=15, tlPanel:=tlpGestionUsuarios, tabla:=dgvUsuarios)
-            'Const MAX_FONTSIZE As Integer = 13
-            'Const MIN_FONTSIZE As Integer = 8 ' Tamaño mínimo de fuente para evitar fuentes demasiado pequeñas
-
-            '' Calcular el tamaño proporcional de la fuente basado en ancho y alto
-            'Dim proporciónAncho As Double = Me.Width / Me.MinimumSize.Width
-            'Dim proporciónAlto As Double = Me.Height / Me.MinimumSize.Height
-            'Dim proporciónPromedio As Double = (proporciónAncho + proporciónAlto) / 2
-
-            '' Determinar el tamaño de la fuente dentro de los límites
-            'Dim fontSize As Integer = Math.Max(Math.Min(CInt(proporciónPromedio * MIN_FONTSIZE), MAX_FONTSIZE), MIN_FONTSIZE)
-
-            '' Actualizar la variable global con la nueva fuente
-            'fuenteActual = New Font("Microsoft Sans Serif", fontSize)
-
-            '' Actualizar las fuentes de los controles en el TableLayoutPanel
-            'For Each control As Control In tlpGestionUsuarios.Controls
-            '    control.Font = fuenteActual
-            'Next
-
-            '' Actualizar las fuentes de las columnas y encabezados del DataGridView
-            'For Each column As DataGridViewColumn In dgvUsuarios.Columns
-            '    column.DefaultCellStyle.Font = fuenteActual
-            'Next
-
-            'dgvUsuarios.ColumnHeadersDefaultCellStyle.Font = New Font(fuenteActual.FontFamily, fuenteActual.Size, FontStyle.Bold)
-
-            '' Forzar la actualización visual del DataGridView
-            'dgvUsuarios.Invalidate()
-            'dgvUsuarios.Refresh()
         End If
     End Sub
 

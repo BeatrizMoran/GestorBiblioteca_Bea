@@ -2,6 +2,7 @@
 Imports GestionBiblioteca.DTOs
 
 Public Class AgregarLibroForm
+    Dim mostrado As Boolean = False
     Dim controlador As New LibroController
     Public accion As String
     Public datosLibro As LibroDTO
@@ -60,12 +61,15 @@ Public Class AgregarLibroForm
                 Case "Año Edicion"
                     If Not input.All(AddressOf Char.IsDigit) Then
                         CambiarColorError(campo)
-                        errores &= $"El campo '{campo.Titulo}' solo puede contener números." & vbCrLf
+                        errores &= $"El campo '{campo.Titulo}' no puede tener valores alfanumericos." & vbCrLf
+                    ElseIf input.Length <> 4 Then
+                        ' Luego, verificar que tenga exactamente cuatro dígitos
+                        CambiarColorError(campo)
+                        errores &= $"El campo '{campo.Titulo}' no tiene un formato adecuado (ejemplo: 2011)." & vbCrLf
+                    ElseIf Convert.ToInt32(input) < 1450 OrElse Convert.ToInt32(input) > DateTime.Now.Year Then
+                        CambiarColorError(campo)
+                        errores &= $"El campo '{campo.Titulo}' debe estar entre 1450 y {DateTime.Now.Year}." & vbCrLf
                     End If
-
-                Case "Título", "Sinopsis"
-                    ' Estos campos no necesitan validaciones adicionales
-                    ' Ya se validó que no estén vacíos
             End Select
         Next
 
@@ -88,11 +92,19 @@ Public Class AgregarLibroForm
 
 
     Private Sub AgregarLibroForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        mostrado = True
         If accion = "editar" Then
+            gbCrearEditarLibro.Text = "Editar Libro"
             liTitulo.InputText = datosLibro.Titulo
             liEscritor.InputText = datosLibro.Escritor
             liAnyoEdicion.InputText = datosLibro.AnyoEdicion
             rtbSinopsis.Text = datosLibro.Sinopsis
+        End If
+    End Sub
+
+    Private Sub AgregarLibroForm_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
+        If mostrado Then
+            ModuloUtilidades.AjustarFuente(formulario:=Me, tamanoMaximoLetra:=13, tlPanel:=tlpPrincipal)
         End If
     End Sub
 End Class

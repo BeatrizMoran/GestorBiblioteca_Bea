@@ -4,13 +4,13 @@ Public Class DashboardForm
 
 
     Dim mostrado As Boolean = False
-    Private Sub TableLayoutPanel1_Paint(sender As Object, e As PaintEventArgs) Handles tlpPrincipal.Paint
 
-    End Sub
 
     Private Sub DashboardForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         bdUsuarios.ColorFondoImagen = Color.FromArgb(243, 235, 116)
-        bdLibros.ColorFondoImagen = Color.FromArgb(60, 187, 219)
+        bdLibros.ColorFondoImagen = Color.FromArgb(68, 195, 140)
+        bdPrestamos.ColorFondoImagen = Color.FromArgb(132, 148, 219)
+
     End Sub
 
 
@@ -28,6 +28,11 @@ Public Class DashboardForm
     End Sub
 
     Private Sub DashboardForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+        bdLibros.BackColor = Color.White
+        bdUsuarios.BackColor = Color.White
+
+        bdPrestamos.BackColor = Color.White
+
         CType(Me.MdiParent, Form1).OcultarMostrarBotonVolver()
     End Sub
 
