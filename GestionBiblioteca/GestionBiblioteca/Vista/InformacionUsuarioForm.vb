@@ -11,6 +11,9 @@ Public Class InformacionUsuarioForm
     Dim controladorUsuario As New UsuarioController
 
     Private Sub InformacionUsuarioForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
+
+
+
         rtbSinopsis.Height = 100
         mostrado = True
 
@@ -131,7 +134,7 @@ Public Class InformacionUsuarioForm
 
     Private Sub InicializarDatosPrestamo()
         'estado prestamo:
-        Dim estado = ""
+        Dim estado
         If datosPrestamo.Estado Then
             estado = "Devuelto"
         ElseIf datosPrestamo.Estado = False AndAlso datosPrestamo.FechaFin < DateTime.Now Then

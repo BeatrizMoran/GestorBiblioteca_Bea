@@ -41,10 +41,9 @@ Partial Class LibroControl
         Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
         Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25.0!))
-        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
+        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
+        Me.tlpControlLibro.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 30.0!))
         Me.tlpControlLibro.Controls.Add(Me.lAnyo, 2, 0)
         Me.tlpControlLibro.Controls.Add(Me.lTitulo, 0, 0)
         Me.tlpControlLibro.Controls.Add(Me.lEscritor, 1, 0)
@@ -64,9 +63,9 @@ Partial Class LibroControl
         '
         Me.lAnyo.AutoSize = True
         Me.lAnyo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lAnyo.Location = New System.Drawing.Point(93, 0)
+        Me.lAnyo.Location = New System.Drawing.Point(87, 0)
         Me.lAnyo.Name = "lAnyo"
-        Me.lAnyo.Size = New System.Drawing.Size(39, 41)
+        Me.lAnyo.Size = New System.Drawing.Size(36, 41)
         Me.lAnyo.TabIndex = 3
         Me.lAnyo.Text = "Año"
         Me.lAnyo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -77,7 +76,7 @@ Partial Class LibroControl
         Me.lTitulo.Dock = System.Windows.Forms.DockStyle.Fill
         Me.lTitulo.Location = New System.Drawing.Point(3, 0)
         Me.lTitulo.Name = "lTitulo"
-        Me.lTitulo.Size = New System.Drawing.Size(39, 41)
+        Me.lTitulo.Size = New System.Drawing.Size(36, 41)
         Me.lTitulo.TabIndex = 1
         Me.lTitulo.Text = "Titulo"
         Me.lTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -86,9 +85,9 @@ Partial Class LibroControl
         '
         Me.lEscritor.AutoSize = True
         Me.lEscritor.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lEscritor.Location = New System.Drawing.Point(48, 0)
+        Me.lEscritor.Location = New System.Drawing.Point(45, 0)
         Me.lEscritor.Name = "lEscritor"
-        Me.lEscritor.Size = New System.Drawing.Size(39, 41)
+        Me.lEscritor.Size = New System.Drawing.Size(36, 41)
         Me.lEscritor.TabIndex = 2
         Me.lEscritor.Text = "Escritor"
         Me.lEscritor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
@@ -98,9 +97,9 @@ Partial Class LibroControl
         Me.bEditar.BackgroundImage = CType(resources.GetObject("bEditar.BackgroundImage"), System.Drawing.Image)
         Me.bEditar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.bEditar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.bEditar.Location = New System.Drawing.Point(183, 3)
+        Me.bEditar.Location = New System.Drawing.Point(171, 3)
         Me.bEditar.Name = "bEditar"
-        Me.bEditar.Size = New System.Drawing.Size(20, 35)
+        Me.bEditar.Size = New System.Drawing.Size(24, 35)
         Me.bEditar.TabIndex = 4
         Me.bEditar.UseVisualStyleBackColor = True
         '
@@ -109,9 +108,9 @@ Partial Class LibroControl
         Me.bInfo.BackgroundImage = CType(resources.GetObject("bInfo.BackgroundImage"), System.Drawing.Image)
         Me.bInfo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.bInfo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.bInfo.Location = New System.Drawing.Point(209, 3)
+        Me.bInfo.Location = New System.Drawing.Point(201, 3)
         Me.bInfo.Name = "bInfo"
-        Me.bInfo.Size = New System.Drawing.Size(20, 35)
+        Me.bInfo.Size = New System.Drawing.Size(24, 35)
         Me.bInfo.TabIndex = 5
         Me.bInfo.UseVisualStyleBackColor = True
         '
@@ -120,9 +119,9 @@ Partial Class LibroControl
         Me.bBorrar.BackgroundImage = CType(resources.GetObject("bBorrar.BackgroundImage"), System.Drawing.Image)
         Me.bBorrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.bBorrar.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.bBorrar.Location = New System.Drawing.Point(235, 3)
+        Me.bBorrar.Location = New System.Drawing.Point(231, 3)
         Me.bBorrar.Name = "bBorrar"
-        Me.bBorrar.Size = New System.Drawing.Size(23, 35)
+        Me.bBorrar.Size = New System.Drawing.Size(27, 35)
         Me.bBorrar.TabIndex = 6
         Me.bBorrar.UseVisualStyleBackColor = True
         '
@@ -130,9 +129,9 @@ Partial Class LibroControl
         '
         Me.lEstado.AutoSize = True
         Me.lEstado.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lEstado.Location = New System.Drawing.Point(138, 0)
+        Me.lEstado.Location = New System.Drawing.Point(129, 0)
         Me.lEstado.Name = "lEstado"
-        Me.lEstado.Size = New System.Drawing.Size(39, 41)
+        Me.lEstado.Size = New System.Drawing.Size(36, 41)
         Me.lEstado.TabIndex = 8
         Me.lEstado.Text = "Estado"
         Me.lEstado.TextAlign = System.Drawing.ContentAlignment.MiddleLeft

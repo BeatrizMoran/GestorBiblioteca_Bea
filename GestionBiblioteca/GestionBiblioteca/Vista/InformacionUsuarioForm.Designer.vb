@@ -25,7 +25,7 @@ Partial Class InformacionUsuarioForm
         Me.tlpPrincipal = New System.Windows.Forms.TableLayoutPanel()
         Me.gbDatos = New System.Windows.Forms.GroupBox()
         Me.tlpInformacion = New System.Windows.Forms.TableLayoutPanel()
-        Me.TableLayoutPanel2 = New System.Windows.Forms.TableLayoutPanel()
+        Me.tlpHead = New System.Windows.Forms.TableLayoutPanel()
         Me.lId = New System.Windows.Forms.Label()
         Me.lTituloID = New System.Windows.Forms.Label()
         Me.lTitulo2 = New System.Windows.Forms.Label()
@@ -37,7 +37,6 @@ Partial Class InformacionUsuarioForm
         Me.lTituloTelefono = New System.Windows.Forms.Label()
         Me.lTelefono = New System.Windows.Forms.Label()
         Me.lUltimoPrestamo = New System.Windows.Forms.Label()
-        Me.lUltimoLibroPrestamo = New System.Windows.Forms.Label()
         Me.rtbLibrosEnPrestamoActivo = New System.Windows.Forms.RichTextBox()
         Me.tlpLibro = New System.Windows.Forms.TableLayoutPanel()
         Me.lTituloSinopsis = New System.Windows.Forms.Label()
@@ -57,20 +56,20 @@ Partial Class InformacionUsuarioForm
         Me.lUsuario = New System.Windows.Forms.Label()
         Me.lTituloLibro = New System.Windows.Forms.Label()
         Me.lLibro = New System.Windows.Forms.Label()
-        Me.TableLayoutPanel5 = New System.Windows.Forms.TableLayoutPanel()
+        Me.tlpBotones = New System.Windows.Forms.TableLayoutPanel()
         Me.bBorrar = New System.Windows.Forms.Button()
         Me.bSalir = New System.Windows.Forms.Button()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.pSeparador1 = New System.Windows.Forms.Panel()
+        Me.pSeparador2 = New System.Windows.Forms.Panel()
         Me.tlpPrincipal.SuspendLayout()
         Me.gbDatos.SuspendLayout()
         Me.tlpInformacion.SuspendLayout()
-        Me.TableLayoutPanel2.SuspendLayout()
+        Me.tlpHead.SuspendLayout()
         CType(Me.pbImagen, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.tlpUsuario.SuspendLayout()
         Me.tlpLibro.SuspendLayout()
         Me.tlpPrestamo.SuspendLayout()
-        Me.TableLayoutPanel5.SuspendLayout()
+        Me.tlpBotones.SuspendLayout()
         Me.SuspendLayout()
         '
         'tlpPrincipal
@@ -107,13 +106,13 @@ Partial Class InformacionUsuarioForm
         Me.tlpInformacion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
         Me.tlpInformacion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
         Me.tlpInformacion.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlpInformacion.Controls.Add(Me.TableLayoutPanel2, 1, 1)
+        Me.tlpInformacion.Controls.Add(Me.tlpHead, 1, 1)
         Me.tlpInformacion.Controls.Add(Me.tlpUsuario, 1, 3)
         Me.tlpInformacion.Controls.Add(Me.tlpLibro, 1, 4)
         Me.tlpInformacion.Controls.Add(Me.tlpPrestamo, 1, 5)
-        Me.tlpInformacion.Controls.Add(Me.TableLayoutPanel5, 1, 7)
-        Me.tlpInformacion.Controls.Add(Me.Panel1, 1, 2)
-        Me.tlpInformacion.Controls.Add(Me.Panel2, 1, 6)
+        Me.tlpInformacion.Controls.Add(Me.tlpBotones, 1, 7)
+        Me.tlpInformacion.Controls.Add(Me.pSeparador1, 1, 2)
+        Me.tlpInformacion.Controls.Add(Me.pSeparador2, 1, 6)
         Me.tlpInformacion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlpInformacion.Location = New System.Drawing.Point(3, 16)
         Me.tlpInformacion.Name = "tlpInformacion"
@@ -130,27 +129,27 @@ Partial Class InformacionUsuarioForm
         Me.tlpInformacion.Size = New System.Drawing.Size(549, 467)
         Me.tlpInformacion.TabIndex = 5
         '
-        'TableLayoutPanel2
+        'tlpHead
         '
-        Me.TableLayoutPanel2.ColumnCount = 3
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.0!))
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel2.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.0!))
-        Me.TableLayoutPanel2.Controls.Add(Me.lId, 2, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.lTituloID, 1, 2)
-        Me.TableLayoutPanel2.Controls.Add(Me.lTitulo2, 2, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.lTitulo, 1, 1)
-        Me.TableLayoutPanel2.Controls.Add(Me.pbImagen, 0, 0)
-        Me.TableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel2.Location = New System.Drawing.Point(57, 29)
-        Me.TableLayoutPanel2.Name = "TableLayoutPanel2"
-        Me.TableLayoutPanel2.RowCount = 4
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle())
-        Me.TableLayoutPanel2.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel2.Size = New System.Drawing.Size(433, 73)
-        Me.TableLayoutPanel2.TabIndex = 0
+        Me.tlpHead.ColumnCount = 3
+        Me.tlpHead.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30.0!))
+        Me.tlpHead.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.tlpHead.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.0!))
+        Me.tlpHead.Controls.Add(Me.lId, 2, 2)
+        Me.tlpHead.Controls.Add(Me.lTituloID, 1, 2)
+        Me.tlpHead.Controls.Add(Me.lTitulo2, 2, 1)
+        Me.tlpHead.Controls.Add(Me.lTitulo, 1, 1)
+        Me.tlpHead.Controls.Add(Me.pbImagen, 0, 0)
+        Me.tlpHead.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlpHead.Location = New System.Drawing.Point(57, 29)
+        Me.tlpHead.Name = "tlpHead"
+        Me.tlpHead.RowCount = 4
+        Me.tlpHead.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpHead.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tlpHead.RowStyles.Add(New System.Windows.Forms.RowStyle())
+        Me.tlpHead.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpHead.Size = New System.Drawing.Size(433, 73)
+        Me.tlpHead.TabIndex = 0
         '
         'lId
         '
@@ -206,7 +205,7 @@ Partial Class InformacionUsuarioForm
         Me.pbImagen.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pbImagen.Location = New System.Drawing.Point(3, 3)
         Me.pbImagen.Name = "pbImagen"
-        Me.TableLayoutPanel2.SetRowSpan(Me.pbImagen, 4)
+        Me.tlpHead.SetRowSpan(Me.pbImagen, 4)
         Me.pbImagen.Size = New System.Drawing.Size(109, 67)
         Me.pbImagen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.pbImagen.TabIndex = 0
@@ -223,7 +222,6 @@ Partial Class InformacionUsuarioForm
         Me.tlpUsuario.Controls.Add(Me.lTituloTelefono, 1, 0)
         Me.tlpUsuario.Controls.Add(Me.lTelefono, 2, 0)
         Me.tlpUsuario.Controls.Add(Me.lUltimoPrestamo, 1, 2)
-        Me.tlpUsuario.Controls.Add(Me.lUltimoLibroPrestamo, 2, 2)
         Me.tlpUsuario.Controls.Add(Me.rtbLibrosEnPrestamoActivo, 1, 3)
         Me.tlpUsuario.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlpUsuario.Location = New System.Drawing.Point(57, 134)
@@ -293,19 +291,8 @@ Partial Class InformacionUsuarioForm
         Me.lUltimoPrestamo.Name = "lUltimoPrestamo"
         Me.lUltimoPrestamo.Size = New System.Drawing.Size(160, 18)
         Me.lUltimoPrestamo.TabIndex = 4
-        Me.lUltimoPrestamo.Text = "Libros actualemnte en prestamo:"
+        Me.lUltimoPrestamo.Text = "Libros actualmente en prestamo:"
         Me.lUltimoPrestamo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'lUltimoLibroPrestamo
-        '
-        Me.lUltimoLibroPrestamo.AutoSize = True
-        Me.lUltimoLibroPrestamo.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.lUltimoLibroPrestamo.Location = New System.Drawing.Point(195, 36)
-        Me.lUltimoLibroPrestamo.Name = "lUltimoLibroPrestamo"
-        Me.lUltimoLibroPrestamo.Size = New System.Drawing.Size(235, 18)
-        Me.lUltimoLibroPrestamo.TabIndex = 5
-        Me.lUltimoLibroPrestamo.Text = "Label2"
-        Me.lUltimoLibroPrestamo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'rtbLibrosEnPrestamoActivo
         '
@@ -544,20 +531,20 @@ Partial Class InformacionUsuarioForm
         Me.lLibro.Text = "Libro"
         Me.lLibro.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'TableLayoutPanel5
+        'tlpBotones
         '
-        Me.TableLayoutPanel5.ColumnCount = 2
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.Controls.Add(Me.bBorrar, 1, 0)
-        Me.TableLayoutPanel5.Controls.Add(Me.bSalir, 0, 0)
-        Me.TableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel5.Location = New System.Drawing.Point(57, 403)
-        Me.TableLayoutPanel5.Name = "TableLayoutPanel5"
-        Me.TableLayoutPanel5.RowCount = 1
-        Me.TableLayoutPanel5.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel5.Size = New System.Drawing.Size(433, 33)
-        Me.TableLayoutPanel5.TabIndex = 4
+        Me.tlpBotones.ColumnCount = 2
+        Me.tlpBotones.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpBotones.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpBotones.Controls.Add(Me.bBorrar, 1, 0)
+        Me.tlpBotones.Controls.Add(Me.bSalir, 0, 0)
+        Me.tlpBotones.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlpBotones.Location = New System.Drawing.Point(57, 403)
+        Me.tlpBotones.Name = "tlpBotones"
+        Me.tlpBotones.RowCount = 1
+        Me.tlpBotones.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpBotones.Size = New System.Drawing.Size(433, 33)
+        Me.tlpBotones.TabIndex = 4
         '
         'bBorrar
         '
@@ -579,23 +566,23 @@ Partial Class InformacionUsuarioForm
         Me.bSalir.Text = "Salir"
         Me.bSalir.UseVisualStyleBackColor = True
         '
-        'Panel1
+        'pSeparador1
         '
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(57, 108)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(433, 13)
-        Me.Panel1.TabIndex = 5
+        Me.pSeparador1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.pSeparador1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.pSeparador1.Location = New System.Drawing.Point(57, 108)
+        Me.pSeparador1.Name = "pSeparador1"
+        Me.pSeparador1.Size = New System.Drawing.Size(433, 13)
+        Me.pSeparador1.TabIndex = 5
         '
-        'Panel2
+        'pSeparador2
         '
-        Me.Panel2.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel2.Location = New System.Drawing.Point(57, 384)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(433, 13)
-        Me.Panel2.TabIndex = 6
+        Me.pSeparador2.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.pSeparador2.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.pSeparador2.Location = New System.Drawing.Point(57, 384)
+        Me.pSeparador2.Name = "pSeparador2"
+        Me.pSeparador2.Size = New System.Drawing.Size(433, 13)
+        Me.pSeparador2.TabIndex = 6
         '
         'InformacionUsuarioForm
         '
@@ -610,8 +597,8 @@ Partial Class InformacionUsuarioForm
         Me.tlpPrincipal.ResumeLayout(False)
         Me.gbDatos.ResumeLayout(False)
         Me.tlpInformacion.ResumeLayout(False)
-        Me.TableLayoutPanel2.ResumeLayout(False)
-        Me.TableLayoutPanel2.PerformLayout()
+        Me.tlpHead.ResumeLayout(False)
+        Me.tlpHead.PerformLayout()
         CType(Me.pbImagen, System.ComponentModel.ISupportInitialize).EndInit()
         Me.tlpUsuario.ResumeLayout(False)
         Me.tlpUsuario.PerformLayout()
@@ -619,7 +606,7 @@ Partial Class InformacionUsuarioForm
         Me.tlpLibro.PerformLayout()
         Me.tlpPrestamo.ResumeLayout(False)
         Me.tlpPrestamo.PerformLayout()
-        Me.TableLayoutPanel5.ResumeLayout(False)
+        Me.tlpBotones.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -627,7 +614,7 @@ Partial Class InformacionUsuarioForm
     Friend WithEvents tlpPrincipal As TableLayoutPanel
     Friend WithEvents gbDatos As GroupBox
     Friend WithEvents tlpInformacion As TableLayoutPanel
-    Friend WithEvents TableLayoutPanel2 As TableLayoutPanel
+    Friend WithEvents tlpHead As TableLayoutPanel
     Friend WithEvents lId As Label
     Friend WithEvents lTituloID As Label
     Friend WithEvents lTitulo2 As Label
@@ -655,13 +642,12 @@ Partial Class InformacionUsuarioForm
     Friend WithEvents lUsuario As Label
     Friend WithEvents lTituloLibro As Label
     Friend WithEvents lLibro As Label
-    Friend WithEvents TableLayoutPanel5 As TableLayoutPanel
+    Friend WithEvents tlpBotones As TableLayoutPanel
     Friend WithEvents bBorrar As Button
     Friend WithEvents bSalir As Button
-    Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
+    Friend WithEvents pSeparador1 As Panel
+    Friend WithEvents pSeparador2 As Panel
     Friend WithEvents rtbSinopsis As RichTextBox
     Friend WithEvents lUltimoPrestamo As Label
-    Friend WithEvents lUltimoLibroPrestamo As Label
     Friend WithEvents rtbLibrosEnPrestamoActivo As RichTextBox
 End Class

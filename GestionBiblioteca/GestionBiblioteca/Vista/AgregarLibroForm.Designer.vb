@@ -31,14 +31,14 @@ Partial Class AgregarLibroForm
         Me.liEscritor = New ControlesBiblioteca.LabelledInput()
         Me.liAnyoEdicion = New ControlesBiblioteca.LabelledInput()
         Me.liTitulo = New ControlesBiblioteca.LabelledInput()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
+        Me.tlpSinopsis = New System.Windows.Forms.TableLayoutPanel()
         Me.rtbSinopsis = New System.Windows.Forms.RichTextBox()
         Me.lSinopsis = New System.Windows.Forms.Label()
         Me.tlpPrincipal.SuspendLayout()
         Me.gbCrearEditarLibro.SuspendLayout()
         Me.tlpFormulario.SuspendLayout()
         Me.tlpBotones.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
+        Me.tlpSinopsis.SuspendLayout()
         Me.SuspendLayout()
         '
         'tlpPrincipal
@@ -79,7 +79,7 @@ Partial Class AgregarLibroForm
         Me.tlpFormulario.Controls.Add(Me.liEscritor, 1, 2)
         Me.tlpFormulario.Controls.Add(Me.liAnyoEdicion, 1, 3)
         Me.tlpFormulario.Controls.Add(Me.liTitulo, 1, 1)
-        Me.tlpFormulario.Controls.Add(Me.TableLayoutPanel1, 1, 4)
+        Me.tlpFormulario.Controls.Add(Me.tlpSinopsis, 1, 4)
         Me.tlpFormulario.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlpFormulario.Location = New System.Drawing.Point(3, 16)
         Me.tlpFormulario.Name = "tlpFormulario"
@@ -173,21 +173,21 @@ Partial Class AgregarLibroForm
         Me.liTitulo.Titulo = "Titulo"
         Me.liTitulo.TituloColor = System.Drawing.Color.Black
         '
-        'TableLayoutPanel1
+        'tlpSinopsis
         '
-        Me.TableLayoutPanel1.ColumnCount = 1
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.rtbSinopsis, 0, 1)
-        Me.TableLayoutPanel1.Controls.Add(Me.lSinopsis, 0, 0)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(57, 216)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.RowCount = 2
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(432, 54)
-        Me.TableLayoutPanel1.TabIndex = 13
+        Me.tlpSinopsis.ColumnCount = 1
+        Me.tlpSinopsis.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlpSinopsis.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20.0!))
+        Me.tlpSinopsis.Controls.Add(Me.rtbSinopsis, 0, 1)
+        Me.tlpSinopsis.Controls.Add(Me.lSinopsis, 0, 0)
+        Me.tlpSinopsis.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlpSinopsis.Location = New System.Drawing.Point(57, 216)
+        Me.tlpSinopsis.Name = "tlpSinopsis"
+        Me.tlpSinopsis.RowCount = 2
+        Me.tlpSinopsis.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpSinopsis.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.0!))
+        Me.tlpSinopsis.Size = New System.Drawing.Size(432, 54)
+        Me.tlpSinopsis.TabIndex = 13
         '
         'rtbSinopsis
         '
@@ -222,8 +222,8 @@ Partial Class AgregarLibroForm
         Me.gbCrearEditarLibro.ResumeLayout(False)
         Me.tlpFormulario.ResumeLayout(False)
         Me.tlpBotones.ResumeLayout(False)
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.PerformLayout()
+        Me.tlpSinopsis.ResumeLayout(False)
+        Me.tlpSinopsis.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -237,7 +237,7 @@ Partial Class AgregarLibroForm
     Friend WithEvents liEscritor As ControlesBiblioteca.LabelledInput
     Friend WithEvents liAnyoEdicion As ControlesBiblioteca.LabelledInput
     Friend WithEvents liTitulo As ControlesBiblioteca.LabelledInput
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
+    Friend WithEvents tlpSinopsis As TableLayoutPanel
     Friend WithEvents rtbSinopsis As RichTextBox
     Friend WithEvents lSinopsis As Label
 End Class

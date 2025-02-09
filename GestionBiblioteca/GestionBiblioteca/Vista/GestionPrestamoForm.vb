@@ -4,6 +4,8 @@ Imports ControlesBiblioteca
 
 Public Class GestionPrestamoForm
     Private Sub GestionPrestamoForm_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        bCrearPrestamo.BackColor = Color.FromArgb(0, 123, 255) ' Color RGB personalizado
+
 
         ActualizarVista()
     End Sub
@@ -15,7 +17,6 @@ Public Class GestionPrestamoForm
     Private tamañoPagina As Integer = 10
     Private totalPaginas As Integer = 1
 
-    Private fuenteActual As Font = New Font("Microsoft Sans Serif", 8) ' Tamaño inicial predeterminado
 
 
 
@@ -91,11 +92,11 @@ Public Class GestionPrestamoForm
 
 
                     If estado = "Vencido" Then
-                        estadoCell.Style.ForeColor = Color.Red ' Rojo para En préstamo vencido
+                        estadoCell.Style.ForeColor = Color.Red
                     ElseIf estado = "En prestamo" Then
-                        estadoCell.Style.ForeColor = Color.Orange ' Naranja para En préstamo no vencido
+                        estadoCell.Style.ForeColor = Color.Orange
                     Else
-                        estadoCell.Style.ForeColor = Color.Green ' Verde para Disponible
+                        estadoCell.Style.ForeColor = Color.Green
                     End If
 
                 Next

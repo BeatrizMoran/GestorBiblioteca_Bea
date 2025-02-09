@@ -34,7 +34,7 @@ Public Class Form1
         dashboard.Dock = DockStyle.Fill
         dashboard.Show()
 
-        TableLayoutPanel1.BackColor = Color.FromArgb(0, 123, 255)
+        tlpNavbar.BackColor = Color.FromArgb(0, 123, 255)
         msNavbar.BackColor = Color.FromArgb(0, 123, 255)
         bTituloLogo.BackColor = Color.FromArgb(0, 123, 255)
 

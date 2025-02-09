@@ -26,11 +26,18 @@ Partial Class GestionLibroForm
         Me.tlpPrincipal = New System.Windows.Forms.TableLayoutPanel()
         Me.tlpLibros = New System.Windows.Forms.TableLayoutPanel()
         Me.panelLibros = New System.Windows.Forms.Panel()
+        Me.tlpHead = New System.Windows.Forms.TableLayoutPanel()
+        Me.lOperaciones = New System.Windows.Forms.Label()
+        Me.lEstado = New System.Windows.Forms.Label()
+        Me.lAnyoEdicion = New System.Windows.Forms.Label()
+        Me.lAutor = New System.Windows.Forms.Label()
+        Me.lTitulo = New System.Windows.Forms.Label()
         Me.tlpTitulo = New System.Windows.Forms.TableLayoutPanel()
         Me.lGestionLibros = New System.Windows.Forms.Label()
         Me.bCrearLibro = New System.Windows.Forms.Button()
         Me.tlpPrincipal.SuspendLayout()
         Me.tlpLibros.SuspendLayout()
+        Me.tlpHead.SuspendLayout()
         Me.tlpTitulo.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -55,12 +62,14 @@ Partial Class GestionLibroForm
         Me.tlpLibros.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
         Me.tlpLibros.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
         Me.tlpLibros.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
-        Me.tlpLibros.Controls.Add(Me.panelLibros, 1, 1)
+        Me.tlpLibros.Controls.Add(Me.panelLibros, 1, 2)
+        Me.tlpLibros.Controls.Add(Me.tlpHead, 1, 1)
         Me.tlpLibros.Dock = System.Windows.Forms.DockStyle.Fill
         Me.tlpLibros.Location = New System.Drawing.Point(3, 83)
         Me.tlpLibros.Name = "tlpLibros"
-        Me.tlpLibros.RowCount = 3
+        Me.tlpLibros.RowCount = 4
         Me.tlpLibros.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
+        Me.tlpLibros.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80.0!))
         Me.tlpLibros.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 80.0!))
         Me.tlpLibros.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 10.0!))
         Me.tlpLibros.Size = New System.Drawing.Size(568, 277)
@@ -70,10 +79,87 @@ Partial Class GestionLibroForm
         '
         Me.panelLibros.AutoScroll = True
         Me.panelLibros.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.panelLibros.Location = New System.Drawing.Point(59, 30)
+        Me.panelLibros.Location = New System.Drawing.Point(59, 102)
         Me.panelLibros.Name = "panelLibros"
-        Me.panelLibros.Size = New System.Drawing.Size(448, 215)
+        Me.panelLibros.Size = New System.Drawing.Size(448, 151)
         Me.panelLibros.TabIndex = 2
+        '
+        'tlpHead
+        '
+        Me.tlpHead.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.tlpHead.ColumnCount = 5
+        Me.tlpHead.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlpHead.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlpHead.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlpHead.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlpHead.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 20.0!))
+        Me.tlpHead.Controls.Add(Me.lOperaciones, 4, 0)
+        Me.tlpHead.Controls.Add(Me.lEstado, 3, 0)
+        Me.tlpHead.Controls.Add(Me.lAnyoEdicion, 2, 0)
+        Me.tlpHead.Controls.Add(Me.lAutor, 1, 0)
+        Me.tlpHead.Controls.Add(Me.lTitulo, 0, 0)
+        Me.tlpHead.Dock = System.Windows.Forms.DockStyle.Top
+        Me.tlpHead.Location = New System.Drawing.Point(59, 22)
+        Me.tlpHead.Name = "tlpHead"
+        Me.tlpHead.RowCount = 1
+        Me.tlpHead.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlpHead.Size = New System.Drawing.Size(448, 44)
+        Me.tlpHead.TabIndex = 3
+        '
+        'lOperaciones
+        '
+        Me.lOperaciones.AutoSize = True
+        Me.lOperaciones.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lOperaciones.Location = New System.Drawing.Point(359, 0)
+        Me.lOperaciones.Name = "lOperaciones"
+        Me.lOperaciones.Size = New System.Drawing.Size(86, 44)
+        Me.lOperaciones.TabIndex = 4
+        Me.lOperaciones.Text = "Operaciones"
+        Me.lOperaciones.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lEstado
+        '
+        Me.lEstado.AutoSize = True
+        Me.lEstado.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lEstado.Location = New System.Drawing.Point(270, 0)
+        Me.lEstado.Name = "lEstado"
+        Me.lEstado.Size = New System.Drawing.Size(83, 44)
+        Me.lEstado.TabIndex = 3
+        Me.lEstado.Text = "Estado"
+        Me.lEstado.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lAnyoEdicion
+        '
+        Me.lAnyoEdicion.AutoSize = True
+        Me.lAnyoEdicion.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lAnyoEdicion.Location = New System.Drawing.Point(181, 0)
+        Me.lAnyoEdicion.Name = "lAnyoEdicion"
+        Me.lAnyoEdicion.Size = New System.Drawing.Size(83, 44)
+        Me.lAnyoEdicion.TabIndex = 2
+        Me.lAnyoEdicion.Text = "Año de edicion"
+        Me.lAnyoEdicion.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lAutor
+        '
+        Me.lAutor.AutoSize = True
+        Me.lAutor.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lAutor.Location = New System.Drawing.Point(92, 0)
+        Me.lAutor.Name = "lAutor"
+        Me.lAutor.Size = New System.Drawing.Size(83, 44)
+        Me.lAutor.TabIndex = 1
+        Me.lAutor.Text = "Autor"
+        Me.lAutor.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'lTitulo
+        '
+        Me.lTitulo.AutoSize = True
+        Me.lTitulo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.lTitulo.Location = New System.Drawing.Point(3, 0)
+        Me.lTitulo.Name = "lTitulo"
+        Me.lTitulo.Size = New System.Drawing.Size(83, 44)
+        Me.lTitulo.TabIndex = 0
+        Me.lTitulo.Text = "Titulo"
+        Me.lTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'tlpTitulo
         '
@@ -128,6 +214,8 @@ Partial Class GestionLibroForm
         Me.Text = "<"
         Me.tlpPrincipal.ResumeLayout(False)
         Me.tlpLibros.ResumeLayout(False)
+        Me.tlpHead.ResumeLayout(False)
+        Me.tlpHead.PerformLayout()
         Me.tlpTitulo.ResumeLayout(False)
         Me.tlpTitulo.PerformLayout()
         Me.ResumeLayout(False)
@@ -140,4 +228,10 @@ Partial Class GestionLibroForm
     Friend WithEvents tlpTitulo As TableLayoutPanel
     Friend WithEvents lGestionLibros As Label
     Friend WithEvents bCrearLibro As Button
+    Friend WithEvents tlpHead As TableLayoutPanel
+    Friend WithEvents lOperaciones As Label
+    Friend WithEvents lEstado As Label
+    Friend WithEvents lAnyoEdicion As Label
+    Friend WithEvents lAutor As Label
+    Friend WithEvents lTitulo As Label
 End Class

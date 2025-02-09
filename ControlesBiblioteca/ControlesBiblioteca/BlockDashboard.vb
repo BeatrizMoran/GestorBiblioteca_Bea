@@ -88,6 +88,8 @@
 
 
     Private Sub BlockDashboard_Click(sender As Object, e As EventArgs) Handles MyBase.Click, lTitulo.Click, pbImagen.Click
+        Me.BackColor = _BackColorNormal
+        lTitulo.BackColor = _BackColorNormal
         RaiseEvent ClickarBlock()
     End Sub
 
@@ -98,6 +100,12 @@
     End Sub
 
     Private Sub BlockDashboard_MouseLeave(sender As Object, e As EventArgs) Handles MyBase.MouseLeave
+        Me.BackColor = _BackColorNormal
+        lTitulo.BackColor = _BackColorNormal
+
+    End Sub
+
+    Private Sub BlockDashboard_MouseClick(sender As Object, e As MouseEventArgs) Handles MyBase.MouseClick
         Me.BackColor = _BackColorNormal
         lTitulo.BackColor = _BackColorNormal
 

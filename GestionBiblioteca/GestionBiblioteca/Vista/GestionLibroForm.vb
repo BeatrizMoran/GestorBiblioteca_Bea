@@ -3,7 +3,6 @@ Imports GestionBiblioteca.DTOs
 
 Public Class GestionLibroForm
     Dim mostrado As Boolean = False
-    Private fuenteActual As Font = New Font("Microsoft Sans Serif", 8) ' Tamaño inicial predeterminado
 
     Dim controlador As New LibroController
 
@@ -42,7 +41,6 @@ Public Class GestionLibroForm
             ' Crear controles para cada libro y configurarlos con los datos del DTO
             Dim row As Integer = 0
             Dim col As Integer = 0
-            Dim esCargando As Boolean = True
 
             For Each libroDTO In libros
                 ' Crear una instancia del control para cada libro
@@ -88,7 +86,6 @@ Public Class GestionLibroForm
                 End If
             Next
 
-            esCargando = False
             ' Agregar el TableLayoutPanel al panel principal
             panelLibros.Controls.Add(Layout)
 

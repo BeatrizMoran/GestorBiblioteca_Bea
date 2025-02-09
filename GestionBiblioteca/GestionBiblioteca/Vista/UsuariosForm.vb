@@ -184,7 +184,7 @@ Public Class UsuariosForm
 
     Private Sub UsuariosForm_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
         If mostrado Then
-            ModuloUtilidades.AjustarFuente(formulario:=Me, tamanoMaximoLetra:=13, tlPanel:=tlpGestionUsuarios, tabla:=dgvUsuarios)
+            ModuloUtilidades.AjustarFuente(formulario:=Me, tamanoMaximoLetra:=13, tlPanel:=tlpTabla, tabla:=dgvUsuarios)
         End If
     End Sub
 

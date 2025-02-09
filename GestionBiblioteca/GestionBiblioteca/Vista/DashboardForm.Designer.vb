@@ -25,16 +25,16 @@ Partial Class DashboardForm
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DashboardForm))
         Me.tlpPrincipal = New System.Windows.Forms.TableLayoutPanel()
         Me.pPanelAdministracion = New System.Windows.Forms.Panel()
-        Me.TableLayoutPanel1 = New System.Windows.Forms.TableLayoutPanel()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.tlpPanelAdmin = New System.Windows.Forms.TableLayoutPanel()
+        Me.pbPanelAdmin = New System.Windows.Forms.PictureBox()
+        Me.lTitulo = New System.Windows.Forms.Label()
         Me.bdUsuarios = New ControlesBiblioteca.BlockDashboard()
         Me.bdLibros = New ControlesBiblioteca.BlockDashboard()
         Me.bdPrestamos = New ControlesBiblioteca.BlockDashboard()
         Me.tlpPrincipal.SuspendLayout()
         Me.pPanelAdministracion.SuspendLayout()
-        Me.TableLayoutPanel1.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.tlpPanelAdmin.SuspendLayout()
+        CType(Me.pbPanelAdmin, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'tlpPrincipal
@@ -66,53 +66,53 @@ Partial Class DashboardForm
         Me.pPanelAdministracion.AccessibleRole = System.Windows.Forms.AccessibleRole.MenuBar
         Me.pPanelAdministracion.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.tlpPrincipal.SetColumnSpan(Me.pPanelAdministracion, 4)
-        Me.pPanelAdministracion.Controls.Add(Me.TableLayoutPanel1)
+        Me.pPanelAdministracion.Controls.Add(Me.tlpPanelAdmin)
         Me.pPanelAdministracion.Dock = System.Windows.Forms.DockStyle.Fill
         Me.pPanelAdministracion.Location = New System.Drawing.Point(3, 3)
         Me.pPanelAdministracion.Name = "pPanelAdministracion"
         Me.pPanelAdministracion.Size = New System.Drawing.Size(540, 54)
         Me.pPanelAdministracion.TabIndex = 6
         '
-        'TableLayoutPanel1
+        'tlpPanelAdmin
         '
-        Me.TableLayoutPanel1.ColumnCount = 2
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
-        Me.TableLayoutPanel1.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Controls.Add(Me.PictureBox1, 0, 0)
-        Me.TableLayoutPanel1.Controls.Add(Me.Label1, 1, 0)
-        Me.TableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TableLayoutPanel1.Location = New System.Drawing.Point(0, 0)
-        Me.TableLayoutPanel1.Margin = New System.Windows.Forms.Padding(0)
-        Me.TableLayoutPanel1.Name = "TableLayoutPanel1"
-        Me.TableLayoutPanel1.Padding = New System.Windows.Forms.Padding(5)
-        Me.TableLayoutPanel1.RowCount = 1
-        Me.TableLayoutPanel1.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
-        Me.TableLayoutPanel1.Size = New System.Drawing.Size(540, 54)
-        Me.TableLayoutPanel1.TabIndex = 0
+        Me.tlpPanelAdmin.ColumnCount = 2
+        Me.tlpPanelAdmin.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle())
+        Me.tlpPanelAdmin.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlpPanelAdmin.Controls.Add(Me.pbPanelAdmin, 0, 0)
+        Me.tlpPanelAdmin.Controls.Add(Me.lTitulo, 1, 0)
+        Me.tlpPanelAdmin.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.tlpPanelAdmin.Location = New System.Drawing.Point(0, 0)
+        Me.tlpPanelAdmin.Margin = New System.Windows.Forms.Padding(0)
+        Me.tlpPanelAdmin.Name = "tlpPanelAdmin"
+        Me.tlpPanelAdmin.Padding = New System.Windows.Forms.Padding(5)
+        Me.tlpPanelAdmin.RowCount = 1
+        Me.tlpPanelAdmin.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100.0!))
+        Me.tlpPanelAdmin.Size = New System.Drawing.Size(540, 54)
+        Me.tlpPanelAdmin.TabIndex = 0
         '
-        'PictureBox1
+        'pbPanelAdmin
         '
-        Me.PictureBox1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.InitialImage = CType(resources.GetObject("PictureBox1.InitialImage"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(8, 8)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(100, 38)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox1.TabIndex = 0
-        Me.PictureBox1.TabStop = False
+        Me.pbPanelAdmin.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.pbPanelAdmin.Image = CType(resources.GetObject("pbPanelAdmin.Image"), System.Drawing.Image)
+        Me.pbPanelAdmin.InitialImage = CType(resources.GetObject("pbPanelAdmin.InitialImage"), System.Drawing.Image)
+        Me.pbPanelAdmin.Location = New System.Drawing.Point(8, 8)
+        Me.pbPanelAdmin.Name = "pbPanelAdmin"
+        Me.pbPanelAdmin.Size = New System.Drawing.Size(100, 38)
+        Me.pbPanelAdmin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.pbPanelAdmin.TabIndex = 0
+        Me.pbPanelAdmin.TabStop = False
         '
-        'Label1
+        'lTitulo
         '
-        Me.Label1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.lTitulo.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(114, 5)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(120, 44)
-        Me.Label1.TabIndex = 1
-        Me.Label1.Text = "Panel de Administracion"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.lTitulo.AutoSize = True
+        Me.lTitulo.Location = New System.Drawing.Point(114, 5)
+        Me.lTitulo.Name = "lTitulo"
+        Me.lTitulo.Size = New System.Drawing.Size(120, 44)
+        Me.lTitulo.TabIndex = 1
+        Me.lTitulo.Text = "Panel de Administracion"
+        Me.lTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'bdUsuarios
         '
@@ -173,18 +173,18 @@ Partial Class DashboardForm
         Me.Text = "DashboardForm"
         Me.tlpPrincipal.ResumeLayout(False)
         Me.pPanelAdministracion.ResumeLayout(False)
-        Me.TableLayoutPanel1.ResumeLayout(False)
-        Me.TableLayoutPanel1.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.tlpPanelAdmin.ResumeLayout(False)
+        Me.tlpPanelAdmin.PerformLayout()
+        CType(Me.pbPanelAdmin, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents tlpPrincipal As TableLayoutPanel
     Friend WithEvents pPanelAdministracion As Panel
-    Friend WithEvents TableLayoutPanel1 As TableLayoutPanel
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents tlpPanelAdmin As TableLayoutPanel
+    Friend WithEvents pbPanelAdmin As PictureBox
+    Friend WithEvents lTitulo As Label
     Friend WithEvents bdUsuarios As ControlesBiblioteca.BlockDashboard
     Friend WithEvents bdLibros As ControlesBiblioteca.BlockDashboard
     Friend WithEvents bdPrestamos As ControlesBiblioteca.BlockDashboard

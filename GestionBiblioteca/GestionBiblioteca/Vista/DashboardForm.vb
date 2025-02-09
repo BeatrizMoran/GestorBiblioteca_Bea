@@ -28,10 +28,6 @@ Public Class DashboardForm
     End Sub
 
     Private Sub DashboardForm_Activated(sender As Object, e As EventArgs) Handles MyBase.Activated
-        bdLibros.BackColor = Color.White
-        bdUsuarios.BackColor = Color.White
-
-        bdPrestamos.BackColor = Color.White
 
         CType(Me.MdiParent, Form1).OcultarMostrarBotonVolver()
     End Sub
